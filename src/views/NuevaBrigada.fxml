@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="291.0" prefWidth="453.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.NuevaBrigadaController">
+    <children>
+        <JFXToolbar layoutX="11.0" layoutY="45.0" prefHeight="10.0" prefWidth="429.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="47.0" layoutY="14.0" prefHeight="27.0" prefWidth="238.0" text="Nueva Brigada Constructora">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="261.0" layoutY="96.0" onKeyTyped="#keyTypeCode"
+                      prefHeight="30.0" prefWidth="173.0" promptText="Código"/>
+        <JFXTextArea fx:id="text_descripcion" labelFloat="true" layoutX="14.0" layoutY="154.0" prefHeight="70.0"
+                     prefWidth="422.0" promptText="Descripción"/>
+        <JFXButton layoutX="25.0" layoutY="247.0" onAction="#addBrigadaAction" prefHeight="27.0" prefWidth="118.0"
+                   style="-fx-background-color: #286090;" text="Agregar" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+            </graphic>
+        </JFXButton>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <JFXComboBox fx:id="combo_empresa" labelFloat="true" layoutX="14.0" layoutY="91.0" prefHeight="35.0"
+                     prefWidth="190.0" promptText="Empresa "/>
+        <FontAwesomeIcon fill="#286090" glyphName="TASKS" layoutX="14.0" layoutY="35.0" size="1.8em"/>
+        <JFXButton fx:id="btnClose" layoutX="306.0" layoutY="247.0" onAction="#handleClose" prefHeight="27.0"
+                   prefWidth="118.0" style="-fx-background-color: #286090;" text="Cancelar" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CLOSE"/>
+            </graphic>
+        </JFXButton>
+        <JFXButton contentDisplay="CENTER" layoutX="397.0" layoutY="10.0" onAction="#handleLoadExcel" prefHeight="32.0"
+                   prefWidth="43.0" style="-fx-border-color: #286090; -fx-border-radius: 3;">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="UPLOAD" size="1.8em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Agregar Brigadas desde el excel"/>
+            </tooltip>
+        </JFXButton>
+    </children>
+</AnchorPane>

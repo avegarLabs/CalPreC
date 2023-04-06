@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0"
+            prefWidth="1088.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ObrasController">
+    <children>
+        <Pane fx:id="content_paneOb" layoutY="81.0" prefHeight="640.0" prefWidth="1088.0" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <TableView fx:id="dataTableObra" layoutX="4.0" layoutY="106.0" prefHeight="527.0" prefWidth="428.0"
+                           stylesheets="@../AccessMigration/tableview.css">
+                    <columns>
+                        <TableColumn fx:id="code" prefWidth="83.0" text="Código"/>
+                        <TableColumn fx:id="descrip" prefWidth="335.0" text="Descripción"/>
+                    </columns>
+                    <contextMenu>
+                        <ContextMenu fx:id="obraMenu">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#handleEditObra" text="Modificar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="REFRESH"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleDuplicateObraForm" text="Duplicar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="COPY"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleCreateObraRC" text="Convertir RC">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="EXCHANGE"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleRecalcular" text="Recalcular">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="CALCULATOR"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleSuplemantaObra" text="Suplementar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="CODE"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleExportToITE"
+                                          text="Exportar para ITE">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="DOWNLOAD"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleDeleteObra" text="Eliminar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="REMOVE"/>
+                                    </graphic>
+                                </MenuItem>
+                            </items>
+                        </ContextMenu>
+                    </contextMenu>
+                </TableView>
+                <JFXButton fx:id="btn_add" disable="true" layoutX="14.0" layoutY="67.0" onAction="#handleNuevaObraForm"
+                           prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #337ab7;" text="Obra"
+                           textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+                    </graphic>
+                    <effect>
+                        <Bloom threshold="0.31"/>
+                    </effect>
+                </JFXButton>
+                <BorderPane fx:id="enterPane" layoutX="443.0" layoutY="64.0" maxHeight="1.7976931348623157E308"
+                            maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
+                            prefHeight="570.0" prefWidth="629.0"/>
+                <JFXToolbar layoutX="9.0" layoutY="39.0" prefHeight="14.0" prefWidth="1063.0"
+                            style="-fx-background-color: #286090;"/>
+                <FontAwesomeIcon fill="#286090" glyphName="BUILDING" layoutX="14.0" layoutY="33.0" size="1.8em"
+                                 wrappingWidth="18.514286041259766"/>
+                <Label fx:id="label_title" layoutX="41.0" layoutY="12.0" prefHeight="25.0" prefWidth="324.0"
+                       text="Obras">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <JFXTextField fx:id="filter" labelFloat="true" layoutX="203.0" layoutY="66.0" prefHeight="27.0"
+                              prefWidth="273.0" promptText="Descripción" visible="false"/>
+                <JFXTextField fx:id="filter" labelFloat="true" layoutX="218.0" layoutY="74.0" prefHeight="25.0"
+                              prefWidth="200.0" promptText="Buscar"/>
+                <FontAwesomeIcon fill="#286090" glyphName="SEARCH" layoutX="420.0" layoutY="97.0" size="1.1em"/>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

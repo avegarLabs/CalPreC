@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.InversionistaController">
+    <children>
+        <Label fx:id="label_title" layoutX="42.0" layoutY="14.0" prefHeight="27.0" prefWidth="1018.0"
+               text="Inversionistas" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="12.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="filter" labelFloat="true" layoutX="805.0" layoutY="127.0" prefHeight="25.0"
+                      prefWidth="253.0" promptText="Código o Descripción" AnchorPane.rightAnchor="14.0"/>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="11.0" prefWidth="1060.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="BRIEFCASE" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273" AnchorPane.leftAnchor="13.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="11.0" layoutY="80.0"
+                      onAction="#handleDefineEmpresa" prefHeight="25.0" prefWidth="211.0" promptText="Código"
+                      AnchorPane.leftAnchor="11.0"/>
+        <JFXTextField fx:id="field_descripcion" labelFloat="true" layoutX="11.0" layoutY="124.0" prefHeight="30.0"
+                      prefWidth="458.0" promptText="Descripción" AnchorPane.leftAnchor="11.0"/>
+        <JFXButton fx:id="btn_add" layoutX="478.0" layoutY="124.0" onAction="#newInversionistaAction" prefHeight="30.0"
+                   prefWidth="92.0" style="-fx-background-color: #337ab7;" text="Agregar" textFill="WHITE"
+                   AnchorPane.leftAnchor="478.0">
+            <font>
+                <Font size="13.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+            </graphic>
+        </JFXButton>
+        <TableView fx:id="dataTable_inversionista" layoutX="9.0" layoutY="163.0" prefHeight="447.0" prefWidth="1053.0"
+                   stylesheets="@../AccessMigration/tableview.css" AnchorPane.bottomAnchor="7.0"
+                   AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="163.0">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="75.0" text="Código"/>
+                <TableColumn fx:id="descripcion" prefWidth="968.0000305175781" text="Descripción"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem fx:id="option1" mnemonicParsing="false" onAction="#handleInversionistaUpdateAction"
+                                  text="Actualizar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REFRESH"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="option2" mnemonicParsing="false" onAction="#handleInversionistaDeleteAction"
+                                  text="Eliminar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REMOVE"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+    </children>
+</AnchorPane>

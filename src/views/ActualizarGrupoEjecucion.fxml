@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="263.0" prefWidth="453.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ActualizarGrupoEjecucionController">
+    <children>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="9.0" prefWidth="436.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="46.0" layoutY="14.0" prefHeight="27.0" prefWidth="317.0" text="Actualizar Grupo de Ejecución">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="14.0" layoutY="71.0" prefHeight="30.0"
+                      prefWidth="182.0" promptText="Código"/>
+        <JFXTextArea fx:id="text_descripcion" labelFloat="true" layoutX="16.0" layoutY="130.0" prefHeight="62.0"
+                     prefWidth="422.0" promptText="Descripción"/>
+        <JFXButton layoutX="16.0" layoutY="219.0" onAction="#handeleUpdateAction" prefHeight="27.0" prefWidth="118.0"
+                   style="-fx-background-color: #286090;" text="Actualizar" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="1.3em" wrappingWidth="21.600000381469727"/>
+            </graphic>
+        </JFXButton>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="STEAM" layoutX="14.0" layoutY="35.0" size="1.8em"/>
+        <JFXButton fx:id="btnClose" layoutX="304.0" layoutY="219.0" onAction="#handleClose" prefHeight="27.0"
+                   prefWidth="118.0" style="-fx-background-color: #286090;" text="Cancelar" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.3em" wrappingWidth="21.600000381469727"/>
+            </graphic>
+        </JFXButton>
+    </children>
+</AnchorPane>

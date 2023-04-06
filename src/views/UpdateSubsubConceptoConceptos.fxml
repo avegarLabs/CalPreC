@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="185.0" prefWidth="411.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.UpdateSubsubFormulaController">
+    <children>
+        <JFXToolbar layoutY="45.0" prefHeight="11.0" prefWidth="402.0" style="-fx-background-color: #286090;"
+                    AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="7.0"/>
+        <Label fx:id="name" layoutX="46.0" layoutY="14.0" prefHeight="27.0" prefWidth="338.0"
+               text="Modificar Subconcepto de Gasto">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <FontAwesomeIcon fill="#286090" glyphName="BOOK" layoutX="14.0" layoutY="35.0" size="1.8em"/>
+        <JFXButton layoutX="311.0" layoutY="148.0" onAction="#handleUpdateConcepto" prefHeight="27.0" prefWidth="86.0"
+                   style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Aceptar" textFill="#286090"
+                   AnchorPane.leftAnchor="311.0">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CHECK"/>
+            </graphic>
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnSub" contentDisplay="CENTER" layoutX="368.0" layoutY="84.0"
+                   onAction="#handleActionAddSubSubconcepto" prefHeight="27.0" prefWidth="32.0"
+                   style="-fx-border-color: #286090; -fx-border-radius: 10;">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="PLUS" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Agregar subconceptos"/>
+            </tooltip>
+        </JFXButton>
+        <JFXTextArea fx:id="decrip" labelFloat="true" layoutX="9.0" layoutY="69.0" prefHeight="66.0" prefWidth="347.0"
+                     promptText="Descripción"/>
+    </children>
+</AnchorPane>

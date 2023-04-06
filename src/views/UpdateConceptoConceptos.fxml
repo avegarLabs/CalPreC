@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="263.0" prefWidth="411.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.UpdateFormulaController">
+    <children>
+        <JFXToolbar layoutX="9.0" layoutY="45.0" prefHeight="11.0" prefWidth="395.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="7.0"/>
+        <Label fx:id="name" layoutX="46.0" layoutY="14.0" prefHeight="27.0" prefWidth="338.0"
+               text="Modificar Conceptos de Gastos">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <FontAwesomeIcon fill="#286090" glyphName="BOOK" layoutX="14.0" layoutY="35.0" size="1.8em"/>
+        <JFXButton layoutX="302.0" layoutY="222.0" onAction="#handleUpdateConcepto" prefHeight="27.0" prefWidth="88.0"
+                   style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Aceptar" textFill="#286090"
+                   AnchorPane.leftAnchor="302.0">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CHECK" selectionFill="#286090"/>
+            </graphic>
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+        <JFXTextField fx:id="conceptField" labelFloat="true" layoutX="14.0" layoutY="79.0" prefHeight="25.0"
+                      prefWidth="376.0" promptText="Concepto"/>
+        <JFXTextField fx:id="coefiField" labelFloat="true" layoutX="14.0" layoutY="127.0" promptText="Coeficiente"/>
+        <JFXTextField fx:id="formulaField" labelFloat="true" layoutX="14.0" layoutY="180.0" prefHeight="25.0"
+                      prefWidth="307.0" promptText="Fórmula"/>
+        <JFXButton fx:id="btnSub" contentDisplay="CENTER" layoutX="336.0" layoutY="135.0"
+                   onAction="#handleActionAddSubconcepto" prefHeight="27.0" prefWidth="32.0"
+                   style="-fx-border-color: #286090; -fx-border-radius: 10;">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="PLUS" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Agregar subconceptos"/>
+            </tooltip>
+        </JFXButton>
+    </children>
+</AnchorPane>

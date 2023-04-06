@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="633.0" prefWidth="465.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.DuplicarUOController">
+    <children>
+        <JFXToolbar layoutY="45.0" prefHeight="4.0" prefWidth="402.0" style="-fx-background-color: #286090;"
+                    AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="7.0"/>
+        <Label fx:id="name" layoutX="46.0" layoutY="14.0" prefHeight="27.0" prefWidth="75.0" text="Duplicar">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <FontAwesomeIcon fill="#286090" glyphName="COPY" layoutX="14.0" layoutY="35.0" size="1.8em"/>
+        <Label fx:id="labelname" layoutX="116.0" layoutY="14.0" prefHeight="27.0" prefWidth="281.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label layoutX="22.0" layoutY="60.0" prefHeight="17.0" prefWidth="55.0" text="Empresa:"/>
+        <Label layoutX="22.0" layoutY="80.0" prefHeight="17.0" prefWidth="55.0" text="Zona:"/>
+        <Label layoutX="22.0" layoutY="100.0" prefHeight="17.0" prefWidth="55.0" text="Objeto:"/>
+        <Label layoutX="22.0" layoutY="120.0" prefHeight="17.0" prefWidth="45.0" text="Nivel:"/>
+        <Label layoutX="22.0" layoutY="140.0" prefHeight="17.0" prefWidth="75.0" text="Especialidad:"/>
+        <Label layoutX="18.0" layoutY="164.0" prefHeight="17.0" prefWidth="97.0" text="Subespecialidad:"
+               textAlignment="RIGHT"/>
+        <Label fx:id="labelEmpresa" layoutX="77.0" layoutY="60.0" prefHeight="17.0" prefWidth="381.0"/>
+        <Label fx:id="labelZona" layoutX="60.0" layoutY="80.0" prefHeight="17.0" prefWidth="397.0"/>
+        <Label fx:id="labelObjeto" layoutX="69.0" layoutY="100.0" prefHeight="17.0" prefWidth="387.0"/>
+        <Label fx:id="labelNivel" layoutX="60.0" layoutY="120.0" prefHeight="17.0" prefWidth="397.0"/>
+        <Label fx:id="labelEspecialidad" layoutX="97.0" layoutY="140.0" prefHeight="17.0" prefWidth="357.0"/>
+        <Label fx:id="labelSubp" layoutX="115.0" layoutY="164.0" prefHeight="17.0" prefWidth="345.0"/>
+        <Separator layoutX="130.0" layoutY="202.0" prefHeight="4.0" prefWidth="202.0"
+                   style="-fx-background-color: #286090;"/>
+        <Label layoutX="339.0" layoutY="193.0" prefHeight="17.0" prefWidth="45.0" text="Incluir">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Label>
+        <JFXCheckBox fx:id="rvCheck" checkedColor="#286090" layoutX="136.0" layoutY="214.0" prefHeight="18.0"
+                     prefWidth="144.0" selected="true" text="Renglones Variantes"/>
+        <JFXCheckBox fx:id="suminisCheck" checkedColor="#286090" layoutX="136.0" layoutY="240.0" selected="true"
+                     text="Suministros"/>
+        <JFXCheckBox fx:id="certCheck" checkedColor="#286090" layoutX="294.0" layoutY="214.0" prefHeight="18.0"
+                     prefWidth="110.0" text="Certificaciones"/>
+        <JFXCheckBox fx:id="planesCheck" checkedColor="#286090" layoutX="294.0" layoutY="240.0" text="Planes"/>
+        <Separator layoutX="51.0" layoutY="267.0" prefHeight="4.0" prefWidth="345.0"
+                   style="-fx-background-color: #286090;"/>
+        <JFXComboBox fx:id="comEmpresas" labelFloat="true" layoutX="15.0" layoutY="325.0" onAction="#handleCargarZonas"
+                     prefHeight="25.0" prefWidth="438.0" promptText="Empresa"/>
+        <JFXComboBox fx:id="comZonas" labelFloat="true" layoutX="15.0" layoutY="364.0" onAction="#handleCargarObjetos"
+                     prefHeight="25.0" prefWidth="438.0" promptText="Zonas"/>
+        <JFXComboBox fx:id="comobjetos" labelFloat="true" layoutX="15.0" layoutY="405.0" onAction="#handleCargarNivel"
+                     prefHeight="25.0" prefWidth="438.0" promptText="Objetos"/>
+        <JFXComboBox fx:id="comsubespecialudad" labelFloat="true" layoutX="15.0" layoutY="510.0" prefHeight="25.0"
+                     prefWidth="438.0" promptText="Subespecialidades"/>
+        <JFXComboBox fx:id="comNivel" labelFloat="true" layoutX="15.0" layoutY="437.0" prefHeight="25.0"
+                     prefWidth="438.0" promptText="Niveles"/>
+        <JFXComboBox fx:id="comespecialidad" labelFloat="true" layoutX="15.0" layoutY="473.0"
+                     onAction="#handleCargarSubesp" prefHeight="25.0" prefWidth="438.0" promptText="Especialidades"/>
+        <JFXTextField fx:id="code" labelFloat="true" layoutX="11.0" layoutY="558.0" onKeyTyped="#getUOByCode"
+                      prefHeight="25.0" prefWidth="126.0" promptText="Código"/>
+        <JFXTextArea fx:id="descript" labelFloat="true" layoutX="158.0" layoutY="548.0" prefHeight="35.0"
+                     prefWidth="297.0" promptText="Descripción"/>
+        <JFXButton layoutX="36.0" layoutY="593.0" onAction="#handleDuplicateUnidad"
+                   style="-fx-background-color: #286090;" text="Aceptar" textFill="WHITE">
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CHECK"/>
+            </graphic>
+        </JFXButton>
+        <JFXButton fx:id="btn_close" layoutX="295.0" layoutY="593.0" onAction="#handleCloseWindows"
+                   style="-fx-background-color: #286090;" text="Cancelar" textFill="WHITE">
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CLOSE"/>
+            </graphic>
+        </JFXButton>
+        <Label layoutX="19.0" layoutY="258.0" prefHeight="19.0" prefWidth="32.0" text="Para">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Label>
+        <JFXComboBox fx:id="comboObras" labelFloat="true" layoutX="15.0" layoutY="288.0" onAction="#handleCargarEmpresa"
+                     prefHeight="25.0" prefWidth="438.0" promptText="Obras"/>
+        <JFXButton contentDisplay="CENTER" layoutX="40.0" layoutY="220.0" onAction="#handleNextZonas" prefHeight="25.0"
+                   prefWidth="32.0" style="-fx-border-color: #286090; -fx-border-radius: 5;">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="PLAY"/>
+            </graphic>
+        </JFXButton>
+    </children>
+</AnchorPane>

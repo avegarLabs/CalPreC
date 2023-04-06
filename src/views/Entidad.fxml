@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.EntidadController">
+    <children>
+        <Label fx:id="label_title" layoutX="45.0" layoutY="14.0" prefHeight="27.0" prefWidth="1004.0" text="Entidades"
+               AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="4.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="filter" labelFloat="true" layoutX="787.0" layoutY="127.0" prefHeight="25.0"
+                      prefWidth="258.0" promptText="Código o Descripción" AnchorPane.rightAnchor="8.0"/>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="9.0" prefWidth="1039.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="8.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="UNIVERSITY" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273" AnchorPane.leftAnchor="13.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="13.0" layoutY="72.0"
+                      onAction="#handleDefineEmpresa" prefHeight="25.0" prefWidth="211.0" promptText="Código"
+                      AnchorPane.leftAnchor="13.0"/>
+        <JFXTextField fx:id="field_descripcion" labelFloat="true" layoutX="13.0" layoutY="112.0" prefHeight="30.0"
+                      prefWidth="458.0" promptText="Descripción" AnchorPane.leftAnchor="13.0"/>
+        <JFXButton fx:id="btn_add" layoutX="478.0" layoutY="119.0" onAction="#addNewEntidad" prefHeight="30.0"
+                   prefWidth="81.0" style="-fx-background-color: #337ab7;" text="Agregar" textFill="WHITE"
+                   AnchorPane.leftAnchor="478.0">
+            <font>
+                <Font size="13.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+            </graphic>
+        </JFXButton>
+        <TableView fx:id="dataTable_entidad" layoutX="9.0" layoutY="158.0" prefHeight="441.0" prefWidth="1039.0"
+                   stylesheets="@../AccessMigration/tableview.css" AnchorPane.bottomAnchor="18.0"
+                   AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="158.0">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="75.0" text="Código"/>
+                <TableColumn fx:id="descripcion" prefWidth="962.0" text="Descripción"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem fx:id="option1" mnemonicParsing="false" onAction="#handleEntidadUpdateAction"
+                                  text="Editar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REFRESH"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="option2" mnemonicParsing="false" onAction="#handleEntidadDeleteAction"
+                                  text="Eliminar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="CLOSE"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+    </children>
+</AnchorPane>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="617.0" prefWidth="1073.0" style="-fx-background-color: #fff;"
+      xmlns="http://javafx.com/javafx/10.0.1">
+    <AnchorPane prefHeight="617.0" prefWidth="966.0" style="-fx-background-color: #fff;">
+        <children>
+            <Label fx:id="label_title" layoutX="38.0" layoutY="14.0" prefHeight="27.0" prefWidth="382.0"
+                   text="Listado de Suministros Compuestos Precons II">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <JFXButton fx:id="btn_add" layoutX="168.0" layoutY="64.0" prefHeight="30.0" prefWidth="98.0"
+                       style="-fx-background-color: #337ab7;" text="Agregar" textFill="WHITE" visible="false">
+                <font>
+                    <Font name="System Bold" size="14.0"/>
+                </font>
+            </JFXButton>
+            <JFXTextField fx:id="filter" labelFloat="true" layoutX="802.0" layoutY="66.0" prefHeight="25.0"
+                          prefWidth="258.0" promptText="Código o Descripción"/>
+            <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="5.0" prefWidth="1066.0"
+                        style="-fx-background-color: #286090;"/>
+            <FontAwesomeIcon fill="#286090" glyphName="CUBE" layoutX="13.0" layoutY="34.0" size="1.8em"
+                             wrappingWidth="25.399999618530273">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </FontAwesomeIcon>
+            <Pane fx:id="content_pane" layoutX="9.0" layoutY="109.0" prefHeight="498.0" prefWidth="1059.0"
+                  AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                <children>
+                    <TableView fx:id="dataTable" layoutX="4.0" prefHeight="491.0" prefWidth="1050.0"
+                               stylesheets="@../AccessMigration/tableview.css">
+                        <columns>
+                            <TableColumn fx:id="code" prefWidth="88.0" text="Código"/>
+                            <TableColumn fx:id="descrip" prefWidth="690.0" text="Descripción"/>
+                            <TableColumn fx:id="um" prefWidth="45.0" text="UM"/>
+                            <TableColumn fx:id="mn" prefWidth="78.0" text="Precio MN"/>
+                            <!--TableColumn fx:id="mlc" prefWidth="79.0" text="Precio MLC"/-->
+                            <TableColumn fx:id="peso" prefWidth="64.0" text="Peso"/>
+                        </columns>
+                        <contextMenu>
+                            <ContextMenu>
+                                <items>
+                                    <!--MenuItem mnemonicParsing="false" onAction="#handleViewSumnistroComponentes"
+                                              text="Modificar"/-->
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                    </TableView>
+                </children>
+            </Pane>
+            <FontAwesomeIcon fill="WHITE" glyphName="PLUS" layoutX="175.0" layoutY="83.0" size="1.3em"/>
+        </children>
+    </AnchorPane>
+</VBox>

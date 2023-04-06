@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="550.0" prefWidth="450.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.ListConceptosController">
+    <children>
+        <JFXToolbar layoutX="11.0" layoutY="45.0" prefHeight="11.0" prefWidth="370.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="7.0"/>
+        <Label fx:id="name" layoutX="46.0" layoutY="14.0" prefHeight="27.0" prefWidth="245.0"
+               text="SubConceptos de Gastos">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <FontAwesomeIcon fill="#286090" glyphName="LIST" layoutX="14.0" layoutY="35.0" size="1.8em"/>
+        <TableView fx:id="dataTable" layoutX="12.0" layoutY="65.0" prefHeight="479.0" prefWidth="426.0"
+                   stylesheets="@../AccessMigration/tableview.css">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="422.0" text="SubConceptos"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#editConcepto" text="Modificar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REFRESH"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#deleteConcepts" text="Eliminar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REMOVE"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#editListSubConcepto" text="Aperturar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="LIST"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+    </children>
+</AnchorPane>

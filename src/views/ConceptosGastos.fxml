@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="591.0" prefWidth="880.0" style="-fx-background-color: #fff;"
+      xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ConceptosController">
+    <AnchorPane prefHeight="581.0" prefWidth="772.0" style="-fx-background-color: #fff;">
+        <children>
+            <TableView fx:id="dataTable" layoutX="3.0" layoutY="65.0" prefHeight="511.0" prefWidth="761.0"
+                       stylesheets="@../AccessMigration/tableview.css" AnchorPane.leftAnchor="3.0"
+                       AnchorPane.rightAnchor="8.0">
+                <columns>
+                    <TableColumn fx:id="code" prefWidth="43.0" text="No."/>
+                    <TableColumn fx:id="descrip" prefWidth="442.0" text="Descripción"/>
+                    <TableColumn fx:id="coeficiente" minWidth="0.0" prefWidth="98.0" text="Coeficiente"/>
+                    <TableColumn fx:id="formula" prefWidth="184.0" text="Formula"/>
+                    <TableColumn fx:id="calculado" prefWidth="85.0" text="Calculado"/>
+                </columns>
+            </TableView>
+            <Label fx:id="label_title" layoutX="30.0" layoutY="14.0" prefHeight="27.0" prefWidth="333.0"
+                   text="Conpectos Gastos" AnchorPane.leftAnchor="30.0">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="9.0" prefWidth="761.0"
+                        style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0"
+                        AnchorPane.rightAnchor="5.0"/>
+            <FontAwesomeIcon fill="#286090" glyphName="DOLLAR" layoutX="14.0" layoutY="35.0" size="1.8em"
+                             AnchorPane.leftAnchor="14.0"/>
+        </children>
+    </AnchorPane>
+</VBox>

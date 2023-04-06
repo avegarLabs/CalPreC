@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="459.0" prefWidth="726.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.DespachosController">
+    <children>
+        <JFXToolbar layoutX="10.0" layoutY="45.0" prefHeight="13.0" prefWidth="711.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="48.0" layoutY="14.0" prefHeight="27.0" prefWidth="357.0" text="Formulario Despacho">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="14.0" layoutY="72.0" prefHeight="25.0"
+                      prefWidth="175.0" promptText="No. Vale"/>
+        <JFXTextField fx:id="field_um" labelFloat="true" layoutX="243.0" layoutY="72.0"
+                      onAction="#handleSelectSuministros" prefHeight="25.0" prefWidth="470.0" promptText="Suministro"/>
+        <JFXTextArea fx:id="text_descripcion" labelFloat="true" layoutX="14.0" layoutY="116.0" prefHeight="52.0"
+                     prefWidth="479.0" promptText="Descripción"/>
+        <JFXTextField fx:id="field_preciomn" labelFloat="true" layoutX="14.0" layoutY="187.0"
+                      onAction="#handleCargarTable" prefHeight="25.0" prefWidth="148.0" promptText="Cantidad"/>
+        <JFXTextField fx:id="field_preciomlc" labelFloat="true" layoutX="269.0" layoutY="187.0" prefHeight="25.0"
+                      prefWidth="127.0" promptText="Disponible"/>
+        <JFXButton layoutX="24.0" layoutY="415.0" onAction="#handleDespacharCartaLimite" prefHeight="30.0"
+                   prefWidth="95.0" style="-fx-border-color: #286090; -fx-border-radius: 5;" text="Agregar"
+                   textFill="#286090">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="PLUS" selectionFill="#286090"/>
+            </graphic>
+        </JFXButton>
+        <Separator layoutX="7.0" layoutY="229.0" prefHeight="5.0" prefWidth="711.0"
+                   style="-fx-background-color: #286090;"/>
+        <JFXButton fx:id="btn_close" layoutX="617.0" layoutY="413.0" onAction="#closeWindow" prefHeight="30.0"
+                   prefWidth="95.0" style="-fx-border-color: #286090; -fx-border-radius: 5;" text="Cancelar"
+                   textFill="#286090">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CLOSE" selectionFill="#286090"/>
+            </graphic>
+        </JFXButton>
+        <FontAwesomeIcon fill="#286090" glyphName="SEND" layoutX="13.0" layoutY="35.0" size="1.8em"/>
+        <TableView fx:id="tableSum" layoutX="9.0" layoutY="244.0" prefHeight="157.0" prefWidth="711.0">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="117.0" text="Código"/>
+                <TableColumn fx:id="descrip" prefWidth="334.0" text="Descripción"/>
+                <TableColumn fx:id="um" prefWidth="65.0" text="U/M"/>
+                <TableColumn fx:id="cant" prefWidth="96.0" text="Cantidad"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#deleteSuministInTable" text="Eliminar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REMOVE"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+        <TextArea fx:id="fielPrecio" layoutX="504.0" layoutY="130.0" prefHeight="22.0" prefWidth="127.0">
+            <font>
+                <Font name="System Bold Italic" size="12.0"/>
+            </font>
+        </TextArea>
+        <Label layoutX="506.0" layoutY="108.0" text="Precio/UM">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

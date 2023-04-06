@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainpane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="1158.0"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.Controller">
+    <top>
+        <Pane prefHeight="62.0" prefWidth="1158.0" style="-fx-background-color: #286090;" BorderPane.alignment="CENTER">
+            <children>
+                <MenuButton contentDisplay="CENTER" layoutX="102.0" layoutY="30.0" mnemonicParsing="false"
+                            popupSide="TOP" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: #286090;"
+                            textFill="WHITE">
+                    <items>
+                        <MenuItem fx:id="btn_obras" mnemonicParsing="false" onAction="#handleNuevoPesupustoObra"
+                                  text="Presupuesto">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="DOLLAR"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handlePlanObras" text="Plan Mes">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="CALENDAR"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handleCertificacion" text="Certificación">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="TAGS"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" fontSmoothingType="LCD" glyphName="BUILDING" size="1.8em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Unidades de Obra"/>
+                    </tooltip>
+                </MenuButton>
+                <MenuButton contentDisplay="CENTER" layoutX="181.0" layoutY="30.0" mnemonicParsing="false"
+                            popupSide="TOP" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: #286090;"
+                            textFill="WHITE">
+                    <items>
+                        <MenuItem fx:id="btn_obras1" mnemonicParsing="false" text="Presupusto"/>
+                        <MenuItem mnemonicParsing="false" text="Salario"/>
+                        <MenuItem mnemonicParsing="false" text="Plan Mes"/>
+                        <MenuItem mnemonicParsing="false" text="Certificación"/>
+                    </items>
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" fontSmoothingType="LCD" glyphName="CALENDAR" size="1.8em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Unidad Mínima de Control"/>
+                    </tooltip>
+                </MenuButton>
+                <MenuButton contentDisplay="CENTER" layoutX="255.0" layoutY="30.0" mnemonicParsing="false"
+                            popupSide="TOP" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: #286090;"
+                            textFill="WHITE">
+                    <items>
+                        <MenuItem fx:id="btn_obras11" mnemonicParsing="false" onAction="#handleNuevoPesupustoRenglon"
+                                  text="Presupuesto">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="DOLLAR"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handlePlanRenglonVariante" text="Plan Mes">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="CALENDAR"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handleCertificacionRenglonVariante"
+                                  text="Certificación">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="TAGS"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" fontSmoothingType="LCD" glyphName="SITEMAP" size="1.8em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Renglón Variante"/>
+                    </tooltip>
+                </MenuButton>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="159.0" layoutY="5.0" prefHeight="17.0"
+                       prefWidth="96.0" text="Presupuesto" textFill="WHITE"/>
+                <JFXButton contentDisplay="CENTER" layoutX="331.0" layoutY="30.0" onAction="#handleControlPresupuesto">
+                    <tooltip>
+                        <Tooltip text="Control del Presupuesto"/>
+                    </tooltip>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="DASHBOARD" size="1.8em"/>
+                    </graphic>
+                </JFXButton>
+                <Label contentDisplay="CENTER" layoutX="334.0" layoutY="5.0" prefHeight="17.0" prefWidth="55.0"
+                       text="  Control" textFill="WHITE"/>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="418.0" layoutY="5.0" prefHeight="17.0"
+                       prefWidth="77.0" text="   Informes" textFill="WHITE"/>
+                <JFXButton contentDisplay="CENTER" layoutX="411.0" layoutY="30.0" onAction="#handleReportesdeImpresion">
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="PRINT" size="1.8em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Reportes de Impresión"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton contentDisplay="CENTER" layoutX="460.0" layoutY="30.0" onAction="#handleReportesdelProject">
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SLIDERS" size="1.8em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Exportar al Microsoft Project"/>
+                    </tooltip>
+                </JFXButton>
+                <Separator layoutX="315.0" layoutY="15.0" orientation="VERTICAL" prefHeight="33.0" prefWidth="11.0"/>
+                <Separator layoutX="395.0" layoutY="15.0" orientation="VERTICAL" prefHeight="33.0" prefWidth="11.0"/>
+                <Label fx:id="labelUser" layoutX="940.0" layoutY="36.0" prefHeight="19.0" prefWidth="168.0"
+                       style="-fx-position-shape: absolute; -fx-border-radius: 15;" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="915.0" layoutY="55.0" size="1.8em"/>
+                <JFXButton fx:id="btn_config" contentDisplay="CENTER" layoutX="860.0" layoutY="30.0"
+                           onAction="#handleConfiguraciones" textFill="WHITE">
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="COGS" size="1.8em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Configuración"/>
+                    </tooltip>
+                </JFXButton>
+                <Separator layoutX="512.0" layoutY="15.0" orientation="VERTICAL" prefHeight="33.0" prefWidth="11.0"/>
+                <Separator layoutX="579.0" layoutY="14.0" orientation="VERTICAL" prefHeight="33.0" prefWidth="11.0"/>
+                <MenuButton contentDisplay="CENTER" layoutX="597.0" layoutY="30.0" mnemonicParsing="false"
+                            popupSide="TOP" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: #286090;"
+                            textFill="WHITE">
+                    <items>
+                        <MenuItem fx:id="btn_obras111" mnemonicParsing="false" onAction="#handleHojaCalcToMain"
+                                  text="Hoja de Cálculo">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="EDIT"/>
+                            </graphic>
+                        </MenuItem>
+                        <!--MenuItem fx:id="opt1" mnemonicParsing="false" onAction="#handleAjustes" text="Plan">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="CALENDAR" />
+                            </graphic>
+                        </MenuItem-->
+                        <MenuItem fx:id="salva" mnemonicParsing="false" onAction="#handleBackupAction" text="Salva BD">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="DATABASE"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="restaura" mnemonicParsing="false" onAction="#handleRestoreAction"
+                                  text="Restaurar BD">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="UPLOAD"/>
+                            </graphic>
+                        </MenuItem>
+                        <!--MenuItem fx:id="importar" mnemonicParsing="false" onAction="#handleImportBDAccessFileAction" text="Importar PC Win BD">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="EXCHANGE" />
+                            </graphic>
+                        </MenuItem-->
+                        <MenuItem fx:id="importar1" mnemonicParsing="false" onAction="#runCalculadoraAction"
+                                  text="Calculadora SO">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="CALCULATOR"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handleIndicadoresView" text="Indicadores">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="FLAG"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handleSaveObra" text="Exportar Obras">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="DOWNLOAD"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handleImportObra" text="Importar Obras">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="UPLOAD"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handleMantenimientoView" text="Importar Catálogo">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="BOOK"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" fontSmoothingType="LCD" glyphName="WRENCH" size="1.8em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Ajustes"/>
+                    </tooltip>
+                </MenuButton>
+                <JFXButton fx:id="btn_close" contentDisplay="CENTER" layoutX="1115.0" layoutY="30.0"
+                           onAction="#handleCloseProgram" prefHeight="20.0" prefWidth="28.0"
+                           style="-fx-border-color: white; -fx-border-radius: 5;">
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Salir del CalpreC cerrando todos los procesos"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton contentDisplay="CENTER" layoutX="523.0" layoutY="30.0" onAction="#handleCartaLimiteShow">
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="FILE" size="1.8em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Datos Carta Limite"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton fx:id="btn_notification" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0"
+                           onAction="#handleInformacionView" prefHeight="39.0" prefWidth="52.0"
+                           style="-fx-border-color: #d80808; -fx-border-radius: 50;" visible="false">
+                    <graphic>
+                        <FontAwesomeIcon fill="#c91521" glyphName="BELL" selectionFill="#da0c0c" size="2.0em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Nueva Versión Disponible"/>
+                    </tooltip>
+                </JFXButton>
+            </children>
+        </Pane>
+    </top>
+    <left>
+        <VBox prefHeight="517.0" prefWidth="76.0" style="-fx-background-color: #286090;" BorderPane.alignment="CENTER">
+            <children>
+                <JFXButton fx:id="btn_suministros" accessibleText="btn_suministros" contentDisplay="CENTER"
+                           prefHeight="40.0" prefWidth="232.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CUBE" size="1.5em" strokeLineJoin="ROUND"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Suministros"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton fx:id="btn_mano" accessibleText="btn_mano" contentDisplay="CENTER" prefHeight="40.0"
+                           prefWidth="232.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon accessibleText="btn_mano" fill="#f8f4f4" glyphName="USERS" size="1.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Mano de Obra"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton fx:id="btn_equipos" accessibleText="btn_equipos" contentDisplay="CENTER" prefHeight="40.0"
+                           prefWidth="232.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon accessibleText="btn_equipos" fill="#f5eeee" glyphName="TRUCK" size="1.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Equipos"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton fx:id="btn_juego" accessibleText="btn_juego" contentDisplay="CENTER" prefHeight="40.0"
+                           prefWidth="232.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon accessibleText="btn_juego" fill="#eeebeb" glyphName="CUBES" size="1.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Juego de Productos"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton fx:id="btn_semielaborados" accessibleText="btn_semielaborados" contentDisplay="CENTER"
+                           prefHeight="40.0" prefWidth="232.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon accessibleText=" btn_semielaborados" fill="WHITE" glyphName="DROPBOX"
+                                         size="1.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Suministros Semielaborados"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton fx:id="btn_renglon" accessibleText="btn_renglon" contentDisplay="CENTER" prefHeight="40.0"
+                           prefWidth="232.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <tooltip>
+                        <Tooltip text="Renglones Variantes"/>
+                    </tooltip>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SITEMAP" size="1.5em"/>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btn_inversionista" accessibleText="btn_inversionista" contentDisplay="CENTER"
+                           prefHeight="40.0" prefWidth="232.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="#f2eded" glyphName="BRIEFCASE" size="1.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Inversionistas"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton fx:id="btn_entidad" accessibleText="btn_entidad" contentDisplay="CENTER" prefHeight="40.0"
+                           prefWidth="232.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="#f5eeee" glyphName="UNIVERSITY" size="1.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Entidades"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton fx:id="btn_empresa" accessibleText="btn_empresa" contentDisplay="CENTER" prefHeight="40.0"
+                           prefWidth="232.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="#f5f3f3" glyphName="HOME" size="1.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Empresa Constructoras"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton fx:id="btn_brigada" accessibleText="btn_brigada" contentDisplay="CENTER" prefHeight="40.0"
+                           prefWidth="232.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="#f8f4f4" glyphName="TASKS" size="1.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Brigada de Construcción"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton fx:id="btn_grupo" accessibleText="btn_grupo" contentDisplay="CENTER" prefHeight="40.0"
+                           prefWidth="232.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="#f2eded" glyphName="TH" size="1.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Grupo de Construcción"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton fx:id="btn_cuadrilla" accessibleText="btn_cuadrilla" contentDisplay="CENTER"
+                           prefHeight="40.0" prefWidth="232.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="#f5f2f2" glyphName="BARS" size="1.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Cuadrilla de Construcción"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton fx:id="btn_ejecucion" accessibleText="btn_ejecucion" contentDisplay="CENTER"
+                           prefHeight="40.0" prefWidth="232.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="#f8f8f8" glyphName="STEAM" size="1.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Grupo de Ejecución"/>
+                    </tooltip>
+                </JFXButton>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <AnchorPane fx:id="centerPane" prefHeight="200.0"
+                    style="-fx-background-image: url('/images/Image1.jpg'); -fx-background-position: left top, center; -fx-background-repeat: no-repeat; -fx-background-size: cover, auto;"
+                    BorderPane.alignment="CENTER"/>
+    </center>
+</BorderPane>

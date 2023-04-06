@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="318.0" prefWidth="488.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.NuevoPlanController">
+    <children>
+        <JFXToolbar layoutX="3.0" layoutY="45.0" prefHeight="8.0" prefWidth="477.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="48.0" layoutY="14.0" prefHeight="27.0" prefWidth="133.0" text="Nuevo Plan">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXButton fx:id="btnAdd" layoutX="371.0" layoutY="275.0" onAction="#handleAddPlan" prefHeight="22.0"
+                   prefWidth="89.0" style="-fx-background-color: #286090;" text="  Aceptar" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <JFXComboBox fx:id="combo_Brigada" labelFloat="true" layoutX="14.0" layoutY="70.0"
+                     onAction="#handleLlenaGrupoList" prefHeight="22.0" prefWidth="283.0" promptText="Brigada"/>
+        <FontAwesomeIcon fill="#286090" glyphName="CALENDAR" layoutX="20.0" layoutY="32.0" size="1.8em"/>
+        <JFXComboBox fx:id="combogrupo" labelFloat="true" layoutX="11.0" layoutY="113.0"
+                     onAction="#handleLlenaCuadrillaList" prefHeight="25.0" prefWidth="261.0" promptText="Grupo"/>
+        <JFXComboBox fx:id="combocuadrilla" disable="true" labelFloat="true" layoutX="11.0" layoutY="158.0"
+                     prefHeight="25.0" prefWidth="283.0" promptText="Cuadrilla"/>
+        <JFXTextField fx:id="fieldcodigouo" labelFloat="true" layoutX="14.0" layoutY="215.0" onKeyTyped="#keyTypeCode"
+                      promptText="Código UO"/>
+        <JFXTextField fx:id="fieldcantidad" labelFloat="true" layoutX="185.0" layoutY="215.0" promptText="Cantidad"/>
+        <Label layoutX="357.0" layoutY="195.0" prefHeight="17.0" prefWidth="67.0" text="Disponible">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <Label fx:id="labelDispo" layoutX="362.0" layoutY="219.0" prefHeight="12.0" prefWidth="57.0"
+               textAlignment="CENTER"/>
+        <FontAwesomeIcon fill="WHITE" glyphName="CHECK" layoutX="383.0" layoutY="294.0" size="1.1em"/>
+        <JFXDatePicker fx:id="dateini" defaultColor="#286090" layoutX="320.0" layoutY="69.0" prefHeight="28.0"
+                       prefWidth="149.0" promptText="Desde"/>
+        <JFXDatePicker fx:id="datehasta" defaultColor="#286090" layoutX="320.0" layoutY="110.0" prefHeight="28.0"
+                       prefWidth="149.0" promptText="Hasta"/>
+        <JFXCheckBox fx:id="checkControl" checkedColor="#286090" layoutX="282.0" layoutY="115.0"/>
+    </children>
+</AnchorPane>

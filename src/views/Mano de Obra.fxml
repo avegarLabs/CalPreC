@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="617.0" prefWidth="1079.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.ManoObraController">
+    <children>
+        <Label fx:id="label_title" layoutX="38.0" layoutY="14.0" prefHeight="27.0" prefWidth="1031.0"
+               text="Listado de Mano de Obra" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="10.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="filter" labelFloat="true" layoutX="802.0" layoutY="66.0" prefHeight="25.0"
+                      prefWidth="269.0" promptText="Código o Descripción" AnchorPane.rightAnchor="8.0"/>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="5.0" prefWidth="1066.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="USERS" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273" AnchorPane.leftAnchor="13.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <TableView fx:id="dataTable" layoutX="8.0" layoutY="98.0" maxHeight="1.7976931348623157E308"
+                   maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0"
+                   prefWidth="1066.0" stylesheets="@../AccessMigration/tableview.css" AnchorPane.bottomAnchor="2.0"
+                   AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="98.0">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="75.0" text="Código"/>
+                <TableColumn fx:id="descrip" prefWidth="683.0" text="Descripción"/>
+                <TableColumn fx:id="um" prefWidth="47.0" text="UM"/>
+                <TableColumn fx:id="mn" prefWidth="79.0" text="Precio MN"/>
+                <!--TableColumn fx:id="mlc" prefWidth="82.0" text="Precio MLC"/-->
+                <TableColumn fx:id="escala" prefWidth="59.0" text="Escala"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem fx:id="option1" mnemonicParsing="false" onAction="#handleUpdateManoPropioAction"
+                                  text="Modificar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REFRESH"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="option2" mnemonicParsing="false" onAction="#handleDeleteMano" text="Eliminar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="CLOSE"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+        <JFXButton fx:id="btnadd" layoutX="14.0" layoutY="66.0" onAction="#handleManoPropioAction"
+                   style="-fx-background-color: #286090;" text="Agregar" textFill="WHITE">
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+            </graphic>
+        </JFXButton>
+        <JFXComboBox fx:id="comboTarifas" labelFloat="true" layoutX="587.0" layoutY="66.0"
+                     onAction="#handleCleanViewByResolt" prefHeight="25.0" prefWidth="188.0" promptText="Tarifas"
+                     AnchorPane.rightAnchor="304.0"/>
+    </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="560.0" prefWidth="686.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.ListValoresConceptosController">
+    <children>
+        <JFXToolbar layoutX="11.0" layoutY="45.0" prefHeight="11.0" prefWidth="370.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="7.0"/>
+        <Label fx:id="name" layoutX="46.0" layoutY="14.0" prefHeight="27.0" prefWidth="394.0"
+               text="Costos por SubConcepto de Gasto">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <FontAwesomeIcon fill="#286090" glyphName="MONEY" layoutX="14.0" layoutY="35.0" size="1.8em"/>
+        <TableView fx:id="dataTable" layoutX="12.0" layoutY="65.0" prefHeight="443.0" prefWidth="668.0"
+                   stylesheets="@../AccessMigration/tableview.css">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="389.0" text="SubConceptos"/>
+                <TableColumn fx:id="valor" prefWidth="155.0" text="Costos"/>
+                <TableColumn fx:id="salario" prefWidth="111.0" text="Salario"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleDesglozarCostos" text="Desglozar costo">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="LIST"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+        <JFXButton layoutX="578.0" fx:id="btn_calcular" layoutY="521.0" onAction="#handleCalcular" prefHeight="25.0"
+                   prefWidth="103.0" style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Aceptar"
+                   textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CHECK" text=""/>
+            </graphic>
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+    </children>
+</AnchorPane>

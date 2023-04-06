@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="report8" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20"
+              topMargin="20" bottomMargin="20" uuid="471a1a0c-40ea-4e31-95f2-4b9c66b38866">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="254" splitType="Stretch">
+            <image>
+                <reportElement x="440" y="0" width="132" height="45" uuid="8102b7eb-e612-40b7-984c-c74bbd529d6f"/>
+                <imageExpression><![CDATA[$P{image}]]></imageExpression>
+            </image>
+            <textField>
+                <reportElement x="0" y="55" width="572" height="18" uuid="a95a06d5-d9bb-49f4-8ad0-20d77f35c7c1"/>
+                <textElement verticalAlignment="Middle" markup="none">
+                    <font size="10" isBold="true" isItalic="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{reportName}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="0" y="45" width="440" height="1" forecolor="#006666"
+                               uuid="a7965181-3e3e-4478-a0aa-3ce63ef13641"/>
+            </line>
+            <textField>
+                <reportElement x="0" y="83" width="572" height="166" uuid="377c45c6-1219-477b-90db-5fa2a5c9bfad"/>
+                <textElement textAlignment="Justified" verticalAlignment="Top" markup="none">
+                    <font size="10" isBold="false" isItalic="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{reportDetail}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="0" y="29" width="383" height="16" uuid="8a4cf049-74a4-4ec4-9693-78d57300051d"/>
+                <textElement textAlignment="Justified">
+                    <font fontName="SansSerif" size="8" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{empresa}]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="60" splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="159" splitType="Stretch"/>
+    </detail>
+    <columnFooter>
+        <band height="50" splitType="Stretch"/>
+    </columnFooter>
+</jasperReport>

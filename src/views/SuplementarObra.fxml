@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="266.0" prefWidth="470.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.SuplementarObra">
+    <children>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="11.0" prefWidth="454.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="10.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="CALCULATOR" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273" AnchorPane.leftAnchor="13.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <Label layoutX="38.0" layoutY="13.0" prefHeight="17.0" prefWidth="335.0" text="Suplementar Obra">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXButton fx:id="btnAceptar" layoutX="330.0" layoutY="216.0" onAction="#suplementarObraCalc" prefHeight="31.0"
+                   prefWidth="109.0" style="-fx-border-color: #286090; -fx-border-radius: 5;" text=" Aceptar"
+                   textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CHECK"/>
+            </graphic>
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnCancel" layoutX="24.0" layoutY="216.0" onAction="#handleBtnClose" prefHeight="31.0"
+                   prefWidth="109.0" style="-fx-border-color: #286090; -fx-border-radius: 5;" text="Cancelar"
+                   textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CLOSE"/>
+            </graphic>
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXButton>
+        <Separator layoutX="14.0" layoutY="191.0" prefHeight="4.0" prefWidth="439.0"
+                   style="-fx-background-color: #286090;"/>
+        <TextArea fx:id="text" layoutX="10.0" layoutY="65.0" prefHeight="68.0" prefWidth="454.0">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </TextArea>
+        <JFXComboBox fx:id="newObra" labelFloat="true" layoutX="10.0" layoutY="150.0" prefHeight="25.0"
+                     prefWidth="265.0" promptText="Resolución"/>
+        <JFXComboBox fx:id="comboTarifas" labelFloat="true" layoutX="302.0" layoutY="150.0" prefHeight="25.0"
+                     prefWidth="148.0" promptText="Tarifa"/>
+    </children>
+</AnchorPane>

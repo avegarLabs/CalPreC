@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="617.0" prefWidth="966.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ControlPresupuestoController">
+    <children>
+        <Label fx:id="label_title" layoutX="45.0" layoutY="14.0" prefHeight="27.0" prefWidth="318.0"
+               text="Control del Presupuesto" textFill="#141414">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="11.0" prefWidth="1062.0"
+                    style="-fx-background-color: #286090;"/>
+        <FontAwesomeIcon fill="#286090" glyphName="DASHBOARD" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <BorderPane fx:id="mainpane" layoutX="-1.0" layoutY="57.0" prefHeight="560.0" prefWidth="1073.0">
+            <center>
+                <Pane fx:id="boxPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <JFXTreeView fx:id="listobras" layoutX="4.0" layoutY="37.0" prefHeight="518.0"
+                                     prefWidth="367.0"/>
+                        <JFXCheckBox fx:id="uoCheck" checkedColor="#286090" layoutX="14.0" layoutY="14.0"
+                                     prefHeight="18.0" prefWidth="98.0">
+                            <graphic>
+                                <FontAwesomeIcon fill="#286090" glyphName="BUILDING" size="1.6em"
+                                                 wrappingWidth="14.457143783569336"/>
+                            </graphic>
+                            <tooltip>
+                                <Tooltip text="Unidades de Obra"/>
+                            </tooltip>
+                        </JFXCheckBox>
+                        <JFXCheckBox fx:id="rvCheck" checkedColor="#286090" layoutX="71.0" layoutY="14.0">
+                            <graphic>
+                                <FontAwesomeIcon fill="#286090" glyphName="SITEMAP" size="1.6em"
+                                                 wrappingWidth="22.200000762939453"/>
+                            </graphic>
+                            <tooltip>
+                                <Tooltip text="Renglón Variante"/>
+                            </tooltip>
+                        </JFXCheckBox>
+                        <Label layoutX="397.0" layoutY="24.0" prefHeight="19.0" prefWidth="68.0" text="Valores">
+                            <font>
+                                <Font name="System Bold" size="13.0"/>
+                            </font>
+                        </Label>
+                        <JFXCheckBox fx:id="valUo" checkedColor="#286090" layoutX="397.0" layoutY="53.0" text="UO"/>
+                        <JFXCheckBox fx:id="valRV" checkedColor="#286090" layoutX="398.0" layoutY="83.0" text="RV"/>
+                        <JFXComboBox fx:id="comboGroupByEmpresa" labelFloat="true" layoutX="491.0" layoutY="50.0"
+                                     prefHeight="25.0" prefWidth="540.0" promptText="Empresa constructora"/>
+                        <JFXComboBox fx:id="comboGroupByZonas" labelFloat="true" layoutX="491.0" layoutY="99.0"
+                                     prefHeight="25.0" prefWidth="540.0" promptText="Zona"/>
+                        <JFXComboBox fx:id="comboGroupByObjetos" labelFloat="true" layoutX="491.0" layoutY="149.0"
+                                     prefHeight="25.0" prefWidth="540.0" promptText="Objeto"/>
+                        <JFXComboBox fx:id="comboGroupByNiveles" labelFloat="true" layoutX="491.0" layoutY="200.0"
+                                     prefHeight="25.0" prefWidth="540.0" promptText="Nivel"/>
+                        <JFXComboBox fx:id="comboGroupByEspecialidades" labelFloat="true" layoutX="491.0"
+                                     layoutY="249.0" prefHeight="25.0" prefWidth="540.0" promptText="Especialidad"/>
+                        <JFXComboBox fx:id="comboGroupBySubEspecialidades" labelFloat="true" layoutX="491.0"
+                                     layoutY="302.0" prefHeight="25.0" prefWidth="540.0" promptText="Subespecialidad"/>
+                        <JFXButton layoutX="490.0" layoutY="359.0" onAction="#handleGenerarReporte" prefHeight="30.0"
+                                   prefWidth="124.0" style="-fx-background-color: #286090;" text="Generar reporte"
+                                   textFill="WHITE">
+                            <graphic>
+                                <FontAwesomeIcon fill="WHITE" glyphName="FILE_PDF_ALT" size="1.5em"/>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="clearComboEmpresa" layoutX="1029.0" layoutY="50.0">
+                            <graphic>
+                                <FontAwesomeIcon fill="#286090" glyphName="REFRESH"/>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="clearComboZona" layoutX="1029.0" layoutY="99.0">
+                            <graphic>
+                                <FontAwesomeIcon fill="#286090" glyphName="REFRESH"/>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="clearComboObjeto" layoutX="1030.0" layoutY="149.0">
+                            <graphic>
+                                <FontAwesomeIcon fill="#286090" glyphName="REFRESH"/>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="clearComboNivel" layoutX="1031.0" layoutY="200.0">
+                            <graphic>
+                                <FontAwesomeIcon fill="#286090" glyphName="REFRESH"/>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="clearComboEsp" layoutX="1031.0" layoutY="249.0">
+                            <graphic>
+                                <FontAwesomeIcon fill="#286090" glyphName="REFRESH"/>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="clearComboSubEsp" layoutX="1032.0" layoutY="302.0">
+                            <graphic>
+                                <FontAwesomeIcon fill="#286090" glyphName="REFRESH"/>
+                            </graphic>
+                        </JFXButton>
+                        <Label layoutX="491.0" layoutY="24.0" text="Filtrar por">
+                            <font>
+                                <Font name="System Bold" size="13.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

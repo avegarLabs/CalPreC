@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="374.0" prefWidth="498.0" style="-fx-background-color: #fff;"
+      xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ImportarSuministrosController">
+    <AnchorPane prefHeight="617.0" prefWidth="966.0" style="-fx-background-color: #fff;">
+        <children>
+            <Label fx:id="label_title" layoutX="38.0" layoutY="14.0" prefHeight="27.0" prefWidth="164.0"
+                   text="Importar Suminitros">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <JFXButton fx:id="btn_add" layoutX="168.0" layoutY="64.0" prefHeight="30.0" prefWidth="98.0"
+                       style="-fx-background-color: #337ab7;" text="Agregar" textFill="WHITE" visible="false">
+                <font>
+                    <Font name="System Bold" size="14.0"/>
+                </font>
+            </JFXButton>
+            <FontAwesomeIcon fill="#286090" glyphName="CUBE" layoutX="13.0" layoutY="34.0" size="1.8em"
+                             wrappingWidth="25.399999618530273">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </FontAwesomeIcon>
+            <JFXTabPane layoutX="1.0" layoutY="41.0" prefHeight="326.0" prefWidth="497.0" AnchorPane.bottomAnchor="0.0"
+                        AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0">
+                <tabs>
+                    <Tab text="Obras">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <TableView fx:id="tableEmpresaToImport" layoutX="9.0" layoutY="9.0"
+                                               prefHeight="228.0" prefWidth="476.0"
+                                               stylesheets="@../AccessMigration/tableview.css">
+                                        <columns>
+                                            <TableColumn fx:id="empresName" prefWidth="131.0" text="Obras"/>
+                                            <TableColumn fx:id="empresDescrip" prefWidth="342.0" text="Descripción"/>
+                                        </columns>
+                                    </TableView>
+                                    <JFXButton layoutX="406.0" layoutY="244.0" onAction="#handleImportSumToObra"
+                                               style="-fx-background-color: #5cb85c;" text="Aceptar" textFill="WHITE">
+                                        <graphic>
+                                            <FontAwesomeIcon fill="WHITE" glyphName="CHECK"/>
+                                        </graphic>
+                                        <font>
+                                            <Font name="System Bold" size="12.0"/>
+                                        </font>
+                                    </JFXButton>
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </Tab>
+                    <Tab text="Fichero Excel">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <JFXButton layoutX="14.0" layoutY="9.0" onAction="#loadFile" prefHeight="22.0"
+                                               prefWidth="67.0" style="-fx-background-color: #286090;" text="Excel"
+                                               textFill="WHITE">
+                                        <graphic>
+                                            <FontAwesomeIcon fill="WHITE" glyphName="FILE"/>
+                                        </graphic>
+                                        <font>
+                                            <Font name="System Bold" size="12.0"/>
+                                        </font>
+                                    </JFXButton>
+                                    <Label fx:id="labelPath" layoutX="92.0" layoutY="13.0" prefHeight="17.0"
+                                           prefWidth="387.0"/>
+                                    <JFXCheckBox fx:id="importar" layoutX="43.0" layoutY="64.0" prefHeight="18.0"
+                                                 prefWidth="87.0" text="Importar"/>
+                                    <JFXCheckBox fx:id="sobreEscr" layoutX="43.0" layoutY="109.0" prefHeight="18.0"
+                                                 prefWidth="87.0" text="Actualizar"/>
+                                    <JFXCheckBox fx:id="unifPres" layoutX="193.0" layoutY="109.0" text="Unificar"
+                                                 visible="false"/>
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </Tab>
+                </tabs>
+            </JFXTabPane>
+        </children>
+    </AnchorPane>
+</VBox>

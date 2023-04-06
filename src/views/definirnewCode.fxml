@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="264.0" maxWidth="357.0" minHeight="146.0" minWidth="313.0"
+            prefHeight="146.0" prefWidth="313.0" style="-fx-background-color: #ffff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.definirCodeController">
+    <children>
+        <JFXTextField fx:id="labelUser" labelFloat="true" layoutX="22.0" layoutY="67.0" prefHeight="25.0"
+                      prefWidth="272.0" promptText="Nuevo Código"/>
+        <JFXButton fx:id="btnAction" layoutX="62.0" layoutY="106.0" onAction="#handleAddNewCode" prefHeight="25.0"
+                   prefWidth="190.0" style="-fx-background-color: #286090;" text="Aceptar" textFill="WHITE">
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CHECK"/>
+            </graphic>
+        </JFXButton>
+        <JFXToolbar layoutX="7.0" layoutY="35.0" prefHeight="16.0" prefWidth="300.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label fx:id="labelText" layoutX="10.0" layoutY="10.0" prefHeight="19.0" prefWidth="294.0">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

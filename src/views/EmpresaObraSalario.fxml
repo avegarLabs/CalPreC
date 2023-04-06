@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="392.0" prefWidth="688.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.EmpresaObraSalarioController">
+    <children>
+        <JFXToolbar layoutY="45.0" prefHeight="11.0" prefWidth="534.0" style="-fx-background-color: #286090;"
+                    AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0"/>
+        <Label fx:id="name" layoutX="46.0" layoutY="14.0" prefHeight="27.0" prefWidth="488.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="DOLLAR" layoutX="14.0" layoutY="35.0" size="1.8em"/>
+        <JFXTextField fx:id="g2" labelFloat="true" layoutX="10.0" layoutY="97.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="II"/>
+        <JFXTextField fx:id="g3" labelFloat="true" layoutX="10.0" layoutY="142.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="III"/>
+        <JFXTextField fx:id="g4" labelFloat="true" layoutX="10.0" layoutY="184.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="IV"/>
+        <JFXTextField fx:id="g5" labelFloat="true" layoutX="10.0" layoutY="225.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="V"/>
+        <JFXTextField fx:id="g6" labelFloat="true" layoutX="10.0" layoutY="271.0" prefHeight="22.0" prefWidth="72.0"
+                      promptText="VI"/>
+        <JFXTextField fx:id="g7" labelFloat="true" layoutX="10.0" layoutY="309.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="VII"/>
+        <JFXTextField fx:id="g8" labelFloat="true" layoutX="113.0" layoutY="97.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="VIII"/>
+        <JFXTextField fx:id="g9" labelFloat="true" layoutX="113.0" layoutY="142.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="IX"/>
+        <JFXTextField fx:id="g10" labelFloat="true" layoutX="113.0" layoutY="184.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="X"/>
+        <JFXTextField fx:id="g11" labelFloat="true" layoutX="113.0" layoutY="225.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="XI"/>
+        <JFXTextField fx:id="g12" labelFloat="true" layoutX="113.0" layoutY="271.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="XII"/>
+        <JFXTextField fx:id="esp" labelFloat="true" layoutX="246.0" layoutY="102.0" prefHeight="25.0" prefWidth="104.0"
+                      promptText="Aut. Especiales (%)"/>
+        <JFXTextField fx:id="ant" labelFloat="true" layoutX="246.0" layoutY="142.0" prefHeight="25.0" prefWidth="104.0"
+                      promptText="Antiguedad (%)"/>
+        <JFXTextField fx:id="vac" labelFloat="true" layoutX="246.0" layoutY="184.0" prefHeight="25.0" prefWidth="104.0"
+                      promptText="Vacaciones (%)"/>
+        <JFXTextField fx:id="nom" labelFloat="true" layoutX="246.0" layoutY="225.0" prefHeight="25.0" prefWidth="104.0"
+                      promptText="Nomina (%)"/>
+        <JFXTextField fx:id="soc" labelFloat="true" layoutX="246.0" layoutY="273.0" prefHeight="25.0" prefWidth="105.0"
+                      promptText="Seg. Social (%)"/>
+        <Label fx:id="labelEq" layoutX="430.0" layoutY="65.0" prefHeight="20.0" prefWidth="104.0" text="Tarifa Total">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Label>
+        <JFXButton layoutX="578.0" layoutY="353.0" onAction="#handleUpdateTarifas" prefHeight="20.0" prefWidth="96.0"
+                   style="-fx-background-color: #286090;" text="Aceptar" textFill="WHITE" AnchorPane.leftAnchor="578.0">
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CHECK"/>
+            </graphic>
+        </JFXButton>
+        <Separator layoutX="2.0" layoutY="343.0" prefHeight="1.0" prefWidth="684.0"
+                   style="-fx-background-color: #286090;"/>
+        <Label layoutX="12.0" layoutY="65.0" prefHeight="17.0" prefWidth="153.0" text="Escalas">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Label>
+        <Label layoutX="246.0" layoutY="65.0" prefHeight="17.0" prefWidth="153.0" text="Conceptos">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="gt2" labelFloat="true" layoutX="430.0" layoutY="102.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="II"/>
+        <JFXTextField fx:id="gt3" labelFloat="true" layoutX="430.0" layoutY="142.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="III"/>
+        <JFXTextField fx:id="gt4" labelFloat="true" layoutX="430.0" layoutY="184.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="IV"/>
+        <JFXTextField fx:id="gt5" labelFloat="true" layoutX="430.0" layoutY="225.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="V"/>
+        <JFXTextField fx:id="gt6" labelFloat="true" layoutX="430.0" layoutY="264.0" prefHeight="27.0" prefWidth="72.0"
+                      promptText="VI"/>
+        <JFXTextField fx:id="gt7" labelFloat="true" layoutX="430.0" layoutY="309.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="VII"/>
+        <JFXTextField fx:id="gt8" labelFloat="true" layoutX="542.0" layoutY="102.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="VIII"/>
+        <JFXTextField fx:id="gt9" labelFloat="true" layoutX="542.0" layoutY="142.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="IX"/>
+        <JFXTextField fx:id="gt10" labelFloat="true" layoutX="542.0" layoutY="184.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="X"/>
+        <JFXTextField fx:id="gt11" labelFloat="true" layoutX="542.0" layoutY="225.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="XI"/>
+        <JFXTextField fx:id="gt12" labelFloat="true" layoutX="542.0" layoutY="264.0" prefHeight="25.0" prefWidth="72.0"
+                      promptText="XII"/>
+        <Separator layoutX="13.0" layoutY="83.0" prefHeight="3.0" prefWidth="665.0"
+                   style="-fx-background-color: #286090;"/>
+    </children>
+</AnchorPane>

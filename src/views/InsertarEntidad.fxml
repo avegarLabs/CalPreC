@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="263.0" prefWidth="453.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.InsertarEntidadController">
+    <children>
+        <JFXToolbar layoutX="11.0" layoutY="45.0" prefHeight="10.0" prefWidth="422.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="50.0" layoutY="14.0" prefHeight="27.0" prefWidth="292.0" text="Agregar Entidad">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="14.0" layoutY="71.0"
+                      onAction="#handleDefineEmpresa" prefHeight="30.0" prefWidth="182.0" promptText="Código"/>
+        <JFXTextArea fx:id="text_descripcion" labelFloat="true" layoutX="16.0" layoutY="139.0" prefHeight="53.0"
+                     prefWidth="422.0" promptText="Descripción"/>
+        <JFXButton layoutX="24.0" layoutY="213.0" onAction="#handeleUpdateAction" prefHeight="30.0" prefWidth="98.0"
+                   style="-fx-background-color: #286090;" text="Agregar" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PLUS" size="1.3em" wrappingWidth="21.600000381469727"/>
+            </graphic>
+        </JFXButton>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <JFXButton fx:id="btn_close" layoutX="294.0" layoutY="213.0" onAction="#handleClose" prefHeight="30.0"
+                   prefWidth="107.0" style="-fx-background-color: #286090;" text="Cancelar" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.3em" wrappingWidth="21.600000381469727"/>
+            </graphic>
+        </JFXButton>
+        <FontAwesomeIcon fill="#286090" glyphName="UNIVERSITY" layoutX="16.0" layoutY="32.0" size="1.8em"/>
+    </children>
+</AnchorPane>

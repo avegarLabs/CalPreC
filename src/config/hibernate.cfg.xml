@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.jdbc.batch_size">10</property>
+        <property name="hibernate.order_inserts">true</property>
+        <property name="hibernate.order_updates">true</property>
+
+        <!--Update database on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">update</property>
+
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
+
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">5</property>
+        <property name="hibernate.c3p0.acquire_increment">1</property>
+        <property name="hibernate.c3p0.idle_test_period">2</property>
+        <property name="hibernate.c3p0.max_statements">100</property>
+        <property name="hibernate.c3p0.timeout">1800</property>
+        <property name="hibernate.c3p0.preferredTestQuery">
+            select 1;
+        </property>
+        <property name="hibernate.c3p0.connection.provider_class">
+            org.hibernate.connection.C3P0ConnectionProvider
+        </property>
+
+        <mapping class="models.CertificacionRenglonVariante"/>
+        <mapping class="models.Brigadaconstruccion"/>
+        <mapping class="models.Cuadrillaconstruccion"/>
+        <mapping class="models.Empresaconstructora"/>
+        <mapping class="models.Empresaobra"/>
+        <mapping class="models.Entidad"/>
+        <mapping class="models.Especialidades"/>
+        <mapping class="models.Grupo"/>
+        <mapping class="models.Grupoconstruccion"/>
+        <mapping class="models.Grupoejecucion"/>
+        <mapping class="models.Inversionista"/>
+        <mapping class="models.Juegoproducto"/>
+        <mapping class="models.Juegorecursos"/>
+        <mapping class="models.Nivel"/>
+        <mapping class="models.Objetos"/>
+        <mapping class="models.Obra"/>
+        <mapping class="models.Recursos"/>
+        <mapping class="models.Renglonrecursos"/>
+        <mapping class="models.Renglonsemielaborados"/>
+        <mapping class="models.Renglonvariante"/>
+        <mapping class="models.Salario"/>
+        <mapping class="models.Semielaboradosrecursos"/>
+        <mapping class="models.Sobregrupo"/>
+        <mapping class="models.Subespecialidades"/>
+        <mapping class="models.Subgrupo"/>
+        <mapping class="models.Suministrossemielaborados"/>
+        <mapping class="models.Unidadobra"/>
+        <mapping class="models.Unidadobrarenglon"/>
+        <mapping class="models.Zonas"/>
+        <mapping class="models.Tipoobra"/>
+        <mapping class="models.Conceptosgasto"/>
+        <mapping class="models.Empresagastos"/>
+        <mapping class="models.Renglonjuego"/>
+        <mapping class="models.Bajoespecificacion"/>
+        <mapping class="models.Empresaobraconcepto"/>
+        <mapping class="models.Certificacion"/>
+        <mapping class="models.Planificacion"/>
+        <mapping class="models.Memoriadescriptiva"/>
+        <mapping class="models.Bajoespecificacionrv"/>
+        <mapping class="models.Nivelespecifico"/>
+        <mapping class="models.Renglonnivelespecifico"/>
+        <mapping class="models.Memoriadescriptivarv"/>
+        <mapping class="models.Planrenglonvariante"/>
+        <mapping class="models.CertificacionRenglonVariante"/>
+        <mapping class="models.Grupos"/>
+        <mapping class="models.Usuarios"/>
+        <mapping class="models.Empresa"/>
+        <mapping class="models.Nomencladorempresa"/>
+        <mapping class="models.Empresaobraconceptoglobal"/>
+        <mapping class="models.Empresaobrasalario"/>
+        <mapping class="models.Especifica"/>
+        <mapping class="models.Subgenerica"/>
+        <mapping class="models.Certificacionrecuo"/>
+        <mapping class="models.Planrecuo"/>
+        <mapping class="models.Certificacionrecrv"/>
+        <mapping class="models.Planrecrv"/>
+        <mapping class="models.Coeficientesequipos"/>
+        <mapping class="models.Registro"/>
+        <mapping class="models.Firmas"/>
+        <mapping class="models.Empresaobraconceptoscoeficientes"/>
+        <mapping class="models.Subconcepto"/>
+        <mapping class="models.Subsubconcepto"/>
+        <mapping class="models.Subsubsubconcepto"/>
+        <mapping class="models.Empresaobrasubconcepto"/>
+        <mapping class="models.Empresaobrasubsubconcepto"/>
+        <mapping class="models.Empresaobrasubsubsubconcepto"/>
+        <mapping class="models.Despachoscl"/>
+        <mapping class="models.IndicadorGrup"/>
+        <mapping class="models.NormasInd"/>
+        <mapping class="models.Certificacionresumenconceptos"/>
+        <mapping class="models.TarifaSalarial"/>
+        <mapping class="models.GruposEscalas"/>
+        <mapping class="models.Empresaobratarifa"/>
+        <mapping class="models.TarConceptos"/>
+        <!-- DB schema will be updated if needed -->
+
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyEventRefresh" prefHeight="654.0"
+            prefWidth="1094.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.UnidadesObraObraController">
+    <children>
+        <Label fx:id="label_title" layoutX="38.0" layoutY="14.0" prefHeight="27.0" prefWidth="835.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="10.0" prefWidth="867.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="11.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="BUILDING" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <JFXComboBox fx:id="coboEmpresas" labelFloat="true" layoutX="14.0" layoutY="69.0"
+                     onAction="#handleSelectEmpresaAction" prefHeight="25.0" prefWidth="557.0" promptText="Empresas"/>
+        <JFXComboBox fx:id="comboZonas" labelFloat="true" layoutX="14.0" layoutY="109.0"
+                     onAction="#handleLenaObjetosList" prefHeight="25.0" prefWidth="522.0" promptText="Zonas"/>
+        <JFXComboBox fx:id="comboObjetos" labelFloat="true" layoutX="14.0" layoutY="147.0"
+                     onAction="#handleLlenarNivelList" prefHeight="25.0" prefWidth="522.0" promptText="Objetos"/>
+        <JFXComboBox fx:id="comboNivel" labelFloat="true" layoutX="14.0" layoutY="186.0"
+                     onAction="#handleLlenarEspecialidad" prefHeight="25.0" prefWidth="522.0" promptText="Nivel"/>
+        <JFXComboBox fx:id="comboEspecialidad" labelFloat="true" layoutX="14.0" layoutY="226.0"
+                     onAction="#handlrLlenarSubsepecialidad" prefHeight="25.0" prefWidth="522.0"
+                     promptText="Especialidad"/>
+        <JFXComboBox fx:id="comboSubEspecialidad" labelFloat="true" layoutX="14.0" layoutY="266.0"
+                     onAction="#handleCargardatos" prefHeight="25.0" prefWidth="522.0" promptText="SubEspecialidad"/>
+        <JFXButton fx:id="addZonas" contentDisplay="CENTER" layoutX="545.0" layoutY="108.0" onAction="#handleCrearZonas"
+                   prefHeight="25.0" prefWidth="25.0" style="-fx-border-color: #286090; -fx-border-radius: 30px;"
+                   text="Button">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="PLUS"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Agregar Zonas"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="addObjetos" contentDisplay="CENTER" layoutX="545.0" layoutY="146.0"
+                   onAction="#handleAgregarObjetos" prefHeight="25.0" prefWidth="25.0"
+                   style="-fx-border-color: #286090; -fx-border-radius: 30px;">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="PLUS"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Agregar Objetos"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="addNivel" contentDisplay="CENTER" layoutX="545.0" layoutY="185.0"
+                   onAction="#handleAgregarNivel" prefHeight="25.0" prefWidth="18.0"
+                   style="-fx-border-color: #286090; -fx-border-radius: 30px;" textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="PLUS"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Agregar Niveles"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="addEspecialidad" contentDisplay="CENTER" layoutX="545.0" layoutY="225.0"
+                   onAction="#handleAgregarEspecialidad" prefHeight="25.0" prefWidth="25.0"
+                   style="-fx-border-color: #286090; -fx-border-radius: 30px;">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="PLUS"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Agregar Especialidad"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="addSubespecialidad" contentDisplay="CENTER" layoutX="545.0" layoutY="265.0"
+                   onAction="#handleAgregarSubespecialidad" prefHeight="25.0" prefWidth="19.0"
+                   style="-fx-border-color: #286090; -fx-border-radius: 30px;" textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="PLUS"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Agregar Subespecialidades"/>
+            </tooltip>
+        </JFXButton>
+        <TableView fx:id="dataTable" layoutX="10.0" layoutY="338.0" prefHeight="303.0" prefWidth="557.0"
+                   stylesheets="@../AccessMigration/tableview.css" visible="false" AnchorPane.bottomAnchor="13.0"
+                   AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="527.0">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="104.0" text="Código"/>
+                <TableColumn fx:id="descripcion" prefWidth="250.0" text="Descripción"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu fx:id="uoMenu">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleModificarUO" text="Modificar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REFRESH"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handleDeleteUo" text="Eliminar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REMOVE"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#actionHandleDuplica" text="Duplicar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="COPY"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#suplementarUnidadesObra" text="Suplementar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="CODE"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+        <JFXButton fx:id="btnadd" layoutX="13.0" layoutY="304.0" onAction="#handleAgregarUO" prefHeight="25.0"
+                   prefWidth="77.0" style="-fx-background-color: #286090;" text="Nueva" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+            </graphic>
+        </JFXButton>
+        <Pane fx:id="paneCalc" layoutX="579.0" layoutY="59.0" prefHeight="582.0" prefWidth="506.0"
+              style="-fx-border-color: #286090;" visible="false">
+            <children>
+                <Label layoutX="14.0" layoutY="14.0" text="Código:">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="156.0" layoutY="15.0" text="UM:">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="labelCode" layoutX="67.0" layoutY="16.0" prefHeight="17.0" prefWidth="85.0">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="labelUM" layoutX="187.0" layoutY="14.0" prefHeight="19.0" prefWidth="64.0">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <Label contentDisplay="RIGHT" layoutX="289.0" layoutY="16.0" prefHeight="19.0" prefWidth="64.0"
+                       text=" Cantidad:">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <Label contentDisplay="RIGHT" layoutX="294.0" layoutY="35.0" prefHeight="19.0" prefWidth="57.0"
+                       text=" Costo U:">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="291.0" layoutY="53.0" prefHeight="22.0" prefWidth="61.0" text="  Costo T:">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <Label contentDisplay="RIGHT" layoutX="299.0" layoutY="70.0" prefHeight="25.0" prefWidth="57.0"
+                       text=" Salario:">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="labelCant" layoutX="355.0" layoutY="16.0" prefHeight="19.0" prefWidth="115.0">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="labelcostU" layoutX="355.0" layoutY="35.0" prefHeight="19.0" prefWidth="115.0">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="labelCosT" layoutX="355.0" layoutY="55.0" prefHeight="19.0" prefWidth="143.0">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="labelSal" layoutX="355.0" layoutY="73.0" prefHeight="19.0" prefWidth="115.0">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <TableView fx:id="tableRenglones" layoutX="10.0" layoutY="111.0" prefHeight="270.0" prefWidth="219.0"
+                           stylesheets="@../AccessMigration/tableview.css">
+                    <columns>
+                        <TableColumn fx:id="RVcode" prefWidth="76.0" text="Código"/>
+                        <TableColumn fx:id="RVcant" prefWidth="57.0" text="Cant."/>
+                        <TableColumn fx:id="RVCosto" prefWidth="79.0" text="Costo"/>
+                    </columns>
+                    <contextMenu>
+                        <ContextMenu fx:id="rvMenu">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#handleNewRV" text="Nuevo">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="PLUS"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleActualizarRV" text="Modificar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="REFRESH"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleDeleteRV" text="Eliminar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="CLOSE"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleDefinirRenglonBase"
+                                          text="Renglón Base">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="FLAG"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleCargarHojaCalculo"
+                                          text="Hoja Cálculo">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="CALCULATOR"/>
+                                    </graphic>
+                                </MenuItem>
+                            </items>
+                        </ContextMenu>
+                    </contextMenu>
+                </TableView>
+                <Label layoutX="14.0" layoutY="92.0" prefHeight="19.0" prefWidth="131.0" text="Renglones Variantes">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <TableView fx:id="tableSuministros" layoutX="233.0" layoutY="111.0" prefHeight="270.0" prefWidth="266.0"
+                           stylesheets="@../AccessMigration/tableview.css">
+                    <columns>
+                        <TableColumn fx:id="SumCode" prefWidth="103.0" text="Código"/>
+                        <TableColumn fx:id="SumCant" prefWidth="66.0" text="Cant."/>
+                        <TableColumn fx:id="SumCost" prefWidth="90.0" text="Costo"/>
+                    </columns>
+                    <contextMenu>
+                        <ContextMenu fx:id="sumiMenu">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#haddleBajoEspecificacion" text="Nuevo">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="PLUS"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#haddleUpadteBajoEspecificacion"
+                                          text="Modificar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="REFRESH"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleDesglozarAction" text="Desglozar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="LIST"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleDeleteSumistro" text="Eliminar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="CLOSE"/>
+                                    </graphic>
+                                </MenuItem>
+                            </items>
+                        </ContextMenu>
+                    </contextMenu>
+                </TableView>
+                <Label layoutX="233.0" layoutY="92.0" text="Suministros">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="419.0" prefHeight="17.0" prefWidth="115.0"
+                       text="Costo Material:">
+                    <font>
+                        <Font name="System Bold Italic" size="12.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="labelTipoCost" layoutX="132.0" layoutY="419.0" prefHeight="17.0" prefWidth="41.0"/>
+                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="12.0" layoutY="442.0" prefHeight="17.0"
+                       prefWidth="115.0" text="Costo Ref:">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="69.0" layoutY="459.0" prefHeight="22.0"
+                       prefWidth="57.0" text="Peso:">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="69.0" layoutY="481.0" prefHeight="17.0"
+                       prefWidth="57.0" text="UM:">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="17.0" layoutY="498.0" text="Descripción:">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <TextArea fx:id="textDescrp" layoutX="10.0" layoutY="515.0" prefHeight="57.0" prefWidth="446.0"/>
+                <Label fx:id="labelRVCant" layoutX="133.0" layoutY="442.0" prefHeight="17.0" prefWidth="61.0"/>
+                <Label fx:id="labelPeso" layoutX="133.0" layoutY="462.0" prefHeight="17.0" prefWidth="61.0"/>
+                <Label fx:id="labelRVum" layoutX="136.0" layoutY="481.0" prefHeight="17.0" prefWidth="41.0"/>
+                <JFXButton fx:id="btnHide" contentDisplay="CENTER" layoutX="472.0" layoutY="3.0"
+                           onAction="#handleCloseAction" prefHeight="27.0" prefWidth="28.0"
+                           style="-fx-border-color: #286090; -fx-border-radius: 5;">
+                    <graphic>
+                        <FontAwesomeIcon fill="#286090" glyphName="CLOSE"/>
+                    </graphic>
+                </JFXButton>
+                <TextArea fx:id="labelUodescrip" layoutX="10.0" layoutY="35.0" prefHeight="38.0" prefWidth="281.0"/>
+                <JFXButton layoutX="233.0" layoutY="383.0" onAction="#handleMemoriaView"
+                           style="-fx-background-color: #286090;" text="Memoria" textFill="WHITE">
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="PENCIL"/>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="btnPlan" layoutX="231.0" layoutY="415.0" onAction="#handleNewPlan"
+                           style="-fx-background-color: #286090;" text="Plan UO" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CALENDAR"/>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnCertif" layoutX="232.0" layoutY="450.0" onAction="#handleNewCertificacion"
+                           style="-fx-background-color: #286090;" text="Certificación UO" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="TAGS"/>
+                    </graphic>
+                </JFXButton>
+                <Label layoutX="38.0" layoutY="387.0" text="Renglón Base: ">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="renbase" layoutX="122.0" layoutY="387.0" prefHeight="17.0" prefWidth="91.0">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <Separator layoutX="35.0" layoutY="410.0" prefHeight="3.0" prefWidth="91.0"
+                           style="-fx-background-color: #286090;"/>
+                <JFXButton fx:id="btnAfct" layoutX="323.0" layoutY="383.0" onAction="#handleAfectarCantidades"
+                           prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #286090;" text="Afectar"
+                           textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CALCULATOR"/>
+                    </graphic>
+                </JFXButton>
+                <JFXButton layoutX="323.0" layoutY="415.0" onAction="#imprimirUnidad" prefHeight="25.0" prefWidth="85.0"
+                           style="-fx-background-color: #286090;" text="Imprimir" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="PRINT"/>
+                    </graphic>
+                </JFXButton>
+                <JFXButton contentDisplay="CENTER" layoutX="472.0" layoutY="82.0" onAction="#refreshSuministrosAaction"
+                           prefHeight="25.0" prefWidth="28.0" style="-fx-border-color: #286090; -fx-border-radius: 5;">
+                    <graphic>
+                        <FontAwesomeIcon fill="#286090" glyphName="REFRESH"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Actualizar el listado de suministros"/>
+                    </tooltip>
+                </JFXButton>
+            </children>
+        </Pane>
+        <JFXButton fx:id="btnimppcw" layoutX="99.0" layoutY="304.0" onAction="#handleActionImport" prefHeight="25.0"
+                   prefWidth="131.0" style="-fx-background-color: #286090;" text="Importar  PCW" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="DATABASE"/>
+            </graphic>
+        </JFXButton>
+        <JFXButton fx:id="btnImCalp" layoutX="242.0" layoutY="304.0" onAction="#handleActionImportInCalPreC"
+                   prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #286090;" text="Importar CalPreC"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="UPLOAD"/>
+            </graphic>
+        </JFXButton>
+    </children>
+</AnchorPane>

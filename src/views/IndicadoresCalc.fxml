@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="700.0" prefWidth="1174.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.indCalController">
+    <children>
+        <Label layoutX="44.0" layoutY="14.0" prefHeight="27.0" prefWidth="412.0" text="Indicadores">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXToolbar layoutX="6.0" layoutY="46.0" prefHeight="8.0" prefWidth="1162.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0"
+                    AnchorPane.topAnchor="45.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="FLAG" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <JFXCheckBox fx:id="Presup" checkedColor="#286090" layoutX="13.0" layoutY="110.0" text="Presupuesto"/>
+        <JFXCheckBox fx:id="planif" checkedColor="#286090" layoutX="128.0" layoutY="110.0" text="Planificación"/>
+        <JFXCheckBox fx:id="certif" checkedColor="#286090" layoutX="242.0" layoutY="110.0" text="Certificación"/>
+        <JFXDatePicker fx:id="ini" defaultColor="#286090" disable="true" layoutX="486.0" layoutY="105.0"/>
+        <JFXDatePicker fx:id="fin" defaultColor="#286090" disable="true" layoutX="675.0" layoutY="105.0"
+                       AnchorPane.topAnchor="105.0"/>
+        <JFXTabPane layoutX="9.0" layoutY="122.0" prefHeight="552.0" prefWidth="998.0" AnchorPane.bottomAnchor="7.0"
+                    AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0">
+            <tabs>
+                <Tab text="Renglones">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="tableRenglones" layoutX="2.0" prefHeight="460.0" prefWidth="994.0"
+                                           AnchorPane.bottomAnchor="52.0" AnchorPane.leftAnchor="2.0"
+                                           AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="emp" prefWidth="90.0" text="Empresa"/>
+                                        <TableColumn fx:id="zon" prefWidth="90.0" text="Zona"/>
+                                        <TableColumn fx:id="obj" prefWidth="90.0" text="Objeto"/>
+                                        <TableColumn fx:id="niv" prefWidth="90.0" text="Nivel"/>
+                                        <TableColumn fx:id="esp" prefWidth="90.0" text="Especialidad"/>
+                                        <TableColumn fx:id="uo" prefWidth="90.0" text="U. Obra"/>
+                                        <TableColumn fx:id="rv" prefWidth="90.0" text="RC"/>
+                                        <TableColumn fx:id="descrp" prefWidth="305.0" text="Descripción"/>
+                                        <TableColumn fx:id="um" prefWidth="73.0" text="U/M"/>
+                                        <TableColumn fx:id="vol" prefWidth="113.0" text="Volumen"/>
+                                        <TableColumn fx:id="cost" prefWidth="106.0" text="Costo"/>
+                                    </columns>
+                                    <contextMenu>
+                                        <ContextMenu>
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#showResumenView"
+                                                          text="Resumen">
+                                                    <graphic>
+                                                        <FontAwesomeIcon glyphName="CALCULATOR"/>
+                                                    </graphic>
+                                                </MenuItem>
+                                            </items>
+                                        </ContextMenu>
+                                    </contextMenu>
+                                </TableView>
+                                <JFXButton layoutX="874.0" layoutY="476.0" onAction="#actionExportarExcelRenglones"
+                                           prefHeight="25.0" prefWidth="120.0"
+                                           style="-fx-border-color: #286090; -fx-border-radius: 10; -fx-background-color: #FFFFFF;"
+                                           text="Exportar .xlsx" textFill="#286090" AnchorPane.bottomAnchor="12.0"
+                                           AnchorPane.rightAnchor="16.0">
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </JFXButton>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Fuerza de Trabajo">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="tableMano" layoutX="5.0" layoutY="23.0" prefHeight="200.0"
+                                           prefWidth="608.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="2.0"
+                                           AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="7.0">
+                                    <columns>
+                                        <TableColumn fx:id="manoEmp" prefWidth="75.0" text="Empresa"/>
+                                        <TableColumn fx:id="manoZona" prefWidth="75.0" text="Zona"/>
+                                        <TableColumn fx:id="manoObjeto" prefWidth="75.0" text="Objeto"/>
+                                        <TableColumn fx:id="manoNivel" prefWidth="75.0" text="Nivel"/>
+                                        <TableColumn fx:id="manoEspecialidad" prefWidth="82.0" text="Especialidad"/>
+                                        <TableColumn fx:id="manoCode" prefWidth="75.0" text="Código"/>
+                                        <TableColumn fx:id="manoDesc" prefWidth="75.0" text="Descripción"/>
+                                        <TableColumn fx:id="manoUm" prefWidth="75.0" text="U/M"/>
+                                        <TableColumn fx:id="manoGEscala" prefWidth="75.0" text="G. Escala"/>
+                                        <TableColumn fx:id="manoCant" prefWidth="75.0" text="Cantidad"/>
+                                    </columns>
+                                </TableView>
+                                <JFXButton layoutX="891.0" layoutY="476.0" onAction="#actionExportarExcelMano"
+                                           prefHeight="25.0" prefWidth="117.0"
+                                           style="-fx-border-color: #286090; -fx-border-radius: 10; -fx-background-color: #ffffff;"
+                                           text="Exportar .xlsx" AnchorPane.bottomAnchor="12.0"
+                                           AnchorPane.rightAnchor="12.0"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Materiales">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="tableMateriales" layoutX="5.0" layoutY="23.0" prefHeight="200.0"
+                                           prefWidth="608.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="2.0"
+                                           AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="7.0">
+                                    <columns>
+                                        <TableColumn fx:id="materiaE" prefWidth="75.0" text="Empresa"/>
+                                        <TableColumn fx:id="materiaZon" prefWidth="75.0" text="Zonas"/>
+                                        <TableColumn fx:id="materiaObj" prefWidth="75.0" text="Objeto"/>
+                                        <TableColumn fx:id="materiaNiv" prefWidth="75.0" text="Nivel"/>
+                                        <TableColumn fx:id="materiaNiv1" prefWidth="75.0" text="Especialidad"/>
+                                        <TableColumn fx:id="materiaCode" prefWidth="75.0" text="Código"/>
+                                        <TableColumn fx:id="materiaDesc" prefWidth="75.0" text="Descripción"/>
+                                        <TableColumn fx:id="materiaUm" prefWidth="75.0" text="U/M"/>
+                                        <TableColumn fx:id="materiaCant" prefWidth="75.0" text="Cantidad"/>
+                                        <TableColumn fx:id="materiaPrec" prefWidth="75.0" text="Precio"/>
+                                    </columns>
+                                </TableView>
+                                <JFXButton layoutX="891.0" layoutY="476.0" onAction="#actionExportarExcelRecursos"
+                                           prefHeight="25.0" prefWidth="117.0"
+                                           style="-fx-border-color: #286090; -fx-border-radius: 10; -fx-background-color: #ffffff;"
+                                           text="Exportar .xlsx" AnchorPane.bottomAnchor="12.0"
+                                           AnchorPane.rightAnchor="12.0"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </JFXTabPane>
+        <JFXComboBox fx:id="listObras" labelFloat="true" layoutX="16.0" layoutY="62.0"
+                     onAction="#addLlenarEmpresasZonas" prefHeight="25.0" prefWidth="253.0" promptText="Obras"/>
+        <JFXCheckBox fx:id="pendientes" checkedColor="#286090" layoutX="355.0" layoutY="110.0" text="Pendientes"
+                     visible="false"/>
+        <JFXButton fx:id="calcular" disable="true" layoutX="855.0" layoutY="102.0" onAction="#calcularAction"
+                   prefHeight="34.0" prefWidth="131.0" style="-fx-border-color: #286090; -fx-border-radius: 10;"
+                   text="Calcular" textFill="#286090" AnchorPane.bottomAnchor="564.0" AnchorPane.leftAnchor="855.0"
+                   AnchorPane.topAnchor="102.0">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CALCULATOR" size="1.2em"/>
+            </graphic>
+            <font>
+                <Font size="13.0"/>
+            </font>
+        </JFXButton>
+        <JFXComboBox fx:id="listEmpresas" labelFloat="true" layoutX="287.0" layoutY="62.0" prefHeight="25.0"
+                     prefWidth="253.0" promptText="Empresas" visible="false"/>
+        <JFXComboBox fx:id="listZonas" labelFloat="true" layoutX="572.0" layoutY="62.0" onAction="#addLlenarObjetos"
+                     prefHeight="25.0" prefWidth="253.0" promptText="Zonas" visible="false"/>
+        <JFXComboBox fx:id="listObjetos" labelFloat="true" layoutX="846.0" layoutY="62.0" prefHeight="25.0"
+                     prefWidth="253.0" promptText="Objetos" visible="false"/>
+        <JFXButton contentDisplay="CENTER" layoutX="1078.0" layoutY="14.0" onAction="#addIndicadoresToCalc"
+                   style="-fx-border-color: #286090; -fx-border-radius: 10;" visible="false">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="LIST" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Definir estructura de los indicadores"/>
+            </tooltip>
+        </JFXButton>
+    </children>
+</AnchorPane>

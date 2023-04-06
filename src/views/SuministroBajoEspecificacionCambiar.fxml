@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="320.0" prefWidth="477.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.BajoEspecificacionRenglonCambiarController">
+    <children>
+        <Label layoutX="44.0" layoutY="14.0" prefHeight="27.0" prefWidth="102.0" text="Suministro  ">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="7.0" prefWidth="458.0"
+                    style="-fx-background-color: #286090;"/>
+        <FontAwesomeIcon fill="#286090" glyphName="CUBE" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="13.0" layoutY="86.0" prefHeight="25.0"
+                      prefWidth="170.0" promptText="Suministro"/>
+        <JFXButton fx:id="btn_add" layoutX="371.0" layoutY="278.0" onAction="#handleBajoEspecificacion"
+                   prefHeight="30.0" prefWidth="92.0" style="-fx-background-color: #337ab7;" text="Agregar"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PLUS" size="1.2em"/>
+            </graphic>
+        </JFXButton>
+        <FontAwesomeIcon fill="#286090" glyphName="SHARE" layoutX="135.0" layoutY="32.0" size="1.3em"
+                         wrappingWidth="25.399998486042023"/>
+        <Label fx:id="labelUoCode" layoutX="156.0" layoutY="13.0" prefHeight="27.0" prefWidth="304.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="fieldCant" labelFloat="true" layoutX="17.0" layoutY="135.0" prefHeight="25.0"
+                      prefWidth="122.0" promptText="Cantidad"/>
+        <TextArea fx:id="textDedscripcion" layoutX="13.0" layoutY="218.0" prefHeight="51.0" prefWidth="452.0"/>
+        <Label layoutX="11.0" layoutY="186.0" prefHeight="17.0" prefWidth="67.0" text="Costo/UM:">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <Label fx:id="labelValue" layoutX="78.0" layoutY="186.0" prefHeight="17.0" prefWidth="67.0"/>
+        <JFXButton fx:id="btnSum" contentDisplay="CENTER" layoutX="431.0" layoutY="61.0" prefHeight="25.0"
+                   prefWidth="32.0" text="`">
+            <tooltip>
+                <Tooltip text="Suministros Renglón Variante"/>
+            </tooltip>
+        </JFXButton>
+        <JFXTextField fx:id="fielNewSum" labelFloat="true" layoutX="239.0" layoutY="86.0"
+                      onAction="#handleLimpiaField" prefHeight="25.0" prefWidth="170.0"
+                      promptText="Nuevo Suministro"/>
+        <Label contentDisplay="CENTER" layoutX="192.0" layoutY="90.0" prefHeight="20.0" prefWidth="32.0"
+               text="   x">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

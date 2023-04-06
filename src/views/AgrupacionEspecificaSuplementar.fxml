@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="438.0" prefWidth="538.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.AgrupacionEspecificaSuplementarController">
+    <children>
+        <Label fx:id="treeGroup" layoutX="38.0" layoutY="14.0" prefHeight="27.0" prefWidth="326.0"
+               text="Agrupaciones Genéricas">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXToolbar layoutY="45.0" prefHeight="11.0" prefWidth="534.0" style="-fx-background-color: #286090;"
+                    AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="BARS" layoutX="14.0" layoutY="35.0" size="1.8em"/>
+        <AnchorPane fx:id="paneContent" layoutX="14.0" layoutY="63.0" prefHeight="365.0" prefWidth="512.0"/>
+    </children>
+</AnchorPane>

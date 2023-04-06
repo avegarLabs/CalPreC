@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="514.0" prefWidth="762.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.PlanificarUnidaddeObraController">
+    <children>
+        <JFXToolbar layoutX="3.0" layoutY="45.0" prefHeight="10.0" prefWidth="750.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label fx:id="labelTitle" layoutX="48.0" layoutY="14.0" prefHeight="27.0" prefWidth="473.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXButton fx:id="btnAdd" layoutX="596.0" layoutY="156.0" onAction="#handleAddCertificacion" prefHeight="30.0"
+                   prefWidth="123.0" style="-fx-background-color: #286090;" text="  Aceptar" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="1.2em"/>
+            </graphic>
+        </JFXButton>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <JFXComboBox fx:id="combo_Brigada" labelFloat="true" layoutX="14.0" layoutY="70.0"
+                     onAction="#handleLlenaGrupoList" prefHeight="25.0" prefWidth="259.0" promptText="Brigada"/>
+        <FontAwesomeIcon fill="#286090" glyphName="CALENDAR" layoutX="20.0" layoutY="32.0" size="1.8em"/>
+        <JFXComboBox fx:id="combogrupo" labelFloat="true" layoutX="11.0" layoutY="113.0"
+                     onAction="#handleLlenaCuadrillaList" prefHeight="25.0" prefWidth="259.0" promptText="Grupo"/>
+        <JFXComboBox fx:id="combocuadrilla" disable="true" labelFloat="true" layoutX="11.0" layoutY="158.0"
+                     prefHeight="25.0" prefWidth="259.0" promptText="Cuadrilla"/>
+        <JFXTextField fx:id="fieldcodigouo" labelFloat="true" layoutX="316.0" layoutY="71.0" prefHeight="25.0"
+                      prefWidth="223.0" promptText="Código UO"/>
+        <JFXTextField fx:id="fieldcantidad" labelFloat="true" onAction="#handleAddCertificacion" layoutX="316.0"
+                      layoutY="113.0" promptText="Cantidad"/>
+        <Label layoutX="329.0" layoutY="162.0" prefHeight="17.0" prefWidth="67.0" text="Disponible: ">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <Label fx:id="labelDispo" layoutX="396.0" layoutY="162.0" prefHeight="12.0" prefWidth="57.0"
+               textAlignment="CENTER"/>
+        <JFXDatePicker fx:id="dateini" defaultColor="#286090" layoutX="579.0" layoutY="69.0" prefHeight="28.0"
+                       prefWidth="149.0" promptText="Desde"/>
+        <JFXDatePicker fx:id="datehasta" defaultColor="#286090" layoutX="579.0" layoutY="112.0" prefHeight="28.0"
+                       prefWidth="149.0" promptText="Hasta"/>
+        <TableView fx:id="tablePlanificacion" layoutX="14.0" layoutY="203.0" prefHeight="300.0" prefWidth="740.0"
+                   stylesheets="@../AccessMigration/tableview.css">
+            <columns>
+                <TableColumn fx:id="cant" prefWidth="61.0" text="Cantidad"/>
+                <TableColumn fx:id="desde" prefWidth="64.0" text="Desde"/>
+                <TableColumn fx:id="hasta" prefWidth="64.0" text="Hasta"/>
+                <TableColumn fx:id="brigada" prefWidth="64.0" text="Brigada"/>
+                <TableColumn fx:id="grupo" prefWidth="64.0" text="Grupo"/>
+                <TableColumn fx:id="cuadrilla" prefWidth="64.0" text="Cuadrilla"/>
+                <TableColumn fx:id="materiales" prefWidth="99.0" text="Cost. Manterial"/>
+                <TableColumn fx:id="mano" prefWidth="75.0" text="Cost. Mano"/>
+                <TableColumn fx:id="equipo" prefWidth="83.0" text="Cost. Equipo"/>
+                <TableColumn fx:id="certificado" prefWidth="83.0" text="Certificado"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu fx:id="menuOptios">
+                    <items>
+                        <!--MenuItem mnemonicParsing="false" onAction="#handleAcatualizarCert" text="Modificar" /-->
+                        <MenuItem mnemonicParsing="false" onAction="#handleDeleteCertificaciones" text="Eliminar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REMOVE"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handleAjustarPlan" text="Ajustar Plan"
+                                  visible="false"/>
+                        <MenuItem mnemonicParsing="false" onAction="#handleTranferirPlan" text="Tranferir">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="EXCHANGE"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+        <JFXCheckBox fx:id="checkActive" checkedColor="#286090" contentDisplay="CENTER" layoutX="278.0"
+                     layoutY="117.0"/>
+    </children>
+</AnchorPane>

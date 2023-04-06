@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="report2" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20"
+              rightMargin="20" topMargin="20" bottomMargin="20" uuid="eac35197-3cb8-43b0-9ef3-6b226098466a">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+    <style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+    <style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+    <style name="Detail" fontName="Arial" fontSize="12"/>
+    <parameter name="obraName" class="java.lang.String"/>
+    <parameter name="fecha" class="java.lang.String"/>
+    <parameter name="empresa" class="java.lang.String"/>
+    <parameter name="titleReport" class="java.lang.String"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="114" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="85" width="532" height="17" uuid="d4ea293b-67d6-4022-bd29-1c2d5781da71"/>
+                <textElement textAlignment="Justified">
+                    <font fontName="Arial" size="12" isBold="true" isItalic="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Obra: " + $P{obraName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="283" y="60" width="506" height="25" uuid="cd275f8c-4234-47cf-be82-d32d2c343121"/>
+                <textElement textAlignment="Right">
+                    <font fontName="Arial" size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{titleReport}]]></textFieldExpression>
+            </textField>
+            <image>
+                <reportElement x="689" y="0" width="113" height="45" uuid="421ab7f0-aed1-49a7-9577-1c17e60607a9"/>
+                <imageExpression><![CDATA[$P{image}]]></imageExpression>
+            </image>
+            <textField>
+                <reportElement x="0" y="23" width="428" height="17" uuid="e89e673b-c770-4025-bc1a-594ab086924b"/>
+                <textElement textAlignment="Justified">
+                    <font fontName="Arial" size="8" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{empresa}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="0" y="40" width="689" height="1" forecolor="#006666"
+                               uuid="9b647a3c-32ba-470d-82d4-763413e7d76a"/>
+            </line>
+        </band>
+    </title>
+    <pageHeader>
+        <band splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="33" splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="41" splitType="Stretch"/>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch">
+            <line>
+                <reportElement positionType="FixRelativeToBottom" x="0" y="44" width="802" height="1"
+                               uuid="ee6b15ae-3897-42c6-858a-c82b0e5adfe8"/>
+                <graphicElement>
+                    <pen lineWidth="0.5" lineColor="#999999"/>
+                </graphicElement>
+            </line>
+        </band>
+    </columnFooter>
+    <pageFooter>
+        <band height="20" splitType="Stretch">
+            <textField>
+                <reportElement style="Column header" x="682" y="0" width="80" height="20"
+                               uuid="9c82a69a-dcf2-409e-addb-672d87c88de7"/>
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Pág "+$V{PAGE_NUMBER}+"/"]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement style="Column header" x="762" y="0" width="40" height="20"
+                               uuid="aae5ef86-6e1a-452e-9887-a5f0f3a612f3"/>
+                <textElement>
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement style="Column header" x="0" y="0" width="197" height="20"
+                               uuid="0aadd4dc-d975-4daa-aef1-c2d41939efb6"/>
+                <textElement>
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Fecha de Impresión: " + $P{fecha}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+    <summary>
+        <band splitType="Stretch"/>
+    </summary>
+</jasperReport>

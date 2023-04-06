@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="119.0" prefWidth="197.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.CantidadController">
+    <children>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="9.0" prefWidth="186.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label fx:id="label_title" layoutX="44.0" layoutY="14.0" prefHeight="27.0" prefWidth="148.0"
+               text="Nueva Cantidad">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <FontAwesomeIcon fill="#286090" glyphName="LIST" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="10.0" layoutY="71.0" onAction="#handleModificar"
+                      prefHeight="27.0" prefWidth="126.0" promptText="Cantidad"/>
+        <JFXButton fx:id="toClose" layoutX="136.0" layoutY="59.0" visible="false"/>
+    </children>
+</AnchorPane>

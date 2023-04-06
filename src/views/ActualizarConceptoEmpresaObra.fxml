@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="236.0" prefWidth="372.0" style="-fx-background-color: #fff;"
+      xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ActualizarConceptoEmpresaObraController">
+    <children>
+        <AnchorPane prefHeight="294.0" prefWidth="372.0" style="-fx-background-color: #fff;">
+            <children>
+                <Label fx:id="label_title" layoutX="34.0" layoutY="14.0" prefHeight="27.0" prefWidth="329.0"
+                       text="Modificar Concepto">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="8.0" prefWidth="355.0"
+                            style="-fx-background-color: #286090;"/>
+                <FontAwesomeIcon fill="#286090" glyphName="DOLLAR" layoutX="13.0" layoutY="34.0" size="1.8em"
+                                 wrappingWidth="25.399999618530273">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </FontAwesomeIcon>
+                <JFXTextField fx:id="concepto" labelFloat="true" layoutX="15.0" layoutY="80.0" prefHeight="25.0"
+                              prefWidth="337.0" promptText="Concepto"/>
+                <JFXTextField fx:id="corficiente" visible="false" labelFloat="true" layoutX="13.0" layoutY="127.0"
+                              prefHeight="30.0" prefWidth="77.0" promptText="Coeficiente"/>
+                <JFXButton fx:id="btn_add" layoutX="257.0" layoutY="187.0" onAction="#handleModificarConceptos"
+                           prefHeight="30.0" prefWidth="92.0" style="-fx-border-color: #286090; -fx-border-radius: 10;"
+                           text="Aceptar" textFill="#286090">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="#286090" glyphName="CHECK" selectionFill="#286090"/>
+                    </graphic>
+                </JFXButton>
+                <JFXTextField fx:id="valor" labelFloat="true" layoutX="138.0" layoutY="130.0" prefHeight="25.0"
+                              prefWidth="102.0" promptText="Valor"/>
+                <JFXButton fx:id="btnList" contentDisplay="CENTER" layoutX="290.0" layoutY="123.0"
+                           onAction="#handleDesglozarConcepto" prefHeight="39.0" prefWidth="42.0"
+                           style="-fx-border-color: #286090; -fx-border-radius: 20;">
+                    <graphic>
+                        <FontAwesomeIcon fill="#286090" glyphName="LIST" size="1.5em" text=""/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Desglosar valor por subconceptos"/>
+                    </tooltip>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

@@ -1,0 +1,71 @@
+package models;
+
+import java.util.ArrayList;
+
+public class UORVReport {
+
+    public Integer id;
+    public String codeUO;
+    public String descrip;
+    public String um;
+    public Double cantidad;
+    public Double total;
+
+    public ArrayList<DatosReporteUORV> table;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCodeUO() {
+        return codeUO;
+    }
+
+    public void setCodeUO(String codeUO) {
+        this.codeUO = codeUO;
+    }
+
+    public String getDescrip() {
+        return descrip;
+    }
+
+    public void setDescrip(String descrip) {
+        this.descrip = descrip;
+    }
+
+    public String getUm() {
+        return um;
+    }
+
+    public void setUm(String um) {
+        this.um = um;
+    }
+
+    public Double getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Double cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
+    }
+
+    public ArrayList<DatosReporteUORV> getTable() {
+        return table;
+    }
+
+    public void setTable(ArrayList<DatosReporteUORV> table) {
+        this.table = table;
+    }
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="424.0" prefWidth="488.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ActualizarEquipoController">
+    <children>
+        <JFXToolbar layoutX="8.0" layoutY="45.0" prefHeight="9.0" prefWidth="472.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="43.0" layoutY="14.0" prefHeight="27.0" prefWidth="178.0" text="Actualizar Equipo">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="14.0" layoutY="72.0" prefHeight="25.0"
+                      prefWidth="272.0" promptText="Código"/>
+        <JFXTextField fx:id="field_um" labelFloat="true" layoutX="330.0" layoutY="72.0" prefHeight="25.0"
+                      prefWidth="120.0" promptText="UM"/>
+        <JFXTextArea fx:id="text_descripcion" labelFloat="true" layoutX="14.0" layoutY="123.0" prefHeight="55.0"
+                     prefWidth="452.0" promptText="Descripción"/>
+        <JFXTextField fx:id="field_preciomn" labelFloat="true" layoutX="14.0" layoutY="201.0" prefHeight="25.0"
+                      prefWidth="142.0" promptText="Precio MN"/>
+        <JFXTextField fx:id="field_cpo" labelFloat="true" layoutX="22.0" layoutY="274.0" prefHeight="25.0"
+                      prefWidth="142.0" promptText="CPO"/>
+        <JFXTextField fx:id="field_cpe" labelFloat="true" layoutX="303.0" layoutY="274.0" prefHeight="25.0"
+                      prefWidth="142.0" promptText="CPE"/>
+        <JFXTextField fx:id="field_CET" labelFloat="true" layoutX="22.0" layoutY="324.0" prefHeight="25.0"
+                      prefWidth="142.0" promptText="CET"/>
+        <JFXTextField fx:id="field_otras" labelFloat="true" layoutX="303.0" layoutY="324.0" prefHeight="25.0"
+                      prefWidth="142.0" promptText="Otro"/>
+        <JFXButton layoutX="22.0" layoutY="372.0" onAction="#updateEquipoAction" prefHeight="30.0" prefWidth="120.0"
+                   style="-fx-background-color: #286090;" text="Actualizar" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="1.3em"/>
+            </graphic>
+        </JFXButton>
+        <FontAwesomeIcon fill="#286090" glyphName="TRUCK" layoutX="11.0" layoutY="35.0" size="1.8em"/>
+        <Separator layoutX="14.0" layoutY="255.0" prefHeight="2.0" prefWidth="452.0"/>
+        <JFXButton fx:id="btn_close" layoutX="314.0" layoutY="372.0" onAction="#handleCloseWindow" prefHeight="30.0"
+                   prefWidth="120.0" style="-fx-background-color: #286090;" text="Cancelar" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.3em"/>
+            </graphic>
+        </JFXButton>
+        <JFXTextField fx:id="field_cmoe" labelFloat="true" layoutX="292.0" layoutY="201.0" prefHeight="25.0"
+                      prefWidth="142.0" promptText="Costo Mano de Obra"/>
+    </children>
+</AnchorPane>

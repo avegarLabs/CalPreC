@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="296.0" prefWidth="372.0" style="-fx-background-color: #fff;"
+      xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ActualizarFormulaController">
+    <children>
+        <AnchorPane prefHeight="294.0" prefWidth="372.0" style="-fx-background-color: #fff;">
+            <children>
+                <Label fx:id="label_title" layoutX="34.0" layoutY="14.0" prefHeight="27.0" prefWidth="329.0"
+                       text="Actualizar Fórmula">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="8.0" prefWidth="355.0"
+                            style="-fx-background-color: #286090;"/>
+                <FontAwesomeIcon fill="#286090" glyphName="DOLLAR" layoutX="13.0" layoutY="34.0" size="1.8em"
+                                 wrappingWidth="25.399999618530273">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </FontAwesomeIcon>
+                <JFXTextField fx:id="concepto" labelFloat="true" layoutX="15.0" layoutY="80.0" prefHeight="25.0"
+                              prefWidth="337.0" promptText="Concepto"/>
+                <JFXTextField fx:id="corficiente" labelFloat="true" layoutX="13.0" layoutY="127.0" prefHeight="30.0"
+                              prefWidth="136.0" promptText="Coeficiente"/>
+                <JFXButton fx:id="btn_add" layoutX="260.0" layoutY="250.0" onAction="#handleActializar"
+                           prefHeight="30.0" prefWidth="92.0" style="-fx-background-color: #337ab7;" text="Aceptar"
+                           textFill="WHITE">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+                    </graphic>
+                </JFXButton>
+                <JFXTextField fx:id="formula" labelFloat="true" layoutX="110.0" layoutY="183.0" prefHeight="25.0"
+                              prefWidth="241.0" promptText="Fórmula"/>
+                <JFXCheckBox fx:id="calcular" checkedColor="#286090" layoutX="242.0" layoutY="148.0" text="Calcular"/>
+                <JFXTextField fx:id="fielporcient" labelFloat="true" layoutX="14.0" layoutY="183.0" prefHeight="25.0"
+                              prefWidth="61.0" promptText="\%" visible="false"/>
+                <Label fx:id="labeld" layoutX="87.0" layoutY="196.0" prefHeight="17.0" prefWidth="18.0" text="de"
+                       visible="false"/>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

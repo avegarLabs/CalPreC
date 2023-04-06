@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="454.0" prefWidth="522.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.IndicadoresNormasListaController">
+    <children>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="11.0" prefWidth="510.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label fx:id="label_title" layoutX="44.0" layoutY="14.0" prefHeight="27.0" prefWidth="246.0"
+               text="Listado Indicadores">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <FontAwesomeIcon fill="#286090" glyphName="LIST" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <TableView fx:id="tableCodes" layoutX="10.0" layoutY="103.0" prefHeight="338.0" prefWidth="503.0">
+            <columns>
+                <TableColumn fx:id="codeRV" prefWidth="102.0" text="Código"/>
+                <TableColumn fx:id="descripRV" prefWidth="319.0" text="Descripción"/>
+                <TableColumn fx:id="umRV" prefWidth="57.0" text="UM"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#deleteNormasToTable" text="Eliminar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REMOVE"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+        <JFXComboBox fx:id="listResolt" labelFloat="true" layoutX="322.0" layoutY="15.0"
+                     onAction="#addInticadotestoList" prefHeight="25.0" prefWidth="189.0" promptText="Resolución"/>
+        <JFXButton layoutX="420.0" layoutY="63.0" onAction="#deleteAction" prefHeight="27.0" prefWidth="84.0"
+                   style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Borrar">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="REMOVE"/>
+            </graphic>
+        </JFXButton>
+        <JFXComboBox fx:id="field_codigo" labelFloat="true" layoutX="10.0" layoutY="64.0"
+                     onAction="#handlePopulatedTable" prefHeight="25.0" prefWidth="405.0" promptText="Indicadores"/>
+    </children>
+</AnchorPane>

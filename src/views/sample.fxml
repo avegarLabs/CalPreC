@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="685.0" prefWidth="1043.0" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.Controller">
+    <children>
+        <JFXDrawer fx:id="drawer" defaultDrawerSize="110.0" layoutX="6.0" layoutY="50.0" prefHeight="635.0"
+                   prefWidth="89.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                   AnchorPane.topAnchor="50.0"/>
+        <Pane fx:id="main_pane" layoutX="88.0" layoutY="50.0" prefHeight="635.0" prefWidth="955.0"
+              style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="88.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0"/>
+        <Pane prefHeight="50.0" prefWidth="1043.0" style="-fx-background-color: #286090;" stylesheets="@css/mycss.css"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <JFXHamburger fx:id="hamburguer" layoutX="7.0" layoutY="-3.0" prefHeight="50.0" prefWidth="56.0"/>
+                <MenuButton layoutX="93.0" layoutY="4.0" mnemonicParsing="false" style="-fx-background-color: #286090;"
+                            text="Obras" textFill="WHITE">
+                    <items>
+                        <MenuItem fx:id="btn_obras" mnemonicParsing="false" onAction="#handleNuevoPesupustoObra"
+                                  text="Presupusto"/>
+                        <MenuItem mnemonicParsing="false" onAction="#handleSalarioObra" text="Salario"/>
+                        <MenuItem mnemonicParsing="false" onAction="#handlePlanObras" text="Plan Mes"/>
+                        <MenuItem mnemonicParsing="false" onAction="#handleCertificacion" text="Certificación"/>
+                    </items>
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" fontSmoothingType="LCD" glyphName="BUILDING"/>
+                    </graphic>
+                </MenuButton>
+                <MenuButton layoutX="192.0" layoutY="4.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="265.0"
+                            style="-fx-background-color: #286090;" text="Unidad Mínima de Control" textFill="WHITE">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Presupusto"/>
+                        <MenuItem mnemonicParsing="false" text="Salario"/>
+                        <MenuItem mnemonicParsing="false" text="Plan Mes"/>
+                        <MenuItem mnemonicParsing="false" text="Certificación"/>
+                    </items>
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CALENDAR"/>
+                    </graphic>
+                </MenuButton>
+                <MenuButton layoutX="451.0" layoutY="4.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="206.0"
+                            style="-fx-background-color: #286090;" text="Renglón Variante" textFill="WHITE">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleNuevoPesupustoRenglon" text="Presupusto"/>
+                        <MenuItem mnemonicParsing="false" text="Salario"/>
+                        <MenuItem mnemonicParsing="false" text="Plan Mes"/>
+                        <MenuItem mnemonicParsing="false" text="Certificación"/>
+                    </items>
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SITEMAP"/>
+                    </graphic>
+                </MenuButton>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

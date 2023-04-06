@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="285.0" prefWidth="583.0" style="-fx-background-color: #fff;"
+      xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ActualizarConceptoEmpresaObraIndirectoController">
+    <children>
+        <AnchorPane prefHeight="287.0" prefWidth="583.0" style="-fx-background-color: #fff;">
+            <children>
+                <Label fx:id="label_title" layoutX="37.0" layoutY="29.0" prefHeight="27.0" prefWidth="329.0"
+                       text="Gastos Indirectos">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <JFXToolbar layoutX="12.0" layoutY="66.0" prefHeight="5.0" prefWidth="559.0"
+                            style="-fx-background-color: #286090;"/>
+                <FontAwesomeIcon fill="#286090" glyphName="DOLLAR" layoutX="14.0" layoutY="50.0" size="1.8em"
+                                 wrappingWidth="25.399999618530273">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </FontAwesomeIcon>
+                <Label layoutX="12.0" layoutY="110.0" prefHeight="17.0" prefWidth="115.0" text="C.D Mano de Obra:">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="12.0" layoutY="136.0" prefHeight="17.0" prefWidth="123.0" text="C.S. M. O en Equipos:">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="16.0" layoutY="161.0" prefHeight="17.0" prefWidth="123.0" text="Salario Concepto 04:">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="valmo" layoutX="141.0" layoutY="110.0" prefHeight="17.0" prefWidth="105.0"/>
+                <Label fx:id="valcdmoe" layoutX="141.0" layoutY="136.0" prefHeight="17.0" prefWidth="95.0"/>
+                <Label fx:id="valco4" layoutX="141.0" layoutY="161.0" prefHeight="17.0" prefWidth="105.0"/>
+                <Separator layoutX="12.0" layoutY="189.0" prefHeight="5.0" prefWidth="231.0"
+                           style="-fx-background-color: #286090;"/>
+                <Label layoutX="14.0" layoutY="205.0" prefHeight="17.0" prefWidth="95.0" text="Valor ha Acotar:"
+                       textAlignment="RIGHT">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="valtotal" layoutX="127.0" layoutY="205.0" prefHeight="17.0" prefWidth="105.0"/>
+                <Label layoutX="295.0" layoutY="136.0" prefHeight="17.0" prefWidth="80.0" text="Concepto 06:">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                    <tooltip>
+                        <Tooltip text="Gastos Asociados a la Producción de la Obra"/>
+                    </tooltip>
+                </Label>
+                <Label layoutX="295.0" layoutY="161.0" prefHeight="17.0" prefWidth="80.0" text="Concepto 08:">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                    <tooltip>
+                        <Tooltip text="Gastos Generales y de Administración"/>
+                    </tooltip>
+                </Label>
+                <Separator layoutX="295.0" layoutY="189.0" prefHeight="5.0" prefWidth="250.0"
+                           style="-fx-background-color: #286090;"/>
+                <Label fx:id="concept6" layoutX="379.0" layoutY="136.0" prefHeight="17.0" prefWidth="123.0"/>
+                <Label fx:id="concept8" layoutX="379.0" layoutY="161.0" prefHeight="17.0" prefWidth="123.0"/>
+                <Label layoutX="295.0" layoutY="205.0" prefHeight="17.0" prefWidth="80.0" text="            Total:"
+                       textAlignment="RIGHT">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="valtotalconcepto" layoutX="380.0" layoutY="205.0" prefHeight="17.0" prefWidth="164.0"/>
+                <Label layoutX="178.0" layoutY="249.0" prefHeight="17.0" prefWidth="105.0" text="Gastos Indirectos:">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="valgeneral" layoutX="291.0" layoutY="249.0" prefHeight="17.0" prefWidth="143.0"/>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

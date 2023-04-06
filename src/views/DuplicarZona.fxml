@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="464.0" prefWidth="717.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.DuplicarZonaController">
+    <children>
+        <JFXToolbar layoutX="2.0" layoutY="40.0" prefHeight="10.0" prefWidth="711.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="41.0" layoutY="14.0" prefHeight="27.0" prefWidth="271.0" text="Duplicar Zonas">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXButton layoutX="15.0" layoutY="420.0" onAction="#handleImportarComponentes" prefHeight="30.0"
+                   prefWidth="102.0" style="-fx-background-color: #286090;" text="Duplicar" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="COPY"/>
+            </graphic>
+        </JFXButton>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <JFXComboBox fx:id="comboObras" labelFloat="true" layoutX="9.0" layoutY="232.0" onAction="#handleCargarEmpresa"
+                     prefHeight="30.0" prefWidth="333.0" promptText="Obra"/>
+        <JFXComboBox fx:id="comboEmpresa" labelFloat="true" layoutX="10.0" layoutY="276.0" prefHeight="30.0"
+                     prefWidth="333.0" promptText="Empresa"/>
+        <JFXButton fx:id="btnClose" layoutX="241.0" layoutY="420.0" onAction="#handleClose" prefHeight="30.0"
+                   prefWidth="102.0" style="-fx-background-color: #286090;" text="Cancelar" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CLOSE"/>
+            </graphic>
+        </JFXButton>
+        <FontAwesomeIcon fill="#286090" glyphName="COPY" layoutX="15.0" layoutY="35.0" size="1.8em"/>
+        <TableView fx:id="tableObjetos" layoutX="353.0" layoutY="64.0" prefHeight="386.0" prefWidth="358.0">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="75.0" text="Objeto"/>
+                <TableColumn fx:id="descrip" prefWidth="261.0" text="Descripción"/>
+            </columns>
+        </TableView>
+        <JFXCheckBox fx:id="checkuo" layoutX="15.0" layoutY="331.0" selected="true" text="U. Obra"/>
+        <JFXCheckBox fx:id="checkrv" layoutX="97.0" layoutY="331.0" prefHeight="18.0" prefWidth="88.0" selected="true"
+                     text="Renglón V"/>
+        <JFXCheckBox fx:id="checksum" layoutX="206.0" layoutY="331.0" prefHeight="18.0" prefWidth="88.0" selected="true"
+                     text="Suministros"/>
+        <JFXCheckBox fx:id="checkplan" layoutX="15.0" layoutY="369.0" prefHeight="18.0" prefWidth="66.0" text="Planes"/>
+        <JFXCheckBox fx:id="checkcertif" layoutX="97.0" layoutY="369.0" text="Certificaciones"/>
+        <Separator layoutX="9.0" layoutY="189.0" prefHeight="3.0" prefWidth="333.0"
+                   style="-fx-background-color: #286090;"/>
+        <JFXTextField fx:id="fieldobra" editable="false" labelFloat="true" layoutX="10.0" layoutY="64.0"
+                      prefHeight="25.0" prefWidth="333.0" promptText="Obra"/>
+        <Label layoutX="10.0" layoutY="203.0" prefHeight="17.0" prefWidth="32.0" text="Para:">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="fieldempresa" editable="false" labelFloat="true" layoutX="10.0" layoutY="108.0"
+                      prefHeight="25.0" prefWidth="333.0" promptText="Empresa"/>
+        <JFXTextField fx:id="zonaFied" labelFloat="true" layoutX="10.0" layoutY="151.0" prefHeight="25.0"
+                      prefWidth="333.0" promptText="Zona"/>
+    </children>
+</AnchorPane>

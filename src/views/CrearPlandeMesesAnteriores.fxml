@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="599.0" prefWidth="488.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.CrearPlanToMesesController">
+    <children>
+        <JFXToolbar layoutX="3.0" layoutY="45.0" prefHeight="8.0" prefWidth="477.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="48.0" layoutY="14.0" prefHeight="27.0" prefWidth="133.0" text="Ajustar Plan">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXButton layoutX="11.0" layoutY="555.0" onAction="#creteNewPlanes" prefHeight="30.0" prefWidth="97.0"
+                   style="-fx-background-color: #286090;" text="  Aceptar" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="1.1em"/>
+            </graphic>
+        </JFXButton>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="CALENDAR" layoutX="20.0" layoutY="32.0" size="1.8em"/>
+        <FontAwesomeIcon fill="WHITE" glyphName="CHECK" layoutX="383.0" layoutY="294.0" size="1.2em"/>
+        <JFXDatePicker fx:id="desdeDateIni" defaultColor="#286090" layoutX="20.0" layoutY="96.0" prefHeight="28.0"
+                       prefWidth="193.0" promptText="Desde"/>
+        <JFXDatePicker fx:id="desdeDateHasta" defaultColor="#286090" layoutX="20.0" layoutY="135.0" prefHeight="28.0"
+                       prefWidth="193.0" promptText="Hasta"/>
+        <JFXButton fx:id="btn_close" layoutX="371.0" layoutY="555.0" prefHeight="30.0" prefWidth="97.0"
+                   style="-fx-background-color: #286090;" text="Cancelar" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CLOSE"/>
+            </graphic>
+        </JFXButton>
+        <Label layoutX="16.0" layoutY="61.0" prefHeight="17.0" prefWidth="113.0" text="Desde">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Label>
+        <Separator layoutX="15.0" layoutY="82.0" prefWidth="200.0"/>
+        <Label layoutX="274.0" layoutY="61.0" prefHeight="17.0" prefWidth="113.0" text="Para">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Label>
+        <Separator layoutX="274.0" layoutY="84.0" prefWidth="200.0"/>
+        <JFXDatePicker fx:id="paraDateIni" defaultColor="#286090" layoutX="274.0" layoutY="96.0" prefHeight="28.0"
+                       prefWidth="193.0" promptText="Desde"/>
+        <JFXDatePicker fx:id="paraDateHasta" defaultColor="#286090" layoutX="274.0" layoutY="135.0" prefHeight="28.0"
+                       prefWidth="193.0" promptText="Hasta"/>
+        <Separator layoutX="11.0" layoutY="178.0" prefHeight="3.0" prefWidth="466.0"/>
+        <JFXComboBox fx:id="obrasCombo" layoutX="12.0" layoutY="191.0" onAction="#handleListofEmpresa" prefHeight="25.0"
+                     prefWidth="466.0" promptText="Obra"/>
+        <JFXComboBox fx:id="empresaCombo" layoutX="12.0" layoutY="228.0" onAction="#handleListofBrigada"
+                     prefHeight="25.0" prefWidth="466.0" promptText="Empresa"/>
+        <JFXComboBox fx:id="zonasCombo" layoutX="12.0" layoutY="269.0" onAction="#handleListofObjetos" prefHeight="25.0"
+                     prefWidth="466.0" promptText="Zonas"/>
+        <JFXComboBox fx:id="objetosCombo" layoutX="12.0" layoutY="315.0" onAction="#handleListofNiveles"
+                     prefHeight="25.0" prefWidth="245.0" promptText="Objetos"/>
+        <JFXComboBox fx:id="nivelCombo" layoutX="271.0" layoutY="315.0" onAction="#handleListofEspecialidades"
+                     prefHeight="25.0" prefWidth="211.0" promptText="Nivel"/>
+        <JFXComboBox fx:id="especialidadCombo" layoutX="12.0" layoutY="355.0" onAction="#handleListofEspecialidades"
+                     prefHeight="25.0" prefWidth="245.0" promptText="Especialidad"/>
+        <JFXComboBox fx:id="subespecialidadCombo" layoutX="271.0" layoutY="355.0" prefHeight="25.0" prefWidth="211.0"
+                     promptText="Subespecialidad"/>
+        <Separator layoutX="15.0" layoutY="395.0" prefHeight="3.0" prefWidth="466.0"/>
+        <JFXComboBox fx:id="brigadaCombo" disable="true" layoutX="12.0" layoutY="442.0" onAction="#handleListofGrupo"
+                     prefHeight="25.0" prefWidth="466.0" promptText="Brigada"/>
+        <JFXComboBox fx:id="grupoCombo" disable="true" layoutX="9.0" layoutY="479.0" onAction="#handleListofCuadrilla"
+                     prefHeight="25.0" prefWidth="436.0" promptText="Grupo"/>
+        <JFXComboBox fx:id="cuadrillaCombo" disable="true" editable="true" layoutX="11.0" layoutY="511.0"
+                     prefHeight="25.0" prefWidth="466.0" promptText="Cuadrilla"/>
+        <Separator layoutX="9.0" layoutY="546.0" prefHeight="3.0" prefWidth="466.0"/>
+        <JFXCheckBox fx:id="checkBrigada" checkedColor="#286090" layoutX="21.0" layoutY="406.0"
+                     text="Para Brigada en Especifico"/>
+        <Separator layoutX="12.0" layoutY="431.0" prefHeight="3.0" prefWidth="466.0"/>
+        <JFXCheckBox fx:id="checkActive" checkedColor="#286090" contentDisplay="CENTER" layoutX="456.0"
+                     layoutY="483.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="SHARE" layoutX="236.0" layoutY="139.0" size="1.5em"/>
+    </children>
+</AnchorPane>

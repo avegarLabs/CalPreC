@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.SuministrosController">
+    <children>
+        <TableView fx:id="dataTable" layoutX="5.0" layoutY="115.0" prefHeight="498.0" prefWidth="956.0"
+                   stylesheets="@../AccessMigration/tableview.css" AnchorPane.bottomAnchor="4.0"
+                   AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="115.0">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="75.0" text="Código"/>
+                <TableColumn fx:id="descrip" prefWidth="570.0" text="Descripción"/>
+                <TableColumn fx:id="um" prefWidth="47.0" text="UM"/>
+                <TableColumn fx:id="mn" prefWidth="87.0" text="Precio Total"/>
+                <!--TableColumn fx:id="mlc" prefWidth="98.0" text="Precio MLC"/-->
+                <TableColumn fx:id="peso" prefWidth="72.0" text="Peso"/>
+                <TableColumn fx:id="active" prefWidth="72.0" text="Activo"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu fx:id="options">
+                    <items>
+                        <MenuItem fx:id="option1" disable="true" mnemonicParsing="false"
+                                  onAction="#handleSuministrosPropioAction" text="Actualizar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REFRESH"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="option2" disable="true" mnemonicParsing="false"
+                                  onAction="#handleEliminarSuministros" text="Eliminar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="CLOSE"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="option21" disable="true" mnemonicParsing="false"
+                                  onAction="#HandleDeleteDuplicados" text=" Eliminar Duplicados">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="COPY"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+        <Label fx:id="label_title" layoutX="38.0" layoutY="14.0" prefHeight="27.0" prefWidth="851.0"
+               text="Listado de Suministros Precons II" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="77.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXButton fx:id="btn_add" disable="true" layoutX="14.0" layoutY="68.0" onAction="#handleAgregarAction"
+                   prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: #337ab7;" text="Agregar"
+                   textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+            </graphic>
+        </JFXButton>
+        <JFXTextField fx:id="filter" labelFloat="true" layoutX="673.0" layoutY="73.0" prefHeight="25.0"
+                      prefWidth="287.0" promptText="Código o Descripción" AnchorPane.rightAnchor="6.0"/>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="9.0" prefWidth="956.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="4.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="CUBE" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273" AnchorPane.leftAnchor="13.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <JFXButton contentDisplay="CENTER" layoutX="927.0" layoutY="8.0" prefHeight="27.0" prefWidth="33.0"
+                   style="-fx-border-color: #286090; -fx-border-radius: 5;" visible="false">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CLOSE" size="1.2em"/>
+            </graphic>
+        </JFXButton>
+        <JFXButton fx:id="btn_import" disable="true" layoutX="119.0" layoutY="68.0" onAction="#ImportSuminitros"
+                   prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: #337ab7;" text="Importar"
+                   textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="DOWNLOAD"/>
+            </graphic>
+        </JFXButton>
+        <JFXComboBox fx:id="comboTarifas" labelFloat="true" layoutX="457.0" layoutY="73.0"
+                     onAction="#handleCleanViewByResolt" prefHeight="25.0" prefWidth="188.0" promptText="Tarifas"
+                     AnchorPane.rightAnchor="310.0"/>
+        <JFXButton fx:id="btn_status" contentDisplay="CENTER" disable="true" layoutX="230.0" layoutY="68.0"
+                   onAction="#actionHandleUpdateState" prefHeight="30.0" prefWidth="63.0"
+                   style="-fx-border-color: #286090; -fx-border-radius: 20;">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="SQUARE_ALT" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Actualizar estado de los suministros"/>
+            </tooltip>
+        </JFXButton>
+    </children>
+</AnchorPane>

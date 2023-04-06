@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="874.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.CambiarSuminstrosController">
+    <children>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="11.0" prefWidth="446.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="31.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="CALCULATOR" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273" AnchorPane.leftAnchor="13.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <Label layoutX="38.0" layoutY="13.0" prefHeight="17.0" prefWidth="335.0" text="Cambiar RV y Suministros">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXRadioButton fx:id="radioRV" layoutX="17.0" layoutY="65.0" prefHeight="19.0" prefWidth="149.0"
+                        text="Renglón Variante">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXRadioButton>
+        <JFXRadioButton fx:id="radioSuminst" layoutX="237.0" layoutY="65.0" prefHeight="19.0" prefWidth="188.0"
+                        text="Suministros">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXRadioButton>
+        <JFXTextField fx:id="fieldElement" labelFloat="true" layoutX="22.0" layoutY="101.0" onAction="#getSuministro"
+                      onKeyTyped="#keyTypeCodeChange" prefHeight="25.0" prefWidth="231.0">
+            <tooltip>
+                <Tooltip text="Especifique el código  y presione enter "/>
+            </tooltip>
+        </JFXTextField>
+        <Separator layoutX="18.0" layoutY="260.0" prefHeight="4.0" prefWidth="439.0"
+                   style="-fx-background-color: #286090;"/>
+        <JFXButton fx:id="btnAceptar" layoutX="332.0" layoutY="549.0" onAction="#handleChangeElement" prefHeight="31.0"
+                   prefWidth="109.0" style="-fx-border-color: #286090; -fx-border-radius: 5;" text=" Aceptar"
+                   textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CHECK"/>
+            </graphic>
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnCancel" layoutX="37.0" layoutY="549.0" onAction="#handleClose" prefHeight="31.0"
+                   prefWidth="109.0" style="-fx-border-color: #286090; -fx-border-radius: 5;" text="Cancelar"
+                   textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CLOSE"/>
+            </graphic>
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXButton>
+        <JFXTextField fx:id="fieldElementInt" labelFloat="true" layoutX="22.0" layoutY="186.0"
+                      onAction="#getSuministroIn" onKeyTyped="#keyTypeCodeIn" prefHeight="25.0" prefWidth="231.0">
+            <tooltip>
+                <Tooltip text="Especifique el código y presione enter"/>
+            </tooltip>
+        </JFXTextField>
+        <JFXComboBox fx:id="comboEmpresa" labelFloat="true" layoutX="18.0" layoutY="281.0" prefHeight="25.0"
+                     prefWidth="439.0" promptText="Empresas"/>
+        <JFXComboBox fx:id="comboZonas" labelFloat="true" layoutX="22.0" layoutY="322.0" onAction="#handleCargarObjetos"
+                     prefHeight="25.0" prefWidth="439.0" promptText="Zonas"/>
+        <JFXComboBox fx:id="comboObjetos" labelFloat="true" layoutX="22.0" layoutY="361.0" onAction="#handleCargarNivel"
+                     prefHeight="25.0" prefWidth="439.0" promptText="Objetos"/>
+        <JFXComboBox fx:id="comboNiveles" labelFloat="true" layoutX="23.0" layoutY="408.0" prefHeight="25.0"
+                     prefWidth="439.0" promptText="Nivel"/>
+        <JFXComboBox fx:id="comboEspecialidad" layoutX="23.0" layoutY="455.0" onAction="#handleChargeSub"
+                     prefHeight="25.0" prefWidth="439.0" promptText="Especialidad"/>
+        <Separator layoutX="18.0" layoutY="536.0" prefHeight="4.0" prefWidth="846.0"
+                   style="-fx-background-color: #286090;"/>
+        <Label layoutX="260.0" layoutY="105.0" prefHeight="25.0" prefWidth="65.0" text="Costo/UM:">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <Label fx:id="labelCostoChange" layoutX="324.0" layoutY="105.0" prefHeight="25.0" prefWidth="122.0"
+               textFill="#286090">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <Label layoutX="260.0" layoutY="190.0" prefHeight="17.0" prefWidth="65.0" text="Costo/UM:">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <Label fx:id="labelCostoIn" layoutX="326.0" layoutY="186.0" prefHeight="25.0" prefWidth="122.0"
+               textFill="#286090">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <TextArea fx:id="text1" layoutX="23.0" layoutY="139.0" prefHeight="37.0" prefWidth="422.0"/>
+        <TextArea fx:id="text2" layoutX="23.0" layoutY="218.0" prefHeight="27.0" prefWidth="422.0"/>
+        <JFXComboBox fx:id="comboSub" labelFloat="true" layoutX="20.0" layoutY="501.0" prefHeight="25.0"
+                     prefWidth="335.0" promptText="Subespecialidad"/>
+        <TableView fx:id="tableUnidad" layoutX="489.0" layoutY="65.0" prefHeight="455.0" prefWidth="364.0"
+                   stylesheets="@../AccessMigration/tableview.css">
+            <columns>
+                <TableColumn fx:id="uoCode" prefWidth="135.33334350585938" text="Código"/>
+                <TableColumn fx:id="uodescrip" prefWidth="216.0" text="Descripción"/>
+            </columns>
+        </TableView>
+        <JFXButton layoutX="367.0" layoutY="501.0" onAction="#handleCargarUnidadObra" prefHeight="25.0"
+                   prefWidth="109.0" style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Mostrar UO"
+                   textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="BUILDING"/>
+            </graphic>
+        </JFXButton>
+    </children>
+</AnchorPane>

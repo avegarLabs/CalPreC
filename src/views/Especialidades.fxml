@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="483.0" prefWidth="477.0" style="-fx-background-color: #fff;"
+      xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.EspacialidadesController">
+    <children>
+        <AnchorPane prefHeight="484.0" prefWidth="477.0" style="-fx-background-color: #fff;">
+            <children>
+                <Label fx:id="label_title" layoutX="44.0" layoutY="14.0" prefHeight="27.0" prefWidth="319.0"
+                       text="Especialidades">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="7.0" prefWidth="458.0"
+                            style="-fx-background-color: #286090;"/>
+                <FontAwesomeIcon fill="#286090" glyphName="LIST" layoutX="13.0" layoutY="34.0" size="1.8em"
+                                 wrappingWidth="25.399999618530273">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </FontAwesomeIcon>
+                <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="13.0" layoutY="75.0"
+                              onKeyTyped="#keyTypeCode" prefHeight="25.0" prefWidth="137.0" promptText="Código"/>
+                <JFXTextField fx:id="field_descripcion" labelFloat="true" layoutX="10.0" layoutY="128.0"
+                              onAction="#addNewObjetos" prefHeight="30.0" prefWidth="332.0" promptText="Descripción"/>
+                <JFXButton fx:id="btn_add" layoutX="354.0" layoutY="128.0" onAction="#addNewObjetos" prefHeight="30.0"
+                           prefWidth="84.0" style="-fx-background-color: #337ab7;" text="Aceptar" textFill="WHITE">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CHECK"/>
+                    </graphic>
+                </JFXButton>
+                <TableView fx:id="tablaEspecialidades" layoutX="10.0" layoutY="176.0" prefHeight="298.0"
+                           prefWidth="458.0" stylesheets="@../AccessMigration/tableview.css">
+                    <columns>
+                        <TableColumn fx:id="code" prefWidth="75.0" text="Código"/>
+                        <TableColumn fx:id="descripcion" prefWidth="377.0" text="Descripción"/>
+                    </columns>
+                    <contextMenu>
+                        <ContextMenu>
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#handleModificar" text="Modificar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="REFRESH"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleEliminar" text="Eliminar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="CLOSE"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleDuplicarEsp" text="Duplicar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="COPY"/>
+                                    </graphic>
+                                </MenuItem>
+                            </items>
+                        </ContextMenu>
+                    </contextMenu>
+                </TableView>
+                <JFXButton contentDisplay="CENTER" onAction="#handleImportarEsp" layoutX="370.0" layoutY="75.0"
+                           prefHeight="30.0" prefWidth="54.0" style="-fx-border-color: #286090; -fx-border-radius: 10;">
+                    <graphic>
+                        <FontAwesomeIcon fill="#286090" glyphName="DOWNLOAD" size="1.8em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Importar Datos de las especialidades"/>
+                    </tooltip>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

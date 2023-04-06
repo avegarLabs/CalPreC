@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="453.0" prefWidth="644.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ValidarDespachosController">
+    <children>
+        <JFXToolbar layoutX="10.0" layoutY="45.0" prefHeight="13.0" prefWidth="625.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="48.0" layoutY="14.0" prefHeight="27.0" prefWidth="357.0" text="Comprobar Despachos">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="14.0" layoutY="72.0" prefHeight="25.0"
+                      prefWidth="164.0" promptText="No. Vale"/>
+        <Separator layoutX="14.0" layoutY="117.0" prefHeight="7.0" prefWidth="617.0"
+                   style="-fx-background-color: #286090;"/>
+        <JFXButton fx:id="btn_close" layoutX="535.0" layoutY="413.0" onAction="#closeWindow" prefHeight="30.0"
+                   prefWidth="95.0" style="-fx-border-color: #286090; -fx-border-radius: 5;" text="Cancelar"
+                   textFill="#286090">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CLOSE" selectionFill="#286090"/>
+            </graphic>
+        </JFXButton>
+        <FontAwesomeIcon fill="#286090" glyphName="TAGS" layoutX="13.0" layoutY="35.0" size="1.8em"/>
+        <TableView fx:id="tableSum" layoutX="9.0" layoutY="131.0" prefHeight="272.0" prefWidth="625.0">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="117.0" text="Código"/>
+                <TableColumn fx:id="descrip" prefWidth="305.0" text="Descripción"/>
+                <TableColumn fx:id="cant" prefWidth="110.0" text="Cantidad"/>
+                <TableColumn fx:id="state" prefWidth="78.0" text="Estado"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleRechazarUnik" text="Confirmar"/>
+                        <MenuItem mnemonicParsing="false" onAction="#handleModificarCantidad"
+                                  text="Modificar Cantidad"/>
+                        <MenuItem mnemonicParsing="false" onAction="#handleEliminar" text="Eliminar"/>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+        <JFXButton layoutX="185.0" layoutY="72.0" onAction="#handleCargarTable"
+                   style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Buscar">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="SEARCH"/>
+            </graphic>
+        </JFXButton>
+        <JFXButton contentDisplay="CENTER" layoutX="578.0" layoutY="87.0" onAction="#handleValidarTodos"
+                   style="-fx-border-color: #286090; -fx-border-radius: 10;">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CHECK" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Confirmar todos los despachos"/>
+            </tooltip>
+        </JFXButton>
+    </children>
+</AnchorPane>

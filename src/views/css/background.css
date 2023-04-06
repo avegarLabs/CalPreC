@@ -1,0 +1,6 @@
+.anchor {
+    -fx-background-image: url('/images/copia.jpg');
+    -fx-background-position: left top, center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover, auto;
+}

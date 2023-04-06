@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="312.0" prefWidth="439.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.AddUEmpresaController">
+    <children>
+        <JFXToolbar layoutX="7.0" layoutY="37.0" prefHeight="8.0" prefWidth="424.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="37.0" layoutY="11.0" prefHeight="27.0" prefWidth="402.0" text="Empresa">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="reup" labelFloat="true" layoutX="14.0" layoutY="72.0" onAction="#handleDefineEmpresa"
+                      prefHeight="30.0" prefWidth="173.0" promptText="Código"/>
+        <JFXButton layoutX="318.0" layoutY="272.0" onAction="#handleAddEmpresa" prefHeight="29.0" prefWidth="98.0"
+                   style="-fx-background-color: #286090;" text="Aceptar" textFill="WHITE">
+            <font>
+                <Font size="13.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CHECK"/>
+            </graphic>
+        </JFXButton>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="BOOKMARK" layoutX="14.0" layoutY="32.0" selectionFill="#286090"
+                         size="1.8em" wrappingWidth="21.9714298248291"/>
+        <JFXTextArea fx:id="nombre" labelFloat="true" layoutX="14.0" layoutY="116.0" prefHeight="57.0" prefWidth="411.0"
+                     promptText="Nombre"/>
+        <JFXTextField fx:id="comercial" layoutX="14.0" layoutY="203.0" prefHeight="25.0" prefWidth="288.0"
+                      promptText="Nombre Comercial"/>
+    </children>
+</AnchorPane>

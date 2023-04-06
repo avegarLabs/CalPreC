@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="report8" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20"
+              rightMargin="20" topMargin="20" bottomMargin="20" uuid="471a1a0c-40ea-4e31-95f2-4b9c66b38866">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="114" splitType="Stretch">
+            <image>
+                <reportElement x="620" y="0" width="132" height="45" uuid="8102b7eb-e612-40b7-984c-c74bbd529d6f"/>
+                <imageExpression><![CDATA[$P{image}]]></imageExpression>
+            </image>
+            <textField>
+                <reportElement x="0" y="25" width="620" height="20" uuid="93e331e9-a0d6-485b-a912-a0333052e338"/>
+                <textElement textAlignment="Justified">
+                    <font fontName="SansSerif" size="8" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{empresa}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="324" y="55" width="428" height="18" uuid="280926ac-2f39-4fe7-90c7-4cc0f80996e2"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+                    <font size="12" isBold="true" isItalic="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{reportName}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="0" y="45" width="620" height="1" forecolor="#006666"
+                               uuid="a7965181-3e3e-4478-a0aa-3ce63ef13641"/>
+            </line>
+            <textField>
+                <reportElement x="0" y="73" width="555" height="17" uuid="7cc7c66b-c25d-4a0f-9bb9-5a8b127b4b59"/>
+                <textElement textAlignment="Justified">
+                    <font fontName="SansSerif" size="10" isBold="false" isItalic="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Obra: " + $P{obraName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="0" y="92" width="686" height="17" uuid="924f600f-3194-4bbd-8f8c-6f010d2bef99"/>
+                <textElement textAlignment="Justified">
+                    <font fontName="SansSerif" size="10" isBold="false" isItalic="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{inver}]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="36" splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="159" splitType="Stretch"/>
+    </detail>
+    <columnFooter>
+        <band height="36" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="73" splitType="Stretch">
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement x="0" y="47" width="197" height="20" uuid="cf9fd9ac-2c98-4595-aa83-a32bd2b24d26"/>
+                <textElement>
+                    <font size="10" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Fecha de Impresión: " + $P{fecha}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement positionType="FixRelativeToBottom" x="0" y="44" width="752" height="2"
+                               uuid="45703d96-6974-4e95-a56f-c462f4403351"/>
+                <graphicElement>
+                    <pen lineWidth="0.5" lineColor="#999999"/>
+                </graphicElement>
+            </line>
+            <textField>
+                <reportElement x="592" y="47" width="119" height="20" uuid="7cd2ae2d-f536-4004-8f2b-e1278340cdbf"/>
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Pág "+$V{PAGE_NUMBER}+"/"]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement x="711" y="47" width="41" height="20" uuid="5707ad6b-68d2-4da0-b485-d7a088f303e3"/>
+                <textElement>
+                    <font size="10" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="0" y="0" width="752" height="1" uuid="7f205cc1-147f-461d-aac2-ac68668a8067"/>
+            </line>
+            <textField>
+                <reportElement x="0" y="4" width="228" height="30" uuid="e4309695-6995-48ab-9f54-b103ad607497"/>
+                <textElement textAlignment="Justified">
+                    <font isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{conf}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="261" y="4" width="228" height="30" uuid="489b7f15-1032-469b-a990-4eba7dd8e280"/>
+                <textElement textAlignment="Justified">
+                    <font isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{rev}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="524" y="4" width="228" height="30" uuid="13a12a2e-3dac-4d18-bb69-363108226523"/>
+                <textElement textAlignment="Justified">
+                    <font isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{aprub}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+</jasperReport>

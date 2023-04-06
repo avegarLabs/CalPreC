@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="365.0" prefWidth="485.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.NuevoManoController">
+    <children>
+        <JFXToolbar layoutX="11.0" layoutY="45.0" prefHeight="8.0" prefWidth="467.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="52.0" layoutY="14.0" prefHeight="27.0" prefWidth="245.0" text="Nueva Mano de Obra">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="14.0" layoutY="72.0" prefHeight="25.0"
+                      prefWidth="245.0" promptText="Código"/>
+        <JFXTextField fx:id="field_um" labelFloat="true" layoutX="330.0" layoutY="72.0" prefHeight="25.0"
+                      prefWidth="128.0" promptText="UM"/>
+        <JFXTextArea fx:id="text_descripcion" labelFloat="true" layoutX="14.0" layoutY="175.0" prefHeight="45.0"
+                     prefWidth="438.0" promptText="Descripción"/>
+        <JFXTextField fx:id="field_preciomn" labelFloat="true" layoutX="14.0" layoutY="256.0" prefHeight="25.0"
+                      prefWidth="190.0" promptText="Precio MN"/>
+        <!--JFXTextField fx:id="field_preciomlc" labelFloat="true" layoutX="259.0" layoutY="256.0" prefHeight="25.0"
+                      prefWidth="198.0" promptText="Precio MLC"/-->
+        <JFXButton layoutX="23.0" layoutY="314.0" onAction="#addManoAction" prefHeight="30.0" prefWidth="95.0"
+                   style="-fx-background-color: #286090;" text="Agregar" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+            </graphic>
+        </JFXButton>
+        <JFXComboBox fx:id="combo_grupo" labelFloat="true" layoutX="13.0" layoutY="130.0" prefHeight="25.0"
+                     prefWidth="116.0" promptText="Grupo Escala"/>
+        <JFXButton fx:id="btn_close" layoutX="338.0" layoutY="314.0" onAction="#handleClose" prefHeight="30.0"
+                   prefWidth="95.0" style="-fx-background-color: #286090;" text="Cancelar" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CLOSE"/>
+            </graphic>
+        </JFXButton>
+        <FontAwesomeIcon fill="#286090" glyphName="USERS" layoutX="23.0" layoutY="33.0" size="1.8em"/>
+    </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="446.0" prefWidth="722.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.VerDespachosController">
+    <children>
+        <JFXToolbar layoutX="10.0" layoutY="45.0" prefHeight="13.0" prefWidth="698.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="48.0" layoutY="14.0" prefHeight="27.0" prefWidth="357.0" text="Despachos Realizados">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXButton fx:id="btn_close" layoutX="612.0" layoutY="403.0" onAction="#closeWindow" prefHeight="30.0"
+                   prefWidth="95.0" style="-fx-border-color: #286090; -fx-border-radius: 5;" text="Cancelar"
+                   textFill="#286090">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CLOSE" selectionFill="#286090"/>
+            </graphic>
+        </JFXButton>
+        <FontAwesomeIcon fill="#286090" glyphName="SEND" layoutX="13.0" layoutY="35.0" size="1.8em"/>
+        <TableView fx:id="tableSum" layoutX="9.0" layoutY="65.0" prefHeight="331.0" prefWidth="698.0">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="181.0" text="No. Vale"/>
+                <TableColumn fx:id="cant" prefWidth="200.0" text="Cantidad"/>
+                <TableColumn fx:id="date" prefWidth="112.0" text="Fecha"/>
+                <TableColumn fx:id="user" prefWidth="114.0" text="Usuario"/>
+                <TableColumn fx:id="state" prefWidth="65.0" text="Estado"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#tranferirDespachosHandle"
+                                  text="Transferir Despacho"/>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+    </children>
+</AnchorPane>

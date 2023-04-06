@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="517.0" prefWidth="522.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.IndicadoresNormasResumenController">
+    <children>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="11.0" prefWidth="510.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label fx:id="label_title" layoutX="44.0" layoutY="14.0" prefHeight="27.0" prefWidth="320.0"
+               text="Resumen Indicadores">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <FontAwesomeIcon fill="#286090" glyphName="LIST" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <TableView fx:id="tableCodes" layoutX="10.0" layoutY="59.0" prefHeight="408.0" prefWidth="503.0">
+            <columns>
+                <TableColumn fx:id="descripRV" prefWidth="400.0" text="Indicador"/>
+                <TableColumn fx:id="umRV" prefWidth="89.0" text="Volumen"/>
+            </columns>
+        </TableView>
+        <JFXButton fx:id="btn_add" layoutX="308.0" layoutY="476.0" onAction="#actionHandleAction" prefHeight="27.0"
+                   prefWidth="200.0" style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Exportar .xlsx">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="DOWNLOAD"/>
+            </graphic>
+        </JFXButton>
+    </children>
+</AnchorPane>

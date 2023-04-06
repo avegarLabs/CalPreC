@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="287.0" prefWidth="572.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.DesgloseSuministrosController">
+    <children>
+        <TableView fx:id="dataTable" layoutX="5.0" layoutY="63.0" prefHeight="213.0" prefWidth="557.0"
+                   stylesheets="@../AccessMigration/tableview.css" AnchorPane.bottomAnchor="11.0"
+                   AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="63.0">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="88.0" text="Código"/>
+                <TableColumn fx:id="descrip" prefWidth="334.0" text="Descripción"/>
+                <TableColumn fx:id="um" prefWidth="40.0" text="UM"/>
+                <TableColumn fx:id="cant" prefWidth="83.0" text="Cantidad"/>
+            </columns>
+        </TableView>
+        <Label fx:id="label_title" layoutX="38.0" layoutY="14.0" prefHeight="27.0" prefWidth="522.0"
+               AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="12.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="14.0" prefWidth="557.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="9.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="CUBE" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273" AnchorPane.leftAnchor="13.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+    </children>
+</AnchorPane>

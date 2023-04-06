@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="498.0" prefWidth="477.0" style="-fx-background-color: #fff;"
+      xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.NivelesController">
+    <children>
+        <AnchorPane prefHeight="499.0" prefWidth="477.0" style="-fx-background-color: #fff;">
+            <children>
+                <Label fx:id="label_title" layoutX="44.0" layoutY="14.0" prefHeight="27.0" prefWidth="319.0"
+                       text="Nivel">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="7.0" prefWidth="458.0"
+                            style="-fx-background-color: #286090;"/>
+                <FontAwesomeIcon fill="#286090" glyphName="TAG" layoutX="13.0" layoutY="34.0" size="1.8em"
+                                 wrappingWidth="25.399999618530273">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </FontAwesomeIcon>
+                <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="10.0" layoutY="118.0"
+                              onKeyTyped="#keyTypeCode" prefHeight="25.0" prefWidth="125.0" promptText="Código"/>
+                <JFXTextField fx:id="field_descripcion" labelFloat="true" layoutX="10.0" layoutY="167.0"
+                              onAction="#addNewNivel" prefHeight="30.0" prefWidth="352.0" promptText="Descripción"/>
+                <JFXButton fx:id="btn_add" layoutX="371.0" layoutY="167.0" onAction="#addNewNivel" prefHeight="30.0"
+                           prefWidth="92.0" style="-fx-background-color: #337ab7;" text="Aceptar" textFill="WHITE">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+                    </graphic>
+                </JFXButton>
+                <JFXComboBox fx:id="comboListObjetos" labelFloat="true" layoutX="10.0" layoutY="68.0" prefHeight="25.0"
+                             prefWidth="255.0" promptText="Objetos"/>
+                <TableView fx:id="tableNivel" layoutX="10.0" layoutY="216.0" prefHeight="275.0" prefWidth="458.0"
+                           stylesheets="@../AccessMigration/tableview.css">
+                    <columns>
+                        <TableColumn fx:id="codeNivel" prefWidth="75.0" text="Código"/>
+                        <TableColumn fx:id="descripNivel" prefWidth="376.0" text="Descripción"/>
+                    </columns>
+                    <contextMenu>
+                        <ContextMenu>
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#handleModificar" text="Modificar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="REFRESH"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#handleEliminar" text="Eliminar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="CLOSE"/>
+                                    </graphic>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#duplicarNivel" text="Duplicar">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="COPY"/>
+                                    </graphic>
+                                </MenuItem>
+                            </items>
+                        </ContextMenu>
+                    </contextMenu>
+                </TableView>
+                <JFXButton contentDisplay="CENTER" layoutX="391.0" layoutY="118.0" onAction="#importarNivel"
+                           style="-fx-border-color: #286090; -fx-border-radius: 3;">
+                    <graphic>
+                        <FontAwesomeIcon fill="#286090" glyphName="DOWNLOAD" size="1.6em"/>
+                    </graphic>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="277.0" prefWidth="477.0" style="-fx-background-color: #fff;"
+      xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.RenVarianteToUnidadObraUpdateController">
+    <children>
+        <AnchorPane prefHeight="275.0" prefWidth="477.0" style="-fx-background-color: #fff;">
+            <children>
+                <Label layoutX="44.0" layoutY="14.0" prefHeight="27.0" prefWidth="142.0" text="Renglón Variante ">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="7.0" prefWidth="458.0"
+                            style="-fx-background-color: #286090;"/>
+                <FontAwesomeIcon fill="#286090" glyphName="SITEMAP" layoutX="13.0" layoutY="34.0" size="1.8em"
+                                 wrappingWidth="25.399999618530273">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </FontAwesomeIcon>
+                <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="13.0" layoutY="86.0"
+                              onKeyTyped="#keyTypeCode" prefHeight="25.0" prefWidth="142.0" promptText="Código RV"/>
+                <JFXButton fx:id="btn_add" layoutX="76.0" layoutY="231.0" onAction="#handleUpdateRenglonVariante"
+                           prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #337ab7;" text="Modificar"
+                           textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="1.1em"/>
+                    </graphic>
+                </JFXButton>
+                <FontAwesomeIcon fill="#286090" glyphName="SHARE" layoutX="186.0" layoutY="34.0" size="1.3em"
+                                 wrappingWidth="25.399998486042023"/>
+                <Label fx:id="labelUoCode" layoutX="214.0" layoutY="13.0" prefHeight="27.0" prefWidth="246.0">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <JFXTextField fx:id="fieldCant" labelFloat="true" layoutX="214.0" layoutY="86.0"
+                              onAction="#handleUpdateRenglonVariante" onKeyTyped="#keyTypeCode" prefHeight="25.0"
+                              prefWidth="122.0" promptText="Cantidad"/>
+                <TextArea fx:id="textDedscripcion" layoutX="13.0" layoutY="168.0" prefHeight="51.0" prefWidth="452.0"/>
+                <Label layoutX="14.0" layoutY="132.0" prefHeight="17.0" prefWidth="67.0" text="Costo/UM:">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="labelValue" layoutX="81.0" layoutY="132.0" prefHeight="17.0" prefWidth="67.0"/>
+                <JFXCheckBox fx:id="checkTipoCosto" checkedColor="#286090" layoutX="214.0" layoutY="132.0"
+                             onAction="#handleTipoCosto" text="Sin Costo Material">
+                    <font>
+                        <Font name="System Bold Italic" size="12.0"/>
+                    </font>
+                </JFXCheckBox>
+                <JFXButton fx:id="btnSum" contentDisplay="CENTER" layoutX="431.0" layoutY="61.0"
+                           onAction="#handleSumRVView" prefHeight="25.0" prefWidth="32.0" text="`">
+                    <graphic>
+                        <FontAwesomeIcon fill="#286090" glyphName="CUBE" size="1.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Suministros Renglón Variante"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton fx:id="btnHoja" contentDisplay="CENTER" layoutX="429.0" layoutY="99.0"
+                           onAction="#handleHojadeCalculo" prefHeight="25.0" prefWidth="34.0">
+                    <graphic>
+                        <FontAwesomeIcon fill="#286090" glyphName="EDIT" size="1.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Hoja de Cálculo"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton contentDisplay="CENTER" layoutX="157.0" layoutY="88.0" onAction="#handleSearhRenglones"
+                           prefHeight="26.0" prefWidth="25.0">
+                    <graphic>
+                        <FontAwesomeIcon fill="#286090" glyphName="SEARCH" size="1.5em"/>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btn_exit" layoutX="312.0" layoutY="231.0" onAction="#handleCloseRVtoUO"
+                           prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #337ab7;" text="Terminar"
+                           textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.1em"/>
+                    </graphic>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

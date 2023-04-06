@@ -1,0 +1,6 @@
+ene. 26, 2021 3:28:52 P.M. models.CreateLogFile createLogMessage
+INFORMACIÓN: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+abr 03, 2023 2:57:16 P.M. models.CreateLogFile createLogMessage
+GRAVE: Información
+abr 03, 2023 2:57:27 P.M. models.CreateLogFile createLogMessage
+GRAVE: Información

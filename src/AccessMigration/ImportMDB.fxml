@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="524.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="AccessMigration.ImportMDBCController">
+    <children>
+        <TableView fx:id="dataTable" layoutX="5.0" layoutY="231.0" prefHeight="204.0" prefWidth="510.0"
+                   stylesheets="@tableview.css" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="5.0"
+                   AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="231.0">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="88.0" text="Código"/>
+                <TableColumn fx:id="descrip" prefWidth="256.0" text="Descripción"/>
+                <TableColumn fx:id="simil" prefWidth="158.0" text=" Cod. PC Win"/>
+            </columns>
+        </TableView>
+        <Label fx:id="label_title" layoutX="43.0" layoutY="14.0" prefHeight="27.0" prefWidth="517.0"
+               text="Importar Obra del Sistema PC WIN" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="12.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="14.0" prefWidth="510.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="8.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="DATABASE" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273" AnchorPane.leftAnchor="13.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <JFXComboBox fx:id="tipoSelect" labelFloat="true" layoutX="10.0" layoutY="73.0" prefHeight="25.0"
+                     prefWidth="135.0" promptText="Tipo Presupuesto"/>
+        <JFXComboBox fx:id="entidadSelect" labelFloat="true" layoutX="10.0" layoutY="123.0" prefHeight="25.0"
+                     prefWidth="252.0" promptText="Entidad"/>
+        <JFXComboBox fx:id="inversionistaSelect" labelFloat="true" layoutX="10.0" layoutY="171.0" prefHeight="25.0"
+                     prefWidth="252.0" promptText="Inversionista"/>
+        <JFXComboBox fx:id="salarioSelect" labelFloat="true" layoutX="302.0" layoutY="123.0" prefHeight="25.0"
+                     prefWidth="195.0" promptText="Salario"/>
+        <Label layoutX="12.0" layoutY="211.0" prefHeight="17.0" prefWidth="151.0" text="Empresas Constructoras">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Label>
+        <JFXButton fx:id="btn_carga" layoutX="12.0" layoutY="449.0" onAction="#handleImportMDBAction" prefHeight="31.0"
+                   prefWidth="128.0" style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Fichero .mdb"
+                   textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="DATABASE" size="1.1em"/>
+            </graphic>
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXButton>
+        <JFXCheckBox fx:id="checkEstructura" checkedColor="#286090" layoutX="302.0" layoutY="175.0" prefHeight="18.0"
+                     prefWidth="117.0" selected="true" text="Estructura Obra"/>
+    </children>
+</AnchorPane>

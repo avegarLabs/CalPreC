@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="548.0" prefWidth="685.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.TarifasSalarialController">
+    <children>
+        <JFXToolbar layoutX="9.0" layoutY="45.0" prefHeight="3.0" prefWidth="655.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="21.0"/>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="DOLLAR" layoutX="14.0" layoutY="35.0" size="1.8em"/>
+        <Separator layoutX="10.0" layoutY="268.0" prefHeight="3.0" prefWidth="665.0"
+                   style="-fx-background-color: #286090;"/>
+        <Separator layoutX="12.0" layoutY="177.0" prefHeight="3.0" prefWidth="665.0"
+                   style="-fx-background-color: #286090;"/>
+        <Label layoutX="35.0" layoutY="14.0" prefHeight="17.0" prefWidth="373.0" text="Nueva Tarifa Salarial"
+               textFill="#286090">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="codeTarifa" labelFloat="true" layoutX="12.0" layoutY="70.0" promptText="Código"/>
+        <JFXTextArea fx:id="tarDescripcion" labelFloat="true" layoutX="12.0" layoutY="110.0" prefHeight="61.0"
+                     prefWidth="394.0" promptText="Descripción"/>
+        <JFXTextField fx:id="moneda" labelFloat="true" layoutX="185.0" layoutY="70.0" promptText="Moneda"/>
+        <FontAwesomeIcon fill="#286090" glyphName="SLACK" layoutX="14.0" layoutY="210.0" size="1.8em"/>
+        <Label layoutX="43.0" layoutY="192.0" prefHeight="20.0" prefWidth="118.0" text="Grupos Escalas"
+               textFill="#286090">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="grupo" labelFloat="true" layoutX="20.0" layoutY="230.0" promptText="Grupo"/>
+        <JFXTextField fx:id="valor" labelFloat="true" layoutX="337.0" layoutY="231.0" onAction="#addGrupoToList"
+                      prefHeight="25.0" prefWidth="118.0" promptText="Costo Directo($/mes)"/>
+        <JFXButton layoutX="476.0" layoutY="230.0" onAction="#addGrupoToList"
+                   style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Aceptar" textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CHECK"/>
+            </graphic>
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+        <TableView fx:id="tableGroup" layoutX="12.0" layoutY="279.0" prefHeight="217.0" prefWidth="665.0">
+            <columns>
+                <TableColumn fx:id="grupCode" prefWidth="130.0" text="Grupo"/>
+                <TableColumn fx:id="tarifa" prefWidth="123.0" text="Tarifa"/>
+                <TableColumn fx:id="grupValor" prefWidth="123.0" text="costo"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#updateGrupoIntable" text="Modificar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="EDIT"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handleRemoveToTable" text="Eliminar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REMOVE"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+        <JFXButton fx:id="btnUpdate" layoutX="578.0" layoutY="509.0" onAction="#createNewTarifaAction" prefHeight="25.0"
+                   prefWidth="99.0" style="-fx-border-color: #286090; -fx-border-radius: 110;" text="Agregar"
+                   textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="PLUS"/>
+            </graphic>
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+        <JFXTextField fx:id="aEspecial" labelFloat="true" layoutX="434.0" layoutY="58.0" prefHeight="25.0"
+                      prefWidth="99.0" promptText="Aut. Especial(%)"/>
+        <JFXTextField fx:id="antiguedad" labelFloat="true" layoutX="435.0" layoutY="98.0" prefHeight="25.0"
+                      prefWidth="99.0" promptText="Antiguedad(%)"/>
+        <JFXTextField fx:id="vacaciones" labelFloat="true" layoutX="435.0" layoutY="141.0" prefHeight="25.0"
+                      prefWidth="99.0" promptText="Vacaciones(%)"/>
+        <JFXTextField fx:id="nomina" labelFloat="true" layoutX="558.0" layoutY="58.0" prefHeight="25.0" prefWidth="93.0"
+                      promptText="Nomina(%)"/>
+        <JFXTextField fx:id="social" labelFloat="true" layoutX="558.0" layoutY="98.0" prefHeight="25.0" prefWidth="93.0"
+                      promptText="Seg. Social(%)"/>
+        <JFXTextField fx:id="valIni" labelFloat="true" layoutX="179.0" layoutY="231.0" onAction="#calcCostoTarifa"
+                      prefHeight="25.0" prefWidth="118.0" promptText="Tarifa Horaria($/hh)">
+            <tooltip>
+                <Tooltip text="Agregre el valor de la tarifa y presione Enter para calcular el costo del grupo escala"/>
+            </tooltip>
+        </JFXTextField>
+        <JFXTextField fx:id="meses" labelFloat="true" layoutX="555.0" layoutY="141.0" prefHeight="25.0" prefWidth="99.0"
+                      promptText="H/Mes"/>
+        <JFXButton contentDisplay="CENTER" layoutX="362.0" layoutY="55.0" onAction="#actionShowConceptsList"
+                   style="-fx-border-color: #286090; -fx-border-radius: 20;" visible="false">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="PLUS" size="1.8em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Agregar otros conceptos al cálculo de la tarifa"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton contentDisplay="CENTER" layoutX="158.0" layoutY="187.0" onAction="#actionShowGrupoConceptsList"
+                   style="-fx-border-color: #286090; -fx-border-radius: 20;" visible="false">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="PLUS" size="1.8em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Agregar otros conceptos al cálculo de la tarifa"/>
+            </tooltip>
+        </JFXButton>
+    </children>
+</AnchorPane>

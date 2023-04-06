@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="514.0" prefWidth="1042.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.DetalleCertificacionUnidadObra">
+    <children>
+        <JFXToolbar layoutX="3.0" layoutY="45.0" prefHeight="10.0" prefWidth="827.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0"/>
+        <Label fx:id="labelTitle" layoutX="48.0" layoutY="14.0" prefHeight="27.0" prefWidth="950.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="CALENDAR" layoutX="20.0" layoutY="32.0" size="1.8em"
+                         AnchorPane.leftAnchor="20.0"/>
+        <TableView fx:id="tablePlanificacion" layoutX="8.0" layoutY="67.0" prefHeight="441.0" prefWidth="828.0"
+                   stylesheets="@../AccessMigration/tableview.css" AnchorPane.bottomAnchor="6.0"
+                   AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="67.0">
+            <columns>
+                <TableColumn fx:id="cant" prefWidth="69.0" text="Cantidad"/>
+                <TableColumn fx:id="desde" prefWidth="91.0" text="Desde"/>
+                <TableColumn fx:id="hasta" prefWidth="109.0" text="Hasta"/>
+                <TableColumn fx:id="brigada" prefWidth="77.0" text="Brigada"/>
+                <TableColumn fx:id="grupo" prefWidth="75.0" text="Grupo"/>
+                <TableColumn fx:id="cuadrilla" prefWidth="90.0" text="Cuadrilla"/>
+                <TableColumn fx:id="materiales" prefWidth="105.0" text="Cost. Manterial"/>
+                <TableColumn fx:id="mano" prefWidth="102.0" text="Cost. Mano"/>
+                <TableColumn fx:id="equipo" prefWidth="100.0" text="Cost. Equipo"/>
+                <TableColumn fx:id="salario" prefWidth="100.0" text="Salario"/>
+                <!--TableColumn fx:id="salariocuc" prefWidth="100.0" text="Salario CUC"/-->
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#modificarPlan" text="Modificar"/>
+                        <MenuItem mnemonicParsing="false" onAction="#deleteAction" text="Eliminar"/>
+
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+    </children>
+</AnchorPane>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="258.0" prefWidth="388.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.FormulaController">
+    <children>
+        <JFXToolbar layoutY="45.0" prefHeight="11.0" prefWidth="379.0" style="-fx-background-color: #286090;"
+                    AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="7.0"/>
+        <Label fx:id="name" layoutX="46.0" layoutY="14.0" prefHeight="27.0" prefWidth="174.0" text="Concepto de Gastos">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <FontAwesomeIcon fill="#286090" glyphName="BOOK" layoutX="14.0" layoutY="35.0" size="1.8em"/>
+        <JFXButton layoutX="272.0" layoutY="223.0" onAction="#handleAddConcepto" prefHeight="27.0" prefWidth="89.0"
+                   style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Aceptar" textFill="#286090"
+                   AnchorPane.leftAnchor="272.0">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CHECK" selectionFill="#286090"/>
+            </graphic>
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+        <JFXTextField fx:id="conceptField" labelFloat="true" layoutX="14.0" layoutY="79.0" prefHeight="25.0"
+                      prefWidth="357.0" promptText="Concepto"/>
+        <JFXTextField fx:id="coefiField" labelFloat="true" layoutX="14.0" layoutY="128.0" promptText="Coeficiente"/>
+        <JFXTextField fx:id="formulaField" labelFloat="true" layoutX="13.0" layoutY="178.0" prefHeight="25.0"
+                      prefWidth="357.0" promptText="Fórmula"/>
+    </children>
+</AnchorPane>

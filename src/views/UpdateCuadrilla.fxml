@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="332.0" prefWidth="447.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ActualizarCuadrillaController">
+    <children>
+        <JFXToolbar layoutX="8.0" layoutY="46.0" prefHeight="10.0" prefWidth="433.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="41.0" layoutY="14.0" prefHeight="27.0" prefWidth="359.0"
+               text="Actualizar Cuadrilla de Construcción">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="238.0" layoutY="158.0" prefHeight="30.0"
+                      prefWidth="173.0" promptText="Código"/>
+        <JFXTextArea fx:id="text_descripcion" labelFloat="true" layoutX="16.0" layoutY="214.0" prefHeight="65.0"
+                     prefWidth="419.0" promptText="Descripción"/>
+        <JFXButton layoutX="16.0" layoutY="294.0" onAction="#updateCuadrillaAction" prefHeight="27.0" prefWidth="118.0"
+                   style="-fx-background-color: #286090;" text="Actualizar" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="1.3em"/>
+            </graphic>
+        </JFXButton>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <JFXComboBox fx:id="combo_grupo" labelFloat="true" layoutX="15.0" layoutY="155.0" prefHeight="35.0"
+                     prefWidth="198.0" promptText="Grupo"/>
+        <JFXTextField fx:id="field_empresa" labelFloat="true" layoutX="16.0" layoutY="99.0" prefHeight="25.0"
+                      prefWidth="198.0" promptText="Empresa"/>
+        <JFXTextField fx:id="field_brigada" labelFloat="true" layoutX="235.0" layoutY="99.0" prefHeight="25.0"
+                      prefWidth="181.0" promptText="Brigada"/>
+        <FontAwesomeIcon fill="#286090" glyphName="BARS" layoutX="16.0" layoutY="35.0" size="1.8em"/>
+        <JFXButton fx:id="btnClose" layoutX="298.0" layoutY="294.0" onAction="#handleClose" prefHeight="27.0"
+                   prefWidth="118.0" style="-fx-background-color: #286090;" text="Cancelar" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.3em"/>
+            </graphic>
+        </JFXButton>
+    </children>
+</AnchorPane>

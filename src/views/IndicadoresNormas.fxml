@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="454.0" prefWidth="522.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.IndicadoresNormasController">
+    <children>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="11.0" prefWidth="510.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label fx:id="label_title" layoutX="44.0" layoutY="14.0" prefHeight="27.0" prefWidth="125.0" text="Indicador">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <FontAwesomeIcon fill="#286090" glyphName="LIST" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="10.0" layoutY="70.0" prefHeight="27.0"
+                      prefWidth="503.0" promptText="Indicador"/>
+        <TableView fx:id="tableCodes" layoutX="10.0" layoutY="165.0" prefHeight="246.0" prefWidth="503.0">
+            <columns>
+                <TableColumn fx:id="codeRV" prefWidth="102.0" text="Código"/>
+                <TableColumn fx:id="descripRV" prefWidth="319.0" text="Descripción"/>
+                <TableColumn fx:id="umRV" prefWidth="57.0" text="UM"/>
+            </columns>
+        </TableView>
+        <JFXButton fx:id="btn_add" layoutX="405.0" layoutY="420.0" onAction="#addIndicador" prefHeight="25.0"
+                   prefWidth="106.0" style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Aceptar">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CHECK"/>
+            </graphic>
+        </JFXButton>
+        <JFXTextField fx:id="field_code" labelFloat="true" layoutX="10.0" layoutY="122.0" onKeyTyped="#keyTypeCode"
+                      prefHeight="22.0" prefWidth="181.0" promptText="Renglón Constructivo"/>
+        <JFXComboBox fx:id="listResolt" labelFloat="true" layoutX="322.0" layoutY="15.0" prefHeight="25.0"
+                     prefWidth="189.0" promptText="Resolución"/>
+        <JFXButton layoutX="413.0" layoutY="121.0" onAction="#handleListIndicadores" prefHeight="25.0" prefWidth="91.0"
+                   style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Listar">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="LIST"/>
+            </graphic>
+        </JFXButton>
+    </children>
+</AnchorPane>

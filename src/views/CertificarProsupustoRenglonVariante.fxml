@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="592.0" prefWidth="1203.0" style="-fx-background-color: #fff;"
+      xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.CertificarProsupustoRenglonVarianteController">
+    <AnchorPane prefHeight="617.0" prefWidth="1017.0" style="-fx-background-color: #fff;">
+        <children>
+            <Label fx:id="label_title" layoutX="35.0" layoutY="14.0" prefHeight="27.0" prefWidth="383.0"
+                   text="Certificación del mes por Renglones Variantes">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <FontAwesomeIcon fill="#286090" glyphName="TAGS" layoutX="10.0" layoutY="35.0" size="1.8em"/>
+            <JFXToolbar layoutX="10.0" layoutY="43.0" prefHeight="12.0" prefWidth="1182.0"
+                        style="-fx-background-color: #286090;"/>
+            <JFXComboBox fx:id="comboObras" labelFloat="true" layoutX="20.0" layoutY="71.0"
+                         onAction="#handleZonasEmpresa" prefHeight="25.0" prefWidth="318.0" promptText="Obras"/>
+            <JFXComboBox fx:id="comboEmpresas" labelFloat="true" layoutX="368.0" layoutY="71.0" prefHeight="25.0"
+                         prefWidth="318.0" promptText="Empresas"/>
+            <JFXComboBox fx:id="comboObjetos" labelFloat="true" layoutX="20.0" layoutY="131.0" onAction="#handleNivel"
+                         prefHeight="25.0" prefWidth="318.0" promptText="Objetos"/>
+            <JFXComboBox fx:id="comboNivel" labelFloat="true" layoutX="368.0" layoutY="131.0" prefHeight="25.0"
+                         prefWidth="318.0" promptText="Nivel"/>
+            <JFXComboBox fx:id="comboEspecialidad" labelFloat="true" layoutX="705.0" layoutY="131.0"
+                         onAction="#handleSubespecilaidad" prefHeight="25.0" prefWidth="241.0"
+                         promptText="Especialidad"/>
+            <JFXComboBox fx:id="comboSubespecialidad" labelFloat="true" layoutX="966.0" layoutY="131.0"
+                         onAction="#handleCargarUnidades" prefHeight="25.0" prefWidth="218.0"
+                         promptText="Subespecialidad"/>
+            <Separator layoutX="14.0" layoutY="170.0" prefHeight="4.0" prefWidth="1182.0"
+                       style="-fx-background-color: #286090;"/>
+            <TableView fx:id="tableUnidades" layoutX="14.0" layoutY="181.0" prefHeight="402.0" prefWidth="1182.0"
+                       stylesheets="@../AccessMigration/tableview.css">
+                <columns>
+                    <TableColumn fx:id="codeFirld" prefWidth="121.0" text="Código"/>
+                    <TableColumn fx:id="descripField" prefWidth="511.0" text="Descripción"/>
+                </columns>
+                <contextMenu>
+                    <ContextMenu>
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#handleNewCertificacion"
+                                      text="Crear Certificación">
+                                <graphic>
+                                    <FontAwesomeIcon glyphName="PLUS"/>
+                                </graphic>
+                            </MenuItem>
+                        </items>
+                    </ContextMenu>
+                </contextMenu>
+            </TableView>
+            <JFXComboBox fx:id="comboZonas" labelFloat="true" layoutX="703.0" layoutY="71.0" onAction="#handleObjetos"
+                         prefHeight="25.0" prefWidth="241.0" promptText="Zonas"/>
+        </children>
+    </AnchorPane>
+</VBox>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="498.0" prefWidth="927.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.DetalleCertificarRenglonVarianteRecursoController">
+    <children>
+        <JFXToolbar layoutX="3.0" layoutY="45.0" prefHeight="11.0" prefWidth="919.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label fx:id="labelTitle" layoutX="48.0" layoutY="14.0" prefHeight="27.0" prefWidth="473.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="TAGS" layoutX="20.0" layoutY="32.0" size="1.8em"/>
+        <TableView fx:id="tablePlanificacionMateriales" layoutX="10.0" layoutY="64.0" prefHeight="426.0"
+                   prefWidth="912.0" stylesheets="@../AccessMigration/tableview.css">
+            <columns>
+                <TableColumn fx:id="codigoNateriales" prefWidth="132.0" text="Código"/>
+                <TableColumn fx:id="descr" prefWidth="341.0" text="Descripción"/>
+                <TableColumn fx:id="um" prefWidth="53.0" text="U/M"/>
+                <TableColumn fx:id="cant" prefWidth="81.0" text="Cant."/>
+                <TableColumn fx:id="cost" prefWidth="96.0" text="Costo"/>
+                <TableColumn fx:id="finic" prefWidth="95.0" text="F. Inicio"/>
+                <TableColumn fx:id="ffi" prefWidth="106.0" text="F. Fin"/>
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

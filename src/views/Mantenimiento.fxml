@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="264.0" maxWidth="357.0" minHeight="264.0" minWidth="357.0"
+            prefHeight="264.0" prefWidth="357.0" style="-fx-background-color: #ffff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.MantenimientoController">
+    <children>
+        <JFXButton fx:id="btnAction" layoutX="98.0" layoutY="217.0" onAction="#DBMantenimiento" prefHeight="25.0"
+                   prefWidth="175.0" style="-fx-background-color: #286090;" text="Aceptar" textFill="WHITE">
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CHECK"/>
+            </graphic>
+        </JFXButton>
+        <Accordion/>
+        <JFXToolbar layoutX="8.0" layoutY="43.0" prefHeight="11.0" prefWidth="342.0"
+                    style="-fx-background-color: #286090;"/>
+        <FontAwesomeIcon fill="#286090" glyphName="ROCKET" layoutX="14.0" layoutY="31.0" size="1.8em"/>
+        <Label layoutX="41.0" layoutY="8.0" prefHeight="32.0" prefWidth="272.0" text="Mantenimiento a la Base de Datos">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Label>
+        <JFXCheckBox fx:id="checDuplicates" layoutX="14.0" layoutY="76.0" text="Elementos Duplicados">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </JFXCheckBox>
+    </children>
+</AnchorPane>

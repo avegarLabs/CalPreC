@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="193.0" prefWidth="438.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.LocalizarOptionsController">
+    <children>
+        <Label fx:id="label_title" layoutX="42.0" layoutY="14.0" prefHeight="27.0" prefWidth="384.0"
+               text="Localizar componentes del presupuesto" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="12.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="10.0" prefWidth="424.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="8.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="SEARCH" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273" AnchorPane.leftAnchor="13.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <JFXCheckBox fx:id="checkSum" checkedColor="#286090" layoutX="14.0" layoutY="76.0" text="Suministro"/>
+        <JFXCheckBox fx:id="checkInsumo" checkedColor="#dff0d8" layoutX="171.0" layoutY="76.0" prefHeight="18.0"
+                     prefWidth="82.0" text="Insumos" visible="false"/>
+        <JFXCheckBox fx:id="checkRvar" checkedColor="#e4b9b9" layoutX="308.0" layoutY="76.0" text="Renglón Variante"/>
+        <JFXTextField fx:id="fielSearch" labelFloat="true" layoutX="14.0" layoutY="123.0" prefHeight="25.0"
+                      prefWidth="323.0"/>
+        <JFXButton fx:id="btnExecute" layoutX="345.0" layoutY="123.0" onAction="#handleGetSuministros" prefHeight="25.0"
+                   prefWidth="64.0" style="-fx-border-color: #286090; -fx-border-radius: 10;" text="OK"
+                   textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CHECK"/>
+            </graphic>
+        </JFXButton>
+    </children>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="430.0" prefWidth="505.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.NuevoSuministroFromBajoRVUpdateControllerAdd">
+    <children>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="8.0" prefWidth="495.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="51.0" layoutY="14.0" prefHeight="27.0" prefWidth="170.0" text="Nuevo Suministro">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="14.0" layoutY="72.0" prefHeight="25.0"
+                      prefWidth="272.0" promptText="Código"/>
+        <JFXTextField fx:id="field_um" labelFloat="true" layoutX="330.0" layoutY="72.0" promptText="UM"/>
+        <JFXTextArea fx:id="text_descripcion" labelFloat="true" layoutX="14.0" layoutY="123.0" prefHeight="55.0"
+                     prefWidth="452.0" promptText="Descripción"/>
+        <JFXTextField fx:id="field_peso" labelFloat="true" layoutX="365.0" layoutY="213.0" prefHeight="25.0"
+                      prefWidth="101.0" promptText="Peso"/>
+        <JFXTextField fx:id="field_precioTotal" labelFloat="true" layoutX="22.0" layoutY="213.0" prefHeight="25.0"
+                      prefWidth="101.0" promptText="Precio Total"/>
+        <!--JFXTextField fx:id="field_preciomlc" labelFloat="true" layoutX="190.0" layoutY="213.0" prefHeight="25.0"
+                      prefWidth="101.0" promptText="Precio MLC"/-->
+        <JFXTextField fx:id="text_mermaprod" labelFloat="true" layoutX="22.0" layoutY="274.0" prefHeight="25.0"
+                      prefWidth="183.0" promptText="Merma Producción"/>
+        <JFXTextField fx:id="text_manipulacion" labelFloat="true" layoutX="269.0" layoutY="274.0" prefHeight="25.0"
+                      prefWidth="198.0" promptText="Merma Manipulación"/>
+        <JFXTextField fx:id="text_transporte" labelFloat="true" layoutX="22.0" layoutY="324.0" prefHeight="25.0"
+                      prefWidth="183.0" promptText="Merma Transposte"/>
+        <JFXTextField fx:id="text_otras" labelFloat="true" layoutX="271.0" layoutY="324.0" prefHeight="25.0"
+                      prefWidth="198.0" promptText="Otras Mermas"/>
+        <JFXButton fx:id="btn_add" layoutX="385.0" layoutY="375.0" onAction="#addSuministroAction" prefHeight="30.0"
+                   prefWidth="81.0" style="-fx-background-color: #286090;" text="Salvar" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+            </graphic>
+        </JFXButton>
+        <FontAwesomeIcon fill="#286090" glyphName="CUBE" layoutX="22.0" layoutY="35.0" size="1.8em"
+                         wrappingWidth="21.600000381469727"/>
+    </children>
+</AnchorPane>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="548.0" prefWidth="685.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ConceptTarifasSalarialUpdateController">
+    <children>
+        <JFXToolbar layoutX="9.0" layoutY="45.0" prefHeight="3.0" prefWidth="655.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="21.0"/>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="DOLLAR" layoutX="14.0" layoutY="35.0" size="1.8em"/>
+        <Separator layoutX="10.0" layoutY="175.0" prefHeight="3.0" prefWidth="665.0"
+                   style="-fx-background-color: #286090;"/>
+        <Label layoutX="35.0" layoutY="14.0" prefHeight="17.0" prefWidth="373.0"
+               text="COSTOS EN EL PAIS MERCADO OBJETIVO"
+               textFill="#286090">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextArea fx:id="tarDescripcion" labelFloat="true" layoutX="14.0" layoutY="66.0" prefHeight="50.0"
+                     prefWidth="647.0" promptText="Descripción"/>
+        <JFXTextField fx:id="moneda" labelFloat="true" layoutX="12.0" layoutY="136.0" promptText="Monto"/>
+        <JFXButton layoutX="173.0" layoutY="135.0" onAction="#createNewTarifaAction"
+                   style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Aceptar" textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CHECK"/>
+            </graphic>
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+        <TableView fx:id="tableGroup" layoutX="12.0" layoutY="184.0" prefHeight="348.0" prefWidth="665.0">
+            <columns>
+                <TableColumn fx:id="grupCode" prefWidth="538.0" text="Descripción"/>
+                <TableColumn fx:id="grupValor" prefWidth="104.0" text="Valor"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#updateGrupoIntable" text="Modificar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="EDIT"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handleRemoveToTable" text="Eliminar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REMOVE"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+        <JFXButton fx:id="btnUpdate" contentDisplay="CENTER" layoutX="623.0" layoutY="15.0" onAction="#closeWindows"
+                   prefHeight="27.0" prefWidth="40.0" style="-fx-border-color: #286090; -fx-border-radius: 20;">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CLOSE" size="1.2em"/>
+            </graphic>
+        </JFXButton>
+    </children>
+</AnchorPane>

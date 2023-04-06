@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.GrupoConstruccionController">
+    <children>
+        <Label fx:id="label_title" layoutX="38.0" layoutY="14.0" prefHeight="27.0" prefWidth="1021.0"
+               text="Grupo de Construcción" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="10.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="filter" labelFloat="true" layoutX="795.0" layoutY="77.0" prefHeight="25.0"
+                      prefWidth="261.0" promptText="Código o Descripción" AnchorPane.rightAnchor="13.0"/>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="9.0" prefWidth="1056.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="TH" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <JFXButton fx:id="btn_add" layoutX="14.0" layoutY="75.0" onAction="#handleButtonAction" prefHeight="30.0"
+                   prefWidth="92.0" style="-fx-background-color: #337ab7;" text="Agregar" textFill="WHITE"
+                   AnchorPane.leftAnchor="14.0">
+            <font>
+                <Font size="13.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+            </graphic>
+        </JFXButton>
+        <TableView fx:id="dataTable_grupo" layoutX="10.0" layoutY="116.0" prefHeight="487.0" prefWidth="1046.0"
+                   stylesheets="@../AccessMigration/tableview.css" AnchorPane.bottomAnchor="14.0"
+                   AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="116.0">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="75.0" text="Código"/>
+                <TableColumn fx:id="descrip" prefWidth="677.0" text="Descripción"/>
+                <TableColumn fx:id="brigag" prefWidth="146.0" text="Brigada"/>
+                <TableColumn fx:id="empresa" prefWidth="154.0" text="Empresa"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem fx:id="option1" mnemonicParsing="false" onAction="#handleGrupoUpdateAction"
+                                  text="Actualizar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REFRESH"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="option2" mnemonicParsing="false" onAction="#handleGrupoDeleteAction"
+                                  text="Eliminar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REMOVE"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="option21" mnemonicParsing="false" onAction="#handleCambiarOperaciones"
+                                  text="Operaciones">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="EXCHANGE"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+    </children>
+</AnchorPane>

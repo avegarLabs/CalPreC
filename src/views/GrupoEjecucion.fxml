@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--suppress ALL -->
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.GrupoEjecucionController">
+    <children>
+        <Label fx:id="label_title" layoutX="42.0" layoutY="14.0" prefHeight="27.0" prefWidth="1018.0"
+               text="Grupo de Ejecución" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="14.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="filter" labelFloat="true" layoutX="795.0" layoutY="114.0" prefHeight="25.0"
+                      prefWidth="262.0" promptText="Código o Descripción" AnchorPane.rightAnchor="17.0"/>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="10.0" prefWidth="1063.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="5.0"/>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="12.0" layoutY="69.0" prefHeight="22.0"
+                      prefWidth="210.0" promptText="Código" AnchorPane.leftAnchor="12.0"/>
+        <JFXTextField fx:id="field_descripcion" labelFloat="true" layoutX="12.0" layoutY="109.0" prefHeight="30.0"
+                      prefWidth="456.0" promptText="Descripción" AnchorPane.leftAnchor="12.0"/>
+        <JFXButton fx:id="btn_add" layoutX="478.0" layoutY="112.0" onAction="#newGrupoEjecucionAction" prefHeight="30.0"
+                   prefWidth="92.0" style="-fx-background-color: #337ab7;" text="Agregar" textFill="WHITE">
+            <font>
+                <Font size="13.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+            </graphic>
+        </JFXButton>
+        <FontAwesomeIcon fill="#286090" glyphName="STEAM" layoutX="14.0" layoutY="35.0" size="1.8em"
+                         wrappingWidth="15.428571701049805" AnchorPane.leftAnchor="14.0"/>
+        <TableView fx:id="dataTable_grupoejecucion" layoutX="11.0" layoutY="152.0" prefHeight="459.0" prefWidth="1050.0"
+                   stylesheets="@../AccessMigration/tableview.css" AnchorPane.bottomAnchor="6.0"
+                   AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="152.0">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="75.0" text="Código"/>
+                <TableColumn fx:id="descrip" prefWidth="970.0" text="Descripción"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem fx:id="option1" mnemonicParsing="false" onAction="#handleGrupoEjecucionUpdateAction"
+                                  text="Actualizar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REFRESH"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="option2" mnemonicParsing="false" onAction="#handleGrupoEjecucionDeleteAction"
+                                  text="Eliminar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="CLOSE"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+    </children>
+</AnchorPane>

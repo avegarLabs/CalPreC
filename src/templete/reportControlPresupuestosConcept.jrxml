@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="report2" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20"
+              rightMargin="20" topMargin="20" bottomMargin="20" uuid="eac35197-3cb8-43b0-9ef3-6b226098466a">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+    <style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+    <style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+    <style name="Detail" fontName="Arial" fontSize="12"/>
+    <style name="table">
+        <box>
+            <pen lineWidth="1.0" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table_TH" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table_CH" mode="Opaque" backcolor="#FFBFBF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 1">
+        <box>
+            <pen lineWidth="1.0" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <parameter name="obraName" class="java.lang.String"/>
+    <parameter name="fecha" class="java.lang.String"/>
+    <parameter name="empresa" class="java.lang.String"/>
+    <parameter name="comercial" class="java.lang.String"/>
+    <group name="Group1">
+        <groupExpression><![CDATA[(int)($V{REPORT_COUNT}/15)]]></groupExpression>
+        <groupHeader>
+            <band height="40"/>
+        </groupHeader>
+        <groupFooter>
+            <band height="45"/>
+        </groupFooter>
+    </group>
+    <group name="Group2">
+        <groupExpression><![CDATA[(int)($V{REPORT_COUNT}/5)]]></groupExpression>
+        <groupHeader>
+            <band height="30"/>
+        </groupHeader>
+    </group>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="140" splitType="Stretch">
+            <staticText>
+                <reportElement style="Title" x="11" y="58" width="791" height="22"
+                               uuid="60122323-80d8-4439-af24-6c2ea9d13c51"/>
+                <box topPadding="0" bottomPadding="5">
+                    <pen lineStyle="Dashed"/>
+                    <topPen lineStyle="Dashed"/>
+                    <leftPen lineStyle="Dashed"/>
+                    <bottomPen lineStyle="Dashed"/>
+                    <rightPen lineStyle="Dashed"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="13"/>
+                </textElement>
+                <text><![CDATA[Versiones del Presupuesto]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="0" y="75" width="569" height="17" uuid="d4ea293b-67d6-4022-bd29-1c2d5781da71"/>
+                <textElement textAlignment="Justified">
+                    <font fontName="Arial" size="12" isBold="true" isItalic="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Obra : " + $P{obraName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="0" y="23" width="460" height="20" uuid="f93f7a98-42f3-4e1a-a910-f4a16249e33a"/>
+                <textElement textAlignment="Justified">
+                    <font fontName="Arial" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{empresa}]]></textFieldExpression>
+            </textField>
+            <image>
+                <reportElement x="440" y="1" width="113" height="45" uuid="a8b67ecd-8929-4a39-b470-7bca55db62d1"/>
+                <imageExpression><![CDATA[$P{image}]]></imageExpression>
+            </image>
+            <line>
+                <reportElement x="0" y="40" width="433" height="1" forecolor="#006666"
+                               uuid="58410be1-dd14-4f4a-9027-daf24ee108bc"/>
+            </line>
+        </band>
+    </title>
+    <pageHeader>
+        <band splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="32" splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="45" splitType="Stretch"/>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch">
+            <line>
+                <reportElement positionType="FixRelativeToBottom" x="0" y="0" width="802" height="4"
+                               uuid="ee6b15ae-3897-42c6-858a-c82b0e5adfe8"/>
+                <graphicElement>
+                    <pen lineWidth="0.5" lineColor="#999999"/>
+                </graphicElement>
+            </line>
+        </band>
+    </columnFooter>
+    <pageFooter>
+        <band height="20" splitType="Stretch">
+            <textField>
+                <reportElement style="Column header" x="682" y="0" width="80" height="20"
+                               uuid="9c82a69a-dcf2-409e-addb-672d87c88de7"/>
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Pág "+$V{PAGE_NUMBER}+"/"]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement style="Column header" x="762" y="0" width="40" height="20"
+                               uuid="aae5ef86-6e1a-452e-9887-a5f0f3a612f3"/>
+                <textElement>
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement style="Column header" x="0" y="0" width="197" height="20"
+                               uuid="0aadd4dc-d975-4daa-aef1-c2d41939efb6"/>
+                <textElement>
+                    <font size="10" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Fecha de Impresión: " + $P{fecha}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+    <summary>
+        <band splitType="Stretch"/>
+    </summary>
+</jasperReport>

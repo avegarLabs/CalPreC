@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="326.0" prefWidth="515.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ImportarCatalogoController">
+    <children>
+        <JFXToolbar layoutX="10.0" layoutY="46.0" prefHeight="7.0" prefWidth="495.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="39.0" layoutY="14.0" prefHeight="27.0" prefWidth="359.0" text="Nuevo Catálogo de Normas">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXButton layoutX="375.0" layoutY="72.0" onAction="#handleActionDeclareCatalogo" prefHeight="27.0"
+                   prefWidth="118.0" style="-fx-background-color: #286090;" text="Aceptar" textFill="WHITE"
+                   AnchorPane.rightAnchor="22.0">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CHECK"/>
+            </graphic>
+        </JFXButton>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="BOOK" layoutX="16.0" layoutY="35.0" size="1.8em"/>
+        <JFXTextField fx:id="catalogo" labelFloat="true" layoutX="18.0" layoutY="74.0" prefHeight="25.0"
+                      prefWidth="349.0" promptText="Nombre"/>
+        <JFXButton fx:id="btnClose" layoutX="166.0" layoutY="279.0" onAction="#handleFileChargeAction" prefHeight="30.0"
+                   prefWidth="177.0" style="-fx-background-color: #286090;" text="Seleccionar Fichero" textFill="WHITE"
+                   AnchorPane.leftAnchor="166.0" AnchorPane.rightAnchor="172.0">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="FILE"/>
+            </graphic>
+        </JFXButton>
+        <Separator layoutX="18.0" layoutY="122.0" prefHeight="0.0" prefWidth="482.0"
+                   style="-fx-background-color: #286090;"/>
+        <JFXCheckBox fx:id="chInsumos" disable="true" layoutX="26.0" layoutY="149.0" text="Insumos">
+            <tooltip>
+                <Tooltip
+                        text="Seleccione el fichero que contienen los Insumos utilizando el botón &quot;Seleccionar Fichero&quot;"/>
+            </tooltip>
+        </JFXCheckBox>
+        <JFXCheckBox fx:id="chJuegos" disable="true" layoutX="134.0" layoutY="149.0" text="Juego de Productos">
+            <tooltip>
+                <Tooltip
+                        text="Seleccione el fichero que contiene los Juegos de Productos utilizando el botón &quot;Seleccionar Fichero&quot;"/>
+            </tooltip>
+        </JFXCheckBox>
+        <JFXCheckBox fx:id="chSemielaborados" disable="true" layoutX="298.0" layoutY="149.0" prefHeight="18.0"
+                     prefWidth="149.0" text="Rec. Semielaborados">
+            <tooltip>
+                <Tooltip
+                        text="Seleccione el fichero que contiene los Suministros Semielaborados utilizando el botón &quot;Seleccionar Fichero&quot;"/>
+            </tooltip>
+        </JFXCheckBox>
+        <JFXCheckBox fx:id="chCompJuegos" disable="true" layoutX="134.0" layoutY="185.0" text="Comp. Juego Producto">
+            <tooltip>
+                <Tooltip
+                        text="Seleccione el fichero que contiene la composición de los Juegos de Productos utilizando el botón &quot;Seleccionar Fichero&quot;"/>
+            </tooltip>
+        </JFXCheckBox>
+        <JFXCheckBox fx:id="chCompSemi" disable="true" layoutX="298.0" layoutY="185.0" text="Comp. Semielaborados">
+            <tooltip>
+                <Tooltip
+                        text="Seleccione el fichero que contiene la composición de los Semielaborados utilizando el botón &quot;Seleccionar Fichero&quot;"/>
+            </tooltip>
+        </JFXCheckBox>
+        <Separator layoutX="18.0" layoutY="213.0" prefHeight="0.0" prefWidth="482.0"
+                   style="-fx-background-color: #286090;"/>
+        <JFXCheckBox fx:id="chRenglones" disable="true" layoutX="26.0" layoutY="233.0" text="Renglones Constructivos">
+            <tooltip>
+                <Tooltip
+                        text="Seleccione el fichero que contiene los Renglones Constructivos utilizando el botón &quot;Seleccionar Fichero&quot;"/>
+            </tooltip>
+        </JFXCheckBox>
+        <JFXCheckBox fx:id="chCompRenglones" disable="true" layoutX="221.0" layoutY="233.0" text="Comp. Renglones ">
+            <tooltip>
+                <Tooltip
+                        text="Seleccione el fichero que contiene la composición de los Renglones Constructivos utilizando el botón &quot;Seleccionar Fichero&quot;"/>
+            </tooltip>
+        </JFXCheckBox>
+        <Separator layoutX="18.0" layoutY="262.0" prefHeight="0.0" prefWidth="482.0"
+                   style="-fx-background-color: #286090;"/>
+    </children>
+</AnchorPane>

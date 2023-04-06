@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="563.0" prefWidth="453.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.MoverCertificacionGrupoConstruccionController">
+    <children>
+        <JFXToolbar layoutX="10.0" layoutY="45.0" prefHeight="11.0" prefWidth="430.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="43.0" layoutY="14.0" prefHeight="27.0" prefWidth="393.0"
+               text="Cambiar Operaciones en  Grupo de Construcción">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXButton layoutX="43.0" layoutY="519.0" onAction="#handeleUpdateAction" prefHeight="30.0" prefWidth="99.0"
+                   style="-fx-background-color: #286090;" text="Aceptar" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="1.3em" wrappingWidth="21.600000381469727"/>
+            </graphic>
+        </JFXButton>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <JFXComboBox fx:id="combo_grupo" labelFloat="true" layoutX="17.0" layoutY="378.0" prefHeight="30.0"
+                     prefWidth="424.0" promptText="Cambiar al Grupo"/>
+        <JFXButton fx:id="btnClose" layoutX="284.0" layoutY="519.0" onAction="#handleClose" prefHeight="30.0"
+                   prefWidth="111.0" style="-fx-background-color: #286090;" text="Cancelar" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.3em" wrappingWidth="21.600000381469727"/>
+            </graphic>
+        </JFXButton>
+        <FontAwesomeIcon fill="#286090" glyphName="TH" layoutX="16.0" layoutY="35.0" size="1.8em"/>
+        <JFXCheckBox fx:id="checkPlan" layoutX="316.0" layoutY="87.0" selected="true" text="Plan"/>
+        <JFXCheckBox fx:id="checkCertifocacion" layoutX="316.0" layoutY="121.0" selected="true" text="Certificación"/>
+        <JFXCheckBox fx:id="checkIntervalo" layoutX="18.0" layoutY="429.0" text="Intervalo de Tiempo"/>
+        <Separator layoutX="12.0" layoutY="455.0" prefHeight="0.0" prefWidth="430.0"
+                   style="-fx-background-color: #286090;"/>
+        <JFXDatePicker fx:id="dateIni" defaultColor="#286090" disable="true" layoutX="27.0" layoutY="465.0"
+                       promptText="Desde"/>
+        <JFXDatePicker fx:id="dateFin" defaultColor="#286090" disable="true" layoutX="254.0" layoutY="465.0"
+                       promptText="Hasta"/>
+        <JFXComboBox fx:id="combo_obras" labelFloat="true" layoutX="17.0" layoutY="71.0" onAction="#handlegetZonas"
+                     prefHeight="25.0" prefWidth="266.0" promptText="Obras"/>
+        <JFXComboBox fx:id="combo_brigada" labelFloat="true" layoutX="17.0" layoutY="332.0"
+                     onAction="#handleChangeGrupo" prefHeight="25.0" prefWidth="275.0"
+                     promptText="Cambiar a la Brigada"/>
+        <JFXComboBox fx:id="selectZonas" labelFloat="true" layoutX="17.0" layoutY="117.0" onAction="#hendleGetObjetos"
+                     prefHeight="25.0" prefWidth="266.0" promptText="Zonas"/>
+        <JFXComboBox fx:id="selectObjetos" labelFloat="true" layoutX="17.0" layoutY="158.0" onAction="#handleGetNiveles"
+                     prefHeight="25.0" prefWidth="352.0" promptText="Objetos"/>
+        <JFXComboBox fx:id="selectNivel" labelFloat="true" layoutX="17.0" layoutY="203.0" prefHeight="25.0"
+                     prefWidth="417.0" promptText="Nivel"/>
+        <JFXComboBox fx:id="selectEspecialidad" labelFloat="true" layoutX="17.0" layoutY="241.0"
+                     onAction="#handleGetSubespecialidad" prefHeight="25.0" prefWidth="424.0"
+                     promptText="Especialidad"/>
+        <JFXComboBox fx:id="selectSubespecialidad" labelFloat="true" layoutX="17.0" layoutY="282.0" prefHeight="25.0"
+                     prefWidth="424.0" promptText="Subespecialidad"/>
+    </children>
+</AnchorPane>

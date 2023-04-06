@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="654.0" prefWidth="1230.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.CertificacionObrasController">
+    <children>
+        <Label fx:id="label_title" layoutX="40.0" layoutY="14.0" prefHeight="27.0" prefWidth="350.0"
+               text="Certificación del mes por unidades de obra">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <FontAwesomeIcon fill="#286090" glyphName="TAGS" layoutX="10.0" layoutY="35.0" size="1.8em"/>
+        <JFXToolbar layoutX="10.0" layoutY="43.0" prefHeight="12.0" prefWidth="1215.0"
+                    style="-fx-background-color: #286090;"/>
+        <JFXComboBox fx:id="comboObras" labelFloat="true" layoutX="20.0" layoutY="71.0" onAction="#handleZonasEmpresa"
+                     prefHeight="25.0" prefWidth="318.0" promptText="Obras"/>
+        <JFXComboBox fx:id="comboEmpresas" labelFloat="true" layoutX="368.0" layoutY="71.0"
+                     onAction="#handleCargarBrigadaAndGrupo" prefHeight="25.0" prefWidth="318.0" promptText="Empresas"/>
+        <JFXComboBox fx:id="comboObjetos" labelFloat="true" layoutX="20.0" layoutY="125.0" onAction="#handleNivel"
+                     prefHeight="25.0" prefWidth="318.0" promptText="Objetos"/>
+        <JFXComboBox fx:id="comboNivel" labelFloat="true" layoutX="368.0" layoutY="125.0" prefHeight="25.0"
+                     prefWidth="318.0" promptText="Nivel"/>
+        <JFXComboBox fx:id="comboEspecialidad" labelFloat="true" layoutX="705.0" layoutY="125.0"
+                     onAction="#handleSubespecilaidad" prefHeight="25.0" prefWidth="241.0" promptText="Especialidad"/>
+        <JFXComboBox fx:id="comboSubespecialidad" labelFloat="true" layoutX="966.0" layoutY="125.0"
+                     onAction="#handleCargarUnidades" prefHeight="25.0" prefWidth="255.0" promptText="Subespecialidad"/>
+        <Separator layoutX="14.0" layoutY="206.0" prefHeight="4.0" prefWidth="1182.0"
+                   style="-fx-background-color: #286090;"/>
+        <TableView fx:id="tableUnidades" layoutX="14.0" layoutY="206.0" prefHeight="435.0" prefWidth="1208.0"
+                   stylesheets="@../AccessMigration/tableview.css">
+            <columns>
+                <TableColumn fx:id="codeFirld" prefWidth="121.0" text="Código"/>
+                <TableColumn fx:id="descripField" prefWidth="511.0" text="Descripción"/>
+                <TableColumn fx:id="umField" minWidth="0.0" prefWidth="62.0" text="UM"/>
+                <TableColumn fx:id="presupField" prefWidth="105.0" text="C. Presup"/>
+                <TableColumn fx:id="cant" prefWidth="132.0" text="Cantidad"/>
+                <TableColumn fx:id="certifField" prefWidth="132.0" text="C. Certificado"/>
+                <TableColumn fx:id="disponible" prefWidth="103.0" text="Disponible"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleNewCertificacion" text="Revisar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="LIST"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+        <JFXComboBox fx:id="comboZonas" labelFloat="true" layoutX="703.0" layoutY="71.0" onAction="#handleObjetos"
+                     prefHeight="25.0" prefWidth="241.0" promptText="Zonas"/>
+        <JFXComboBox fx:id="comboBrigada" labelFloat="true" layoutX="20.0" layoutY="172.0"
+                     onAction="#handleLlenaGrupoList" prefHeight="25.0" prefWidth="247.0" promptText="Brigada"/>
+        <JFXComboBox fx:id="comboGrupo" labelFloat="true" layoutX="287.0" layoutY="172.0" prefHeight="25.0"
+                     prefWidth="247.0" promptText="Grupo"/>
+        <JFXDatePicker fx:id="dateDesde" defaultColor="#286090" layoutX="846.0" layoutY="171.0"
+                       onAction="#handleCargarUnidades" prefHeight="22.0" prefWidth="171.0"/>
+        <JFXDatePicker fx:id="dateHasta" defaultColor="#286090" layoutX="1045.0" layoutY="171.0"
+                       onAction="#handleCargarUnidades"/>
+        <JFXComboBox fx:id="comboCuadrilla" disable="true" labelFloat="true" layoutX="580.0" layoutY="172.0"
+                     prefHeight="25.0" prefWidth="247.0" promptText="Cuadrillas"/>
+        <JFXCheckBox fx:id="checkCuadrilla" layoutX="542.0" layoutY="176.0">
+            <tooltip>
+                <Tooltip text="Seleccionar para activar el campo cuadrilla"/>
+            </tooltip>
+        </JFXCheckBox>
+        <JFXButton contentDisplay="CENTER" layoutX="1154.0" layoutY="71.0" onAction="#reloadPlan" prefHeight="25.0"
+                   prefWidth="63.0" style="-fx-border-color: #286090; -fx-border-radius: 0  20 0 20;">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="REFRESH" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Ajuster datos de las Certificaciones"/>
+            </tooltip>
+        </JFXButton>
+    </children>
+</AnchorPane>

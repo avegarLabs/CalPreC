@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="174.0" prefWidth="382.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.TransferirCantidadController">
+    <children>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="9.0" prefWidth="368.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label fx:id="label_title" layoutX="44.0" layoutY="14.0" prefHeight="27.0" prefWidth="325.0"
+               text="Transferir a">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <FontAwesomeIcon fill="#286090" glyphName="SEND" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="10.0" layoutY="71.0" onAction="#cargarSuministros"
+                      prefHeight="27.0" prefWidth="294.0" promptText="Código del Suministro"/>
+        <JFXButton contentDisplay="CENTER" layoutX="312.0" layoutY="72.0" onAction="#handleModificar"
+                   style="-fx-border-color: #286090; -fx-border-radius: 10;">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="SEND" size="1.5em"/>
+            </graphic>
+        </JFXButton>
+        <TextArea fx:id="descrip" layoutX="5.0" layoutY="109.0" prefHeight="53.0" prefWidth="368.0"/>
+    </children>
+</AnchorPane>

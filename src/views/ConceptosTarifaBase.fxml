@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="548.0" prefWidth="685.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ConceptTarifasSalarialBaseController">
+    <children>
+        <JFXToolbar layoutX="9.0" layoutY="45.0" prefHeight="3.0" prefWidth="655.0"
+                    style="-fx-background-color: #286090;"
+                    AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="21.0"/>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="DOLLAR" layoutX="14.0" layoutY="35.0" size="1.8em"/>
+        <Label layoutX="35.0" layoutY="14.0" prefHeight="27.0" prefWidth="401.0"
+               text="COSTOS ASOCIADOS A LA ESCALA SALARIAL" textFill="#286090">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Label>
+        <JFXButton fx:id="btnUpdate" contentDisplay="CENTER" layoutX="623.0" layoutY="15.0" onAction="#closeWindows"
+                   prefHeight="27.0" prefWidth="40.0" style="-fx-border-color: #286090; -fx-border-radius: 20;">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CLOSE" size="1.2em"/>
+            </graphic>
+        </JFXButton>
+        <JFXTabPane layoutX="4.0" layoutY="48.0" prefHeight="497.0" prefWidth="678.0">
+            <tabs>
+                <Tab style="-fx-background-color: #286090;" text="COSTOS EN CUBA">
+                    <content>
+                        <AnchorPane prefHeight="548.0" prefWidth="685.0" style="-fx-background-color: #fff;">
+                            <children>
+                                <AnchorPane layoutX="185.0" layoutY="203.0"/>
+                                <Separator layoutX="7.0" layoutY="133.0" prefHeight="3.0" prefWidth="665.0"
+                                           style="-fx-background-color: #286090;"/>
+                                <JFXTextArea fx:id="tarDescripcion" labelFloat="true" layoutX="16.0" layoutY="21.0"
+                                             prefHeight="49.0" prefWidth="647.0" promptText="Descripción"/>
+                                <JFXTextField fx:id="moneda" labelFloat="true" layoutX="16.0" layoutY="97.0"
+                                              promptText="Monto"/>
+                                <JFXButton layoutX="177.0" layoutY="96.0" onAction="#createNewTarifaAction"
+                                           style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Aceptar"
+                                           textFill="#286090">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="#286090" glyphName="CHECK"/>
+                                    </graphic>
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </JFXButton>
+                                <TableView fx:id="tableGroup" layoutX="8.0" layoutY="141.0" prefHeight="312.0"
+                                           prefWidth="663.0">
+                                    <columns>
+                                        <TableColumn fx:id="grupCode" prefWidth="538.0" text="Descripción"/>
+                                        <TableColumn fx:id="grupValor" prefWidth="104.0" text="Valor"/>
+                                    </columns>
+                                    <contextMenu>
+                                        <ContextMenu>
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#updateGrupoIntable"
+                                                          text="Modificar">
+                                                    <graphic>
+                                                        <FontAwesomeIcon glyphName="EDIT"/>
+                                                    </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false" onAction="#handleRemoveToTable"
+                                                          text="Eliminar">
+                                                    <graphic>
+                                                        <FontAwesomeIcon glyphName="REMOVE"/>
+                                                    </graphic>
+                                                </MenuItem>
+                                            </items>
+                                        </ContextMenu>
+                                    </contextMenu>
+                                </TableView>
+                                <JFXTextField fx:id="cuba_total" labelFloat="true" layoutX="545.0" layoutY="97.0"
+                                              prefHeight="25.0" prefWidth="109.0" promptText="Costo Total">
+                                    <font>
+                                        <Font name="System Bold" size="13.0"/>
+                                    </font>
+                                </JFXTextField>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab style="-fx-background-color: #286090;" text="BASE ESTIMACION TARIFA HORARIA Y COSTO DIRECTO">
+                    <content>
+                        <AnchorPane prefHeight="548.0" prefWidth="685.0" style="-fx-background-color: #fff;">
+                            <children>
+                                <AnchorPane layoutX="185.0" layoutY="203.0"/>
+                                <Separator layoutX="7.0" layoutY="133.0" prefHeight="3.0" prefWidth="665.0"
+                                           style="-fx-background-color: #286090;"/>
+                                <JFXTextArea fx:id="tarDescripcion1" labelFloat="true" layoutX="16.0" layoutY="21.0"
+                                             prefHeight="49.0" prefWidth="647.0" promptText="Descripción"/>
+                                <JFXTextField fx:id="moneda1" labelFloat="true" layoutX="16.0" layoutY="97.0"
+                                              promptText="Monto"/>
+                                <JFXButton layoutX="177.0" layoutY="96.0" onAction="#createNewTarifaAction1"
+                                           style="-fx-border-color: #286090; -fx-border-radius: 10;" text="Aceptar"
+                                           textFill="#286090">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="#286090" glyphName="CHECK"/>
+                                    </graphic>
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </JFXButton>
+                                <TableView fx:id="tableGroup1" layoutX="8.0" layoutY="141.0" prefHeight="312.0"
+                                           prefWidth="663.0">
+                                    <columns>
+                                        <TableColumn fx:id="grupCode1" prefWidth="538.0" text="Descripción"/>
+                                        <TableColumn fx:id="grupValor1" prefWidth="104.0" text="Valor"/>
+                                    </columns>
+                                    <contextMenu>
+                                        <ContextMenu>
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#updateGrupoIntable1"
+                                                          text="Modificar">
+                                                    <graphic>
+                                                        <FontAwesomeIcon glyphName="EDIT"/>
+                                                    </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false" onAction="#handleRemoveToTable1"
+                                                          text="Eliminar">
+                                                    <graphic>
+                                                        <FontAwesomeIcon glyphName="REMOVE"/>
+                                                    </graphic>
+                                                </MenuItem>
+                                            </items>
+                                        </ContextMenu>
+                                    </contextMenu>
+                                </TableView>
+                                <JFXTextField fx:id="resumen" labelFloat="true" layoutX="544.0" layoutY="97.0"
+                                              prefHeight="25.0"
+                                              prefWidth="109.0" promptText="Costo Total">
+                                    <font>
+                                        <Font name="System Bold" size="13.0"/>
+                                    </font>
+                                </JFXTextField>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </JFXTabPane>
+    </children>
+</AnchorPane>

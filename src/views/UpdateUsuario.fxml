@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="389.0" prefWidth="439.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.EditUserController">
+    <children>
+        <JFXToolbar layoutX="7.0" layoutY="37.0" prefHeight="12.0" prefWidth="424.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="37.0" layoutY="11.0" prefHeight="27.0" prefWidth="402.0" text="Editar Usuario">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="user" labelFloat="true" layoutX="14.0" layoutY="72.0" prefHeight="30.0" prefWidth="173.0"
+                      promptText="Usuario"/>
+        <JFXButton layoutX="327.0" layoutY="349.0" onAction="#handleAddUsuario" prefHeight="29.0" prefWidth="98.0"
+                   style="-fx-background-color: #286090;" text="Aceptar" textFill="WHITE">
+            <font>
+                <Font size="13.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CHECK"/>
+            </graphic>
+        </JFXButton>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="USER" layoutX="14.0" layoutY="32.0" selectionFill="#286090"
+                         size="1.8em" wrappingWidth="21.9714298248291"/>
+        <JFXTextField fx:id="name" labelFloat="true" layoutX="14.0" layoutY="129.0" prefHeight="25.0" prefWidth="414.0"
+                      promptText="Nombre"/>
+        <JFXTextField fx:id="cargo" labelFloat="true" layoutX="14.0" layoutY="184.0" prefHeight="25.0" prefWidth="414.0"
+                      promptText="Cargo"/>
+        <JFXTextField fx:id="depto" labelFloat="true" layoutX="14.0" layoutY="237.0" prefHeight="25.0" prefWidth="414.0"
+                      promptText="Departamento"/>
+        <JFXComboBox fx:id="cmbogrupo" labelFloat="true" layoutX="14.0" layoutY="288.0" prefHeight="25.0"
+                     prefWidth="414.0" promptText="Grupo"/>
+        <JFXPasswordField fx:id="password" labelFloat="true" layoutX="203.0" layoutY="75.0" prefHeight="30.0"
+                          prefWidth="221.0" promptText="Contraseña"/>
+    </children>
+</AnchorPane>

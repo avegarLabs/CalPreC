@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.EmpresaConstructoraController">
+    <children>
+        <Label fx:id="label_title" layoutX="38.0" layoutY="14.0" prefHeight="27.0" prefWidth="1011.0"
+               text="Empresas Constructoras" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="18.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="filter" labelFloat="true" layoutX="795.0" layoutY="77.0" prefHeight="25.0"
+                      prefWidth="248.0" promptText="Código o Descripción" AnchorPane.rightAnchor="12.0"/>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="11.0" prefWidth="1049.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="12.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="HOME" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273" AnchorPane.leftAnchor="13.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <JFXButton fx:id="btn_add" layoutX="13.0" layoutY="75.0" onAction="#handleButtonAction" prefHeight="30.0"
+                   prefWidth="92.0" style="-fx-background-color: #337ab7;" text="Agregar" textFill="WHITE"
+                   AnchorPane.leftAnchor="13.0">
+            <font>
+                <Font size="13.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+            </graphic>
+        </JFXButton>
+        <TableView fx:id="dataTable_Empresa" layoutX="8.0" layoutY="111.0" prefHeight="498.0" prefWidth="1049.0"
+                   stylesheets="@../AccessMigration/tableview.css" AnchorPane.bottomAnchor="8.0"
+                   AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="111.0">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="93.0" text="Código"/>
+                <TableColumn fx:id="descrip" prefWidth="689.0" text="Descripción"/>
+                <TableColumn fx:id="c731" prefWidth="78.0" text="Cuenta 731"/>
+                <TableColumn fx:id="c822" text="Cuenta 822"/>
+                <TableColumn fx:id="pbruta" prefWidth="97.0" text="Prod. Bruta"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem fx:id="option1" mnemonicParsing="false" onAction="#handleEmpresaUpdateAction"
+                                  text="Actualizar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="REFRESH"/>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="option11" mnemonicParsing="false" onAction="#handleEmpresaDeleteAction"
+                                  text="Eliminar">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="CLOSE"/>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+    </children>
+</AnchorPane>

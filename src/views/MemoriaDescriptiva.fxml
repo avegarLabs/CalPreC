@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="391.0" prefWidth="443.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.MemoriaDescriptivaController">
+    <children>
+        <JFXToolbar layoutX="3.0" layoutY="45.0" prefHeight="9.0" prefWidth="436.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="36.0" layoutY="14.0" prefHeight="27.0" prefWidth="175.0" text="Memoria Descriptiva">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXButton layoutX="369.0" layoutY="347.0" onAction="#handleSaveMemoria" prefHeight="30.0" prefWidth="63.0"
+                   style="-fx-background-color: #286090;" text="OK" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PENCIL" size="1.2em"/>
+            </graphic>
+        </JFXButton>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="PENCIL" layoutX="14.0" layoutY="35.0" size="1.8em"/>
+        <JFXTextField fx:id="fieldTitulo" labelFloat="true" layoutX="10.0" layoutY="73.0" prefHeight="25.0"
+                      prefWidth="304.0" promptText="Titulo"/>
+        <JFXTextArea fx:id="fieldTexto" labelFloat="true" layoutX="9.0" layoutY="125.0" prefHeight="86.0"
+                     prefWidth="429.0" promptText="Texto"/>
+        <FontAwesomeIcon fill="#286090" glyphName="SHARE" layoutX="211.0" layoutY="33.0" size="1.5em"/>
+        <Label fx:id="labelUo" layoutX="242.0" layoutY="13.0" prefHeight="17.0" prefWidth="146.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <TableView fx:id="tableTitulos" layoutX="6.0" layoutY="224.0" prefHeight="111.0" prefWidth="429.0"
+                   stylesheets="@../AccessMigration/tableview.css">
+            <columns>
+                <TableColumn fx:id="titulo" prefWidth="426.0" text="Titulos"/>
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

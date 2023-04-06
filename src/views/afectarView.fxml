@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="470.0"
+            style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="views.AfectarController">
+    <children>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="11.0" prefWidth="454.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="10.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="CALCULATOR" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273" AnchorPane.leftAnchor="13.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <Label layoutX="38.0" layoutY="13.0" prefHeight="17.0" prefWidth="335.0" text="Afectar Cantiades">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <FontAwesomeIcon fill="#286090" glyphName="SITEMAP" layoutX="17.0" layoutY="82.0" size="1.6em"/>
+        <Label layoutX="40.0" layoutY="67.0" prefHeight="20.0" prefWidth="167.0" text="Renglones Variantes"
+               textFill="#286090">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Label>
+        <JFXRadioButton fx:id="sumCnt" layoutX="17.0" layoutY="98.0" selected="true" text="Aumentar">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXRadioButton>
+        <JFXRadioButton fx:id="restCnt" layoutX="142.0" layoutY="98.0" text="Disminuir">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXRadioButton>
+        <JFXTextField fx:id="rvFieldcant" labelFloat="true" layoutX="55.0" layoutY="135.0" prefHeight="25.0"
+                      prefWidth="142.0" promptText="\%  de Cantidades"/>
+        <JFXRadioButton fx:id="radioAll" layoutX="223.0" layoutY="127.0" selected="true" text="Todos">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXRadioButton>
+        <JFXRadioButton fx:id="radioOne" layoutX="223.0" layoutY="160.0" prefHeight="17.0" prefWidth="88.0"
+                        text="Para Uno">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXRadioButton>
+        <JFXTextField fx:id="rvfieldCode" disable="true" labelFloat="true" layoutX="324.0" layoutY="148.0"
+                      prefHeight="25.0" prefWidth="130.0" promptText="Código RV"/>
+        <Separator layoutX="17.0" layoutY="193.0" prefHeight="4.0" prefWidth="439.0"
+                   style="-fx-background-color: #286090;"/>
+        <FontAwesomeIcon fill="#286090" glyphName="CUBE" layoutX="17.0" layoutY="224.0" size="1.6em"/>
+        <Label layoutX="41.0" layoutY="208.0" prefHeight="17.0" prefWidth="218.0" text="Suministros" textFill="#286090">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Label>
+        <JFXRadioButton fx:id="restSumin" layoutX="140.0" layoutY="241.0" text="Disminuir">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXRadioButton>
+        <JFXTextField fx:id="cantSumin" labelFloat="true" layoutX="55.0" layoutY="278.0" prefHeight="25.0"
+                      prefWidth="149.0" promptText="\% de Cantidades"/>
+        <JFXRadioButton fx:id="sumiAll" layoutX="228.0" layoutY="260.0" selected="true" text="Todos">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXRadioButton>
+        <JFXRadioButton fx:id="sumiOne" layoutX="228.0" layoutY="295.0" text="Para Uno">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXRadioButton>
+        <JFXTextField fx:id="codeSumin" disable="true" labelFloat="true" layoutX="322.0" layoutY="283.0"
+                      prefHeight="25.0" prefWidth="130.0" promptText="Cod. Suministro"/>
+        <JFXRadioButton fx:id="sumSumin" layoutX="17.0" layoutY="241.0" selected="true" text="Aumentar">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXRadioButton>
+        <JFXButton fx:id="btnAceptar" layoutX="335.0" layoutY="331.0" onAction="#calcular" prefHeight="31.0"
+                   prefWidth="109.0" style="-fx-border-color: #286090; -fx-border-radius: 5;" text=" Aceptar"
+                   textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CHECK"/>
+            </graphic>
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnCancel" layoutX="62.0" layoutY="331.0" onAction="#handleBtnClose" prefHeight="31.0"
+                   prefWidth="109.0" style="-fx-border-color: #286090; -fx-border-radius: 5;" text="Cancelar"
+                   textFill="#286090">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="CLOSE"/>
+            </graphic>
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </JFXButton>
+        <Separator layoutX="17.0" layoutY="321.0" prefHeight="4.0" prefWidth="439.0"
+                   style="-fx-background-color: #286090;"/>
+    </children>
+</AnchorPane>

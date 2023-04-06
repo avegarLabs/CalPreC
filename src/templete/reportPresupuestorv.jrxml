@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="report2" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20"
+              rightMargin="20" topMargin="20" bottomMargin="20" uuid="eac35197-3cb8-43b0-9ef3-6b226098466a">
+    <property name="ireport.zoom" value="1.1000000000000005"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+    <style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+    <style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+    <style name="Detail" fontName="Arial" fontSize="12"/>
+    <parameter name="obraName" class="java.lang.String"/>
+    <parameter name="fecha" class="java.lang.String"/>
+    <parameter name="empresa" class="java.lang.String"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="108" splitType="Stretch">
+            <staticText>
+                <reportElement style="Title" x="294" y="57" width="508" height="18"
+                               uuid="60122323-80d8-4439-af24-6c2ea9d13c51"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="14" isBold="true" isItalic="false"/>
+                </textElement>
+                <text><![CDATA[Presupuesto por Renglón Variante]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="0" y="75" width="532" height="17" uuid="d4ea293b-67d6-4022-bd29-1c2d5781da71"/>
+                <textElement textAlignment="Justified">
+                    <font fontName="Arial" size="12" isBold="true" isItalic="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Obra: " + $P{obraName}]]></textFieldExpression>
+            </textField>
+            <image>
+                <reportElement x="689" y="0" width="113" height="45" uuid="1f2e2601-c72f-4c4b-91c2-157580dd92b3"/>
+                <imageExpression><![CDATA[$P{image}]]></imageExpression>
+            </image>
+            <textField>
+                <reportElement x="0" y="23" width="689" height="20" uuid="bd2d89ed-0069-4f00-a201-f79cb3d366d4"/>
+                <textElement textAlignment="Justified">
+                    <font fontName="Arial" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{empresa}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="0" y="41" width="689" height="1" forecolor="#006666"
+                               uuid="0afcce3e-d687-48cc-b008-f1b408587581"/>
+            </line>
+        </band>
+    </title>
+    <pageHeader>
+        <band splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="33" splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="41" splitType="Stretch"/>
+    </detail>
+    <columnFooter>
+        <band height="30" splitType="Stretch">
+            <line>
+                <reportElement x="0" y="28" width="802" height="2" forecolor="#006666"
+                               uuid="2b862fcc-6bba-4ee5-8e3e-ca3fda3dc65f"/>
+            </line>
+        </band>
+    </columnFooter>
+    <pageFooter>
+        <band height="20" splitType="Stretch">
+            <textField>
+                <reportElement style="Column header" x="685" y="0" width="80" height="20"
+                               uuid="9c82a69a-dcf2-409e-addb-672d87c88de7"/>
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Pág "+$V{PAGE_NUMBER}+"/"]]></textFieldExpression>
+            </textField>
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement style="Column header" x="0" y="0" width="197" height="20"
+                               uuid="0aadd4dc-d975-4daa-aef1-c2d41939efb6"/>
+                <textElement>
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Fecha de Impresión: " + $P{fecha}]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement style="Column header" x="765" y="0" width="37" height="20"
+                               uuid="aae5ef86-6e1a-452e-9887-a5f0f3a612f3"/>
+                <textElement>
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+    <summary>
+        <band splitType="Stretch"/>
+    </summary>
+</jasperReport>

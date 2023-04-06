@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="menu" prefHeight="612.0" prefWidth="91.0"
+      style="-fx-background-color: #286090;" xmlns="http://javafx.com/javafx/10.0.1">
+    <children>
+        <JFXButton fx:id="btn_suministros" accessibleText="btn_suministros" prefHeight="40.0" prefWidth="232.0"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CUBE" size="1.5em" strokeLineJoin="ROUND"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Suministros"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="btn_mano" accessibleText="btn_mano" prefHeight="40.0" prefWidth="236.0" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon accessibleText="btn_mano" fill="#f8f4f4" glyphName="USERS" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Mano de Obra"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="btn_equipos" accessibleText="btn_equipos" prefHeight="40.0" prefWidth="231.0"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon accessibleText="btn_equipos" fill="#f5eeee" glyphName="TRUCK" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Equipos"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="btn_juego" accessibleText="btn_juego" prefHeight="40.0" prefWidth="230.0" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon accessibleText="btn_juego" fill="#eeebeb" glyphName="CUBES" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Juego de Productos"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="btn_semielaborados" accessibleText="btn_semielaborados" prefHeight="40.0" prefWidth="231.0"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon accessibleText=" btn_semielaborados" fill="WHITE" glyphName="DROPBOX" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Suministros Semielaborados"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="btn_renglon" accessibleText="btn_renglon" prefHeight="40.0" prefWidth="231.0"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+            <tooltip>
+                <Tooltip text="Renglones Variantes"/>
+            </tooltip>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="SITEMAP" size="1.5em"/>
+            </graphic>
+        </JFXButton>
+        <JFXButton fx:id="btn_inversionista" accessibleText="btn_inversionista" prefHeight="40.0" prefWidth="231.0"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="#f2eded" glyphName="BRIEFCASE" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Inversionistas"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="btn_entidad" accessibleText="btn_entidad" prefHeight="40.0" prefWidth="232.0"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="#f5eeee" glyphName="UNIVERSITY" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Entidades"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="btn_empresa" accessibleText="btn_empresa" prefHeight="40.0" prefWidth="231.0"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="#f5f3f3" glyphName="HOME" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Empresa Constructoras"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="btn_brigada" accessibleText="btn_brigada" prefHeight="40.0" prefWidth="235.0"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="#f8f4f4" glyphName="TASKS" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Brigada de Construcción"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="btn_grupo" accessibleText="btn_grupo" prefHeight="40.0" prefWidth="233.0" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="#f2eded" glyphName="TH" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Grupo de Construcción"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="btn_cuadrilla" accessibleText="btn_cuadrilla" prefHeight="40.0" prefWidth="234.0"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="#f5f2f2" glyphName="BARS" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Cuadrilla de Construcción"/>
+            </tooltip>
+        </JFXButton>
+        <JFXButton fx:id="btn_ejecucion" accessibleText="btn_ejecucion" prefHeight="40.0" prefWidth="230.0"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="#f8f8f8" glyphName="STEAM" size="1.5em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Grupo de Ejecición"/>
+            </tooltip>
+        </JFXButton>
+    </children>
+</VBox>

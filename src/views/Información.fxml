@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="251.0" prefWidth="555.0" style="-fx-background-color: #fff;"
+      xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.InformacionController">
+    <children>
+        <AnchorPane fx:id="description" prefHeight="252.0" prefWidth="555.0" style="-fx-background-color: #fff;">
+            <children>
+                <Label fx:id="label_title" layoutX="44.0" layoutY="14.0" prefHeight="27.0" prefWidth="319.0"
+                       text="Actualización Disponible">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="5.0" prefWidth="543.0"
+                            style="-fx-background-color: #286090;"/>
+                <FontAwesomeIcon fill="#286090" glyphName="BOOK" layoutX="13.0" layoutY="34.0" size="1.8em"
+                                 wrappingWidth="25.399999618530273">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </FontAwesomeIcon>
+                <Label layoutX="13.0" layoutY="70.0" prefHeight="27.0" prefWidth="172.0" text="Versión: CalPreC 2.0">
+                    <font>
+                        <Font name="System Bold Italic" size="18.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="compilationInfo" layoutX="13.0" layoutY="104.0" prefHeight="27.0" prefWidth="392.0">
+                    <font>
+                        <Font name="System Bold Italic" size="18.0"/>
+                    </font>
+                </Label>
+                <JFXTextArea fx:id="descripText" labelFloat="true" layoutX="15.0" layoutY="147.0" prefHeight="91.0"
+                             prefWidth="530.0" promptText="Información"/>
+                <JFXButton contentDisplay="CENTER" layoutX="451.0" layoutY="69.0" onAction="#decompress"
+                           style="-fx-border-color: #286090; -fx-border-radius: 50;">
+                    <graphic>
+                        <FontAwesomeIcon fill="#286090" glyphName="DOWNLOAD" size="4.5em"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Descargar actualización"/>
+                    </tooltip>
+                </JFXButton>
+                <JFXButton contentDisplay="CENTER" layoutX="505.0" layoutY="14.0" onAction="#actionClose"
+                           prefHeight="27.0" prefWidth="38.0" style="-fx-border-color: #286090; -fx-border-radius: 50;">
+                    <graphic>
+                        <FontAwesomeIcon fill="#286090" glyphName="CLOSE" size="1.5em"/>
+                    </graphic>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

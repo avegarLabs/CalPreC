@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="654.0" prefWidth="987.0" style="-fx-background-color: #fff;"
+      xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.SalarioUnidadesObraObraController">
+    <AnchorPane prefHeight="658.0" prefWidth="987.0" style="-fx-background-color: #fff;">
+        <children>
+            <Label fx:id="label_title" layoutX="44.0" layoutY="14.0" prefHeight="27.0" prefWidth="453.0">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="9.0" prefWidth="970.0"
+                        style="-fx-background-color: #286090;"/>
+            <FontAwesomeIcon fill="#286090" glyphName="MONEY" layoutX="13.0" layoutY="34.0" size="1.8em"
+                             wrappingWidth="25.399999618530273">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </FontAwesomeIcon>
+            <JFXComboBox fx:id="coboEmpresas" labelFloat="true" layoutX="14.0" layoutY="69.0" prefHeight="25.0"
+                         prefWidth="459.0" promptText="Empresas"/>
+            <JFXComboBox fx:id="comboZonas" labelFloat="true" layoutX="14.0" layoutY="109.0"
+                         onAction="#handleLenaObjetosList" prefHeight="25.0" prefWidth="459.0" promptText="Zonas"/>
+            <JFXComboBox fx:id="comboObjetos" labelFloat="true" layoutX="14.0" layoutY="147.0"
+                         onAction="#handleLlenarNivelList" prefHeight="25.0" prefWidth="459.0" promptText="Objetos"/>
+            <JFXComboBox fx:id="comboNivel" labelFloat="true" layoutX="14.0" layoutY="186.0" prefHeight="25.0"
+                         prefWidth="459.0" promptText="Nivel"/>
+            <JFXComboBox fx:id="comboEspecialidad" labelFloat="true" layoutX="14.0" layoutY="226.0"
+                         onAction="#handlrLlenarSubsepecialidad" prefHeight="25.0" prefWidth="459.0"
+                         promptText="Especialidad"/>
+            <JFXComboBox fx:id="comboSubEspecialidad" labelFloat="true" layoutX="14.0" layoutY="266.0"
+                         onAction="#handleCargardatos" prefHeight="25.0" prefWidth="459.0"
+                         promptText="SubEspecialidad"/>
+            <TableView fx:id="dataTable" layoutX="10.0" layoutY="301.0" prefHeight="340.0" prefWidth="459.0"
+                       stylesheets="@../AccessMigration/tableview.css" visible="false">
+                <columns>
+                    <TableColumn fx:id="code" prefWidth="104.0" text="Código"/>
+                    <TableColumn fx:id="descripcion" prefWidth="350.0" text="Descripción"/>
+                </columns>
+                <contextMenu>
+                    <ContextMenu>
+                        <items>
+                            <MenuItem mnemonicParsing="false" text="Modificar"/>
+                            <MenuItem mnemonicParsing="false" onAction="#handleDeleteUo" text="Eliminar"/>
+                        </items>
+                    </ContextMenu>
+                </contextMenu>
+            </TableView>
+            <Pane fx:id="paneCalc" layoutX="481.0" layoutY="59.0" prefHeight="578.0" prefWidth="473.0"
+                  style="-fx-border-color: #286090;">
+                <children>
+                    <Label layoutX="14.0" layoutY="14.0" text="Código:">
+                        <font>
+                            <Font name="System Bold" size="13.0"/>
+                        </font>
+                    </Label>
+                    <Label layoutX="156.0" layoutY="15.0" text="UM:">
+                        <font>
+                            <Font name="System Bold" size="13.0"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="labelCode" layoutX="67.0" layoutY="16.0" prefHeight="17.0" prefWidth="85.0">
+                        <font>
+                            <Font size="13.0"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="labelUM" layoutX="187.0" layoutY="14.0" prefHeight="19.0" prefWidth="64.0">
+                        <font>
+                            <Font size="13.0"/>
+                        </font>
+                    </Label>
+                    <Label contentDisplay="RIGHT" layoutX="289.0" layoutY="16.0" prefHeight="19.0" prefWidth="64.0"
+                           text=" Cantidad:">
+                        <font>
+                            <Font name="System Bold" size="13.0"/>
+                        </font>
+                    </Label>
+                    <Label contentDisplay="RIGHT" layoutX="294.0" layoutY="35.0" prefHeight="19.0" prefWidth="57.0"
+                           text=" Costo U:">
+                        <font>
+                            <Font name="System Bold" size="13.0"/>
+                        </font>
+                    </Label>
+                    <Label layoutX="291.0" layoutY="53.0" prefHeight="22.0" prefWidth="61.0" text="  Costo T:">
+                        <font>
+                            <Font name="System Bold" size="13.0"/>
+                        </font>
+                    </Label>
+                    <Label contentDisplay="RIGHT" layoutX="299.0" layoutY="70.0" prefHeight="25.0" prefWidth="57.0"
+                           text=" Salario:">
+                        <font>
+                            <Font name="System Bold" size="13.0"/>
+                        </font>
+                    </Label>
+                    <!--Label contentDisplay="RIGHT" layoutX="269.0" layoutY="95.0" prefHeight="19.0" prefWidth="85.0"
+                           text="  Salario CUC:">
+                        <font>
+                            <Font name="System Bold" size="13.0"/>
+                        </font>
+                    </Label-->
+                    <Label fx:id="labelCant" layoutX="355.0" layoutY="16.0" prefHeight="9.0" prefWidth="89.0">
+                        <font>
+                            <Font size="13.0"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="labelcostU" layoutX="359.0" layoutY="35.0" prefHeight="9.0" prefWidth="89.0">
+                        <font>
+                            <Font size="13.0"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="labelCosT" layoutX="355.0" layoutY="55.0" prefHeight="9.0" prefWidth="89.0">
+                        <font>
+                            <Font size="13.0"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="labelSal" layoutX="355.0" layoutY="73.0" prefHeight="9.0" prefWidth="89.0">
+                        <font>
+                            <Font size="13.0"/>
+                        </font>
+                    </Label>
+                    <Label layoutX="355.0" layoutY="96.0" prefHeight="9.0" prefWidth="89.0">
+                        <font>
+                            <Font size="13.0"/>
+                        </font>
+                    </Label>
+                    <TableView fx:id="tableRenglones" layoutX="10.0" layoutY="148.0" prefHeight="222.0"
+                               prefWidth="219.0" stylesheets="@../AccessMigration/tableview.css">
+                        <columns>
+                            <TableColumn fx:id="RVcode" prefWidth="76.0" text="Código"/>
+                            <TableColumn fx:id="RVcant" prefWidth="57.0" text="Cant."/>
+                            <TableColumn fx:id="RVCosto" prefWidth="83.0" text="Salario"/>
+                        </columns>
+                    </TableView>
+                    <Label layoutX="10.0" layoutY="124.0" prefHeight="19.0" prefWidth="131.0"
+                           text="Renglones Variantes">
+                        <font>
+                            <Font name="System Bold" size="13.0"/>
+                        </font>
+                    </Label>
+                    <TableView fx:id="tableSuministros" layoutX="233.0" layoutY="148.0" prefHeight="222.0"
+                               prefWidth="219.0" stylesheets="@../AccessMigration/tableview.css">
+                        <columns>
+                            <TableColumn fx:id="SumCode" prefWidth="134.0" text="Código"/>
+                            <TableColumn fx:id="SumCant" prefWidth="79.0" text="Cant."/>
+                        </columns>
+                        <contextMenu>
+                            <ContextMenu>
+                                <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#haddleBajoEspecificacion"
+                                              text="Nuevo"/>
+                                    <MenuItem mnemonicParsing="false" onAction="#haddleUpadteBajoEspecificacion"
+                                              text="Modificar"/>
+                                    <MenuItem mnemonicParsing="false" onAction="#handleDeleteSumistro" text="Eliminar"/>
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                    </TableView>
+                    <Label layoutX="233.0" layoutY="125.0" prefHeight="19.0" prefWidth="85.0" text="Mano Obra">
+                        <font>
+                            <Font name="System Bold" size="13.0"/>
+                        </font>
+                    </Label>
+                    <JFXComboBox fx:id="comboRenglones" labelFloat="true" layoutX="10.0" layoutY="383.0"
+                                 onAction="#handleDefinirRenglonBase" prefHeight="25.0" prefWidth="153.0"
+                                 promptText="Renglón Base"/>
+                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="12.0" layoutY="418.0"
+                           prefHeight="17.0" prefWidth="115.0" text="Salario :">
+                        <font>
+                            <Font name="System Bold" size="12.0"/>
+                        </font>
+                    </Label>
+                    <Label layoutX="17.0" layoutY="498.0" text="Descripción:">
+                        <font>
+                            <Font name="System Bold" size="12.0"/>
+                        </font>
+                    </Label>
+                    <TextArea fx:id="textDescrp" layoutX="10.0" layoutY="515.0" prefHeight="37.0" prefWidth="446.0"/>
+                    <Label fx:id="labelRVCant" layoutX="133.0" layoutY="418.0" prefHeight="17.0" prefWidth="61.0"/>
+                    <Label fx:id="labelRVum" layoutX="136.0" layoutY="481.0" prefHeight="17.0" prefWidth="41.0"/>
+                    <JFXButton fx:id="btnHide" contentDisplay="CENTER" layoutX="446.0" layoutY="-1.0" prefHeight="25.0"
+                               prefWidth="25.0">
+                        <graphic>
+                            <FontAwesomeIcon fill="#286090" glyphName="CLOSE"/>
+                        </graphic>
+                    </JFXButton>
+                    <TextArea fx:id="labelUodescrip" layoutX="10.0" layoutY="35.0" prefHeight="38.0" prefWidth="281.0"/>
+                    <JFXButton layoutX="361.0" layoutY="381.0" prefHeight="29.0" prefWidth="85.0"
+                               style="-fx-background-color: #286090;" text="     Afectar" textFill="WHITE">
+                        <font>
+                            <Font name="System Bold" size="13.0"/>
+                        </font>
+                    </JFXButton>
+                    <FontAwesomeIcon fill="WHITE" glyphName="MAGIC" layoutX="371.0" layoutY="400.0" size="1.3em"/>
+                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="12.0" layoutY="444.0"
+                           prefHeight="17.0" prefWidth="115.0" text="U/M:">
+                        <font>
+                            <Font name="System Bold" size="12.0"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="labelPeso" layoutX="133.0" layoutY="444.0" prefHeight="17.0" prefWidth="61.0"/>
+                </children>
+            </Pane>
+        </children>
+    </AnchorPane>
+</VBox>

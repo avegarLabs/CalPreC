@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.ConfiguracionController">
+    <children>
+        <Label fx:id="label_title" layoutX="38.0" layoutY="14.0" prefHeight="27.0" prefWidth="577.0"
+               text="Configuración" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="351.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXButton fx:id="btn_add" layoutX="168.0" layoutY="64.0" prefHeight="30.0" prefWidth="98.0"
+                   style="-fx-background-color: #337ab7;" text="Agregar" textFill="WHITE" visible="false">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </JFXButton>
+        <JFXToolbar layoutX="6.0" layoutY="45.0" prefHeight="9.0" prefWidth="956.0"
+                    style="-fx-background-color: #286090;" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="4.0"/>
+        <FontAwesomeIcon fill="#286090" glyphName="COGS" layoutX="13.0" layoutY="34.0" size="1.8em"
+                         wrappingWidth="25.399999618530273" AnchorPane.leftAnchor="13.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </FontAwesomeIcon>
+        <JFXTabPane layoutX="5.0" layoutY="64.0" prefHeight="501.0" prefWidth="956.0" AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="60.0">
+            <tabs>
+                <Tab style="-fx-background-color: #286090;" text="Usuarios">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="tableUsers" layoutX="7.0" layoutY="55.0" prefHeight="402.0"
+                                           prefWidth="931.0" stylesheets="@../AccessMigration/tableview.css"
+                                           AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0"
+                                           AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="55.0">
+                                    <columns>
+                                        <TableColumn fx:id="user" prefWidth="150.0" text="Usuario"/>
+                                        <TableColumn fx:id="name" minWidth="0.0" prefWidth="297.0" text="Nombre"/>
+                                        <TableColumn fx:id="cargo" prefWidth="140.0" text="Cargo"/>
+                                        <TableColumn fx:id="dpto" prefWidth="175.0" text="Departamento"/>
+                                        <TableColumn fx:id="grupo" prefWidth="159.0" text="Grupo"/>
+                                    </columns>
+                                    <contextMenu>
+                                        <ContextMenu>
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#handleUpdateUser"
+                                                          text="Actualizar"/>
+                                                <MenuItem mnemonicParsing="false" onAction="#handleDeleteUser"
+                                                          text="Eliminar"/>
+                                            </items>
+                                        </ContextMenu>
+                                    </contextMenu>
+                                </TableView>
+                                <JFXButton layoutX="14.0" layoutY="14.0" onAction="#handleAddUser"
+                                           style="-fx-background-color: #286090;" text="Agregar" textFill="WHITE">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="USER"/>
+                                    </graphic>
+                                    <font>
+                                        <Font size="13.0"/>
+                                    </font>
+                                </JFXButton>
+                                <JFXButton layoutX="113.0" layoutY="14.0" prefHeight="29.0" prefWidth="79.0"
+                                           style="-fx-background-color: #286090;" text="  LDAP" textFill="WHITE"
+                                           visible="false">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="SHIELD"/>
+                                    </graphic>
+                                    <font>
+                                        <Font size="13.0"/>
+                                    </font>
+                                </JFXButton>
+                                <JFXButton contentDisplay="CENTER" layoutX="682.0" layoutY="14.0"
+                                           onAction="#handleRegisterWindows" style="-fx-background-color: #286090;"
+                                           visible="false">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="SHIELD" size="1.8em"/>
+                                    </graphic>
+                                </JFXButton>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab style="-fx-background-color: #286090;" text="Empresa">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="tableEmpresaConf" layoutX="14.0" layoutY="47.0" prefHeight="405.0"
+                                           prefWidth="935.0" stylesheets="@../AccessMigration/tableview.css">
+                                    <columns>
+                                        <TableColumn fx:id="codeEmp" prefWidth="102.0" text="Código"/>
+                                        <TableColumn fx:id="nombEmp" prefWidth="554.0" text="Nombre"/>
+                                        <TableColumn fx:id="comercialEmp" minWidth="0.0" prefWidth="273.0"
+                                                     text="Nomb. Comercial"/>
+                                    </columns>
+                                    <contextMenu>
+                                        <ContextMenu>
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#handleUpdateEmpresa"
+                                                          text="Actualizar"/>
+                                            </items>
+                                        </ContextMenu>
+                                    </contextMenu>
+                                </TableView>
+                                <JFXButton layoutX="15.0" layoutY="14.0" onAction="#handleAddEmpresa" prefHeight="25.0"
+                                           prefWidth="76.0" style="-fx-background-color: #286090;" text="Agregar"
+                                           textFill="WHITE">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="BOOKMARK"/>
+                                    </graphic>
+                                </JFXButton>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab style="-fx-background-color: #286090;" text="Tarifas">
+                    <content>
+                        <AnchorPane fx:id="salarioPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                    prefWidth="200.0">
+                            <children>
+                                <VBox fx:id="flowpane" prefHeight="464.0" prefWidth="188.0" spacing="10.0"
+                                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                      AnchorPane.topAnchor="0.0">
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets left="10.0" top="10.0"/>
+                                    </padding>
+                                    <children>
+                                        <JFXButton onAction="#handleNewTarifaAction" prefHeight="27.0" prefWidth="91.0"
+                                                   style="-fx-border-color: #286090; -fx-border-radius: 10;"
+                                                   text="Agregar" textFill="#286090">
+                                            <graphic>
+                                                <FontAwesomeIcon fill="#286090" glyphName="DOLLAR" size="1.2em"/>
+                                            </graphic>
+                                            <font>
+                                                <Font name="System Bold" size="13.0"/>
+                                            </font>
+                                        </JFXButton>
+                                        <TableView fx:id="tableTarifas" prefHeight="392.0" prefWidth="178.0"
+                                                   stylesheets="@../AccessMigration/tableview.css">
+                                            <columns>
+                                                <TableColumn fx:id="colTarifas" prefWidth="172.0" text="Tarifas"/>
+                                            </columns>
+                                            <contextMenu>
+                                                <ContextMenu>
+                                                    <items>
+                                                        <MenuItem mnemonicParsing="false"
+                                                                  onAction="#actionShowInformation" text="Detalle">
+                                                            <graphic>
+                                                                <FontAwesomeIcon glyphName="INFO"/>
+                                                            </graphic>
+                                                        </MenuItem>
+                                                        <MenuItem mnemonicParsing="false" onAction="#handleDeleteTarifa"
+                                                                  text="Eliminar">
+                                                            <graphic>
+                                                                <FontAwesomeIcon glyphName="REMOVE"/>
+                                                            </graphic>
+                                                        </MenuItem>
+                                                    </items>
+                                                </ContextMenu>
+                                            </contextMenu>
+                                        </TableView>
+                                    </children>
+                                </VBox>
+                                <BorderPane fx:id="contentPane" layoutX="195.0" layoutY="3.0" prefHeight="462.0"
+                                            prefWidth="761.0" AnchorPane.bottomAnchor="0.0"
+                                            AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="0.0"
+                                            AnchorPane.topAnchor="2.0"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab style="-fx-background-color: #286090;" text="Conceptos Gastos">
+                    <content>
+                        <AnchorPane fx:id="salarioPane1" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                    prefWidth="200.0">
+                            <children>
+                                <BorderPane fx:id="contentPane1" layoutY="3.0" prefHeight="462.0" prefWidth="956.0"
+                                            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+                                    <center>
+                                        <TableView fx:id="tableConceptos" prefHeight="390.0" prefWidth="956.0"
+                                                   stylesheets="@../AccessMigration/tableview.css"
+                                                   BorderPane.alignment="CENTER">
+                                            <columns>
+                                                <TableColumn fx:id="indice" prefWidth="72.0" text="No"/>
+                                                <TableColumn fx:id="concepto" prefWidth="671.0" text="Concepto"/>
+                                                <TableColumn fx:id="coeficiente" prefWidth="74.0" text="Coeficiente"/>
+                                                <TableColumn fx:id="formula" prefWidth="136.0" text="Formula"/>
+                                            </columns>
+                                            <contextMenu>
+                                                <ContextMenu>
+                                                    <items>
+                                                        <MenuItem mnemonicParsing="false"
+                                                                  onAction="#handlUpdateConcepto" text="Modificar">
+                                                            <graphic>
+                                                                <FontAwesomeIcon glyphName="REFRESH"/>
+                                                            </graphic>
+                                                        </MenuItem>
+                                                        <MenuItem mnemonicParsing="false"
+                                                                  onAction="#handleDeleteConcepto" text="Eliminar">
+                                                            <graphic>
+                                                                <FontAwesomeIcon glyphName="REMOVE"/>
+                                                            </graphic>
+                                                        </MenuItem>
+                                                        <MenuItem mnemonicParsing="false" onAction="#handleListConcepto"
+                                                                  text="SubConceptos">
+                                                            <graphic>
+                                                                <FontAwesomeIcon glyphName="LIST"/>
+                                                            </graphic>
+                                                        </MenuItem>
+                                                    </items>
+                                                </ContextMenu>
+                                            </contextMenu>
+                                        </TableView>
+                                    </center>
+                                    <top>
+                                        <Pane prefHeight="36.0" prefWidth="956.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXButton layoutX="5.0" layoutY="6.0" onAction="#handleAddConcepto"
+                                                           prefHeight="25.0" prefWidth="87.0"
+                                                           style="-fx-background-color: #286090;" text="Agregar"
+                                                           textFill="WHITE">
+                                                    <graphic>
+                                                        <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+                                                    </graphic>
+                                                </JFXButton>
+                                                <JFXComboBox fx:id="comboResol" labelFloat="true" layoutX="740.0"
+                                                             layoutY="7.0" onAction="#filterConcptByresol"
+                                                             prefHeight="25.0" prefWidth="211.0"
+                                                             promptText="Resolución"/>
+                                                <JFXButton layoutX="220.0" layoutY="3.0" onAction="#handleClearConptos"
+                                                           prefHeight="30.0" prefWidth="161.0"
+                                                           style="-fx-border-color: #286090; -fx-border-radius: 10;"
+                                                           text="Actualizar Conceptos">
+                                                    <graphic>
+                                                        <FontAwesomeIcon fill="#286090" glyphName="REFRESH"/>
+                                                    </graphic>
+                                                    <font>
+                                                        <Font size="13.0"/>
+                                                    </font>
+                                                </JFXButton>
+                                                <JFXComboBox fx:id="comboOperations" labelFloat="true" layoutX="400.0"
+                                                             layoutY="7.0" onAction="#handleImportsOperations"
+                                                             prefHeight="25.0" prefWidth="310.0"
+                                                             promptText="Operaciones"/>
+                                            </children>
+                                        </Pane>
+                                    </top>
+                                </BorderPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </JFXTabPane>
+    </children>
+</AnchorPane>

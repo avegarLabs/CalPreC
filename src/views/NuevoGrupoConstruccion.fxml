@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="347.0" prefWidth="453.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="views.NuevoGrupoConstruccionController">
+    <children>
+        <JFXToolbar layoutX="10.0" layoutY="45.0" prefHeight="10.0" prefWidth="431.0"
+                    style="-fx-background-color: #286090;"/>
+        <Label layoutX="46.0" layoutY="14.0" prefHeight="27.0" prefWidth="260.0" text="Nuevo Grupo de Construcción">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="field_codigo" labelFloat="true" layoutX="14.0" layoutY="150.0" onKeyTyped="#keyTypeCode"
+                      prefHeight="30.0" prefWidth="190.0" promptText="Código"/>
+        <JFXTextArea fx:id="text_descripcion" labelFloat="true" layoutX="16.0" layoutY="217.0" prefHeight="69.0"
+                     prefWidth="422.0" promptText="Descripción"/>
+        <JFXButton layoutX="16.0" layoutY="303.0" onAction="#addGrupoConstAction" prefHeight="27.0" prefWidth="118.0"
+                   style="-fx-background-color: #286090;" text="Agregar" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="PLUS"/>
+            </graphic>
+        </JFXButton>
+        <AnchorPane layoutX="185.0" layoutY="203.0"/>
+        <JFXComboBox fx:id="combo_empresa" labelFloat="true" layoutX="14.0" layoutY="91.0" onAction="#createBrigadaList"
+                     prefHeight="35.0" prefWidth="190.0" promptText="Empresa "/>
+        <JFXComboBox fx:id="combo_brigada" labelFloat="true" layoutX="224.0" layoutY="91.0" prefHeight="35.0"
+                     prefWidth="213.0" promptText="Brigada"/>
+        <JFXButton fx:id="btnClose" layoutX="306.0" layoutY="303.0" onAction="#handleClose" prefHeight="27.0"
+                   prefWidth="118.0" style="-fx-background-color: #286090;" text="Cancelar" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIcon fill="WHITE" glyphName="CLOSE"/>
+            </graphic>
+        </JFXButton>
+        <FontAwesomeIcon fill="#286090" glyphName="TH" layoutX="16.0" layoutY="35.0" size="1.8em"/>
+        <JFXButton contentDisplay="CENTER" layoutX="401.0" layoutY="8.0" onAction="#handleLoadExcel" prefHeight="35.0"
+                   prefWidth="36.0" style="-fx-border-color: #286090; -fx-border-radius: 3;">
+            <graphic>
+                <FontAwesomeIcon fill="#286090" glyphName="UPLOAD" size="1.8em"/>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Agregar Grupos de Costrucción dede el excel"/>
+            </tooltip>
+        </JFXButton>
+    </children>
+</AnchorPane>
